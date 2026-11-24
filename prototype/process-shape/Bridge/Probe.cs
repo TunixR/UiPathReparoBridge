@@ -25,6 +25,8 @@ namespace Reparo.UiPathBridge
         protected override void Track(TrackingRecord record, TimeSpan timeout)
         {
             Records++;
+            if (record is ActivityStateRecord a0 && a0.State != "Faulted") return;
+            if (!(record is ActivityStateRecord) && !(record is FaultPropagationRecord)) return;
             if (record is ActivityStateRecord a)
                 Trace.W($"TRACK state {a.State} {a.Activity.TypeName} '{a.Activity.Name}' id={a.Activity.Id} inst={a.Activity.InstanceId}");
             else if (record is FaultPropagationRecord f)

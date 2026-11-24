@@ -1,0 +1,41 @@
+{
+  "task_name": "spending_approval",
+  "errored_act": {
+    "model_event_id": "Main.xaml#ReparoEvent_5",
+    "event_name": "Click Approve #2",
+    "error_code": "SelectorNotFoundException",
+    "error_description": "Could not find the UI element corresponding to this selector:\r"
+  },
+  "loop_iteration": [
+    2
+  ],
+  "variables": {
+    "approval_limit": 500,
+    "pending": [
+      104,
+      102,
+      105,
+      101,
+      103
+    ],
+    "request_id": 105,
+    "amount": 450,
+    "remaining_budget": 700
+  },
+  "ui_log": [
+    "Open the requests window  [Main.xaml#ReparoEvent_1]",
+    "Read the pending requests  [Main.xaml#ReparoEvent_2]",
+    "Open the request #0  [Main.xaml#ReparoEvent_3]",
+    "Read the request #0  [Main.xaml#ReparoEvent_4]",
+    "Click Approve #0  [Main.xaml#ReparoEvent_5]",
+    "Go back to the requests #0  [Main.xaml#ReparoEvent_12]",
+    "Open the request #1  [Main.xaml#ReparoEvent_3]",
+    "Read the request #1  [Main.xaml#ReparoEvent_4]",
+    "Open the Reason dropdown #1  [Main.xaml#ReparoEvent_6]",
+    "Pick Over the approval limit #1  [Main.xaml#ReparoEvent_7]",
+    "Click Reject #1  [Main.xaml#ReparoEvent_8]",
+    "Go back to the requests #1  [Main.xaml#ReparoEvent_12]",
+    "Open the request #2  [Main.xaml#ReparoEvent_3]",
+    "Read the request #2  [Main.xaml#ReparoEvent_4]"
+  ]
+}

@@ -1,0 +1,128 @@
+17:46:09.083 === Process 'spending_approval' id=Main.xaml#ReparoProcess_1; 56 IdRefs known; Variables: approval_limit, pending, request_id, amount, remaining_budget
+17:46:09.085   ReparoProcess 'spending_approval' Main.xaml#ReparoProcess_1
+17:46:09.086     ReparoActivity 'Open the spending requests' Main.xaml#ReparoActivity_1
+17:46:09.086       ReparoEvent 'Open the requests window' Main.xaml#ReparoEvent_1
+17:46:09.086       ReparoEvent 'Read the pending requests' Main.xaml#ReparoEvent_2
+17:46:09.087     ReparoForEach 'each_request' Main.xaml#ReparoForEach_1
+17:46:09.087       ReparoActivity 'Open the request' Main.xaml#ReparoActivity_2
+17:46:09.087         ReparoEvent 'Open the request' Main.xaml#ReparoEvent_3
+17:46:09.088         ReparoEvent 'Read the request' Main.xaml#ReparoEvent_4
+17:46:09.088       ReparoIf 'decide' Main.xaml#ReparoIf_2
+17:46:09.088         ReparoActivity 'Approve the request' Main.xaml#ReparoActivity_3
+17:46:09.089           ReparoEvent 'Click Approve' Main.xaml#ReparoEvent_5
+17:46:09.089         ReparoIf 'over the limit' Main.xaml#ReparoIf_1
+17:46:09.089           ReparoActivity 'Reject over limit' Main.xaml#ReparoActivity_4
+17:46:09.089             ReparoEvent 'Open the Reason dropdown' Main.xaml#ReparoEvent_6
+17:46:09.090             ReparoEvent 'Pick Over the approval limit' Main.xaml#ReparoEvent_7
+17:46:09.090             ReparoEvent 'Click Reject' Main.xaml#ReparoEvent_8
+17:46:09.090           ReparoActivity 'Reject for budget' Main.xaml#ReparoActivity_5
+17:46:09.090             ReparoEvent 'Open the Reason dropdown' Main.xaml#ReparoEvent_9
+17:46:09.090             ReparoEvent 'Pick Budget exhausted' Main.xaml#ReparoEvent_10
+17:46:09.091             ReparoEvent 'Click Reject' Main.xaml#ReparoEvent_11
+17:46:09.091       ReparoActivity 'Return to the list' Main.xaml#ReparoActivity_6
+17:46:09.091         ReparoEvent 'Go back to the requests' Main.xaml#ReparoEvent_12
+17:46:09.092     ReparoActivity 'Record the final budget' Main.xaml#ReparoActivity_7
+17:46:09.092       ReparoEvent 'Read the final budget' Main.xaml#ReparoEvent_13
+17:46:09.099 Activity 'Open the spending requests' entered
+17:46:09.126   Event 'Open the requests window' Main.xaml#ReparoEvent_1 starts; Variables {"approval_limit":500,"pending":null,"request_id":0,"amount":0,"remaining_budget":0}
+17:46:12.203   Event 'Read the pending requests' Main.xaml#ReparoEvent_2 starts; Variables {"approval_limit":500,"pending":null,"request_id":0,"amount":0,"remaining_budget":0}
+17:46:12.580 For Each 'each_request' pass 0: request_id = 104
+17:46:12.584 Activity 'Open the request' entered #0
+17:46:12.590   Event 'Open the request' #0 Main.xaml#ReparoEvent_3 starts; Variables {"approval_limit":500,"pending":[104,102,105,101,103],"request_id":104,"amount":0,"remaining_budget":0}
+17:46:13.372   Event 'Read the request' #0 Main.xaml#ReparoEvent_4 starts; Variables {"approval_limit":500,"pending":[104,102,105,101,103],"request_id":104,"amount":0,"remaining_budget":0}
+17:46:13.427 If 'decide': Then
+17:46:13.428 Activity 'Approve the request' entered #0
+17:46:13.430   Event 'Click Approve' #0 Main.xaml#ReparoEvent_5 starts; Variables {"approval_limit":500,"pending":[104,102,105,101,103],"request_id":104,"amount":300,"remaining_budget":1000}
+17:46:14.158 Activity 'Return to the list' entered #0
+17:46:14.161   Event 'Go back to the requests' #0 Main.xaml#ReparoEvent_12 starts; Variables {"approval_limit":500,"pending":[104,102,105,101,103],"request_id":104,"amount":300,"remaining_budget":1000}
+17:46:14.933 For Each 'each_request' pass 1: request_id = 102
+17:46:14.955 Activity 'Open the request' entered #1
+17:46:14.959   Event 'Open the request' #1 Main.xaml#ReparoEvent_3 starts; Variables {"approval_limit":500,"pending":[104,102,105,101,103],"request_id":102,"amount":300,"remaining_budget":1000}
+17:46:15.721   Event 'Read the request' #1 Main.xaml#ReparoEvent_4 starts; Variables {"approval_limit":500,"pending":[104,102,105,101,103],"request_id":102,"amount":300,"remaining_budget":1000}
+17:46:15.786 If 'decide': Else
+17:46:15.789 If 'over the limit': Then
+17:46:15.792 Activity 'Reject over limit' entered #1
+17:46:15.795   Event 'Open the Reason dropdown' #1 Main.xaml#ReparoEvent_6 starts; Variables {"approval_limit":500,"pending":[104,102,105,101,103],"request_id":102,"amount":800,"remaining_budget":700}
+17:46:16.550   Event 'Pick Over the approval limit' #1 Main.xaml#ReparoEvent_7 starts; Variables {"approval_limit":500,"pending":[104,102,105,101,103],"request_id":102,"amount":800,"remaining_budget":700}
+17:46:17.340   Event 'Click Reject' #1 Main.xaml#ReparoEvent_8 starts; Variables {"approval_limit":500,"pending":[104,102,105,101,103],"request_id":102,"amount":800,"remaining_budget":700}
+17:46:18.129 Activity 'Return to the list' entered #1
+17:46:18.144   Event 'Go back to the requests' #1 Main.xaml#ReparoEvent_12 starts; Variables {"approval_limit":500,"pending":[104,102,105,101,103],"request_id":102,"amount":800,"remaining_budget":700}
+17:46:18.956 For Each 'each_request' pass 2: request_id = 105
+17:46:18.961 Activity 'Open the request' entered #2
+17:46:18.965   Event 'Open the request' #2 Main.xaml#ReparoEvent_3 starts; Variables {"approval_limit":500,"pending":[104,102,105,101,103],"request_id":105,"amount":800,"remaining_budget":700}
+17:46:19.713   Event 'Read the request' #2 Main.xaml#ReparoEvent_4 starts; Variables {"approval_limit":500,"pending":[104,102,105,101,103],"request_id":105,"amount":800,"remaining_budget":700}
+17:46:19.759 If 'decide': Then
+17:46:19.760 Activity 'Approve the request' entered #2
+17:46:19.763   Event 'Click Approve' #2 Main.xaml#ReparoEvent_5 starts; Variables {"approval_limit":500,"pending":[104,102,105,101,103],"request_id":105,"amount":450,"remaining_budget":700}
+17:46:22.081 TRACK state Faulted UiPath.Core.Activities.Click 'Click Approve' id=1.160 inst=100
+17:46:22.081 TRACK fault from 'Click Approve' handler='Sequence' src=True SelectorNotFoundException
+17:46:22.101 TRACK fault from 'Click Approve' handler='Click Approve' src=False SelectorNotFoundException
+17:46:22.108 TRACK fault from 'Click Approve' handler='Approve the request' src=False SelectorNotFoundException
+17:46:22.111 TRACK fault from 'Click Approve' handler='decide' src=False SelectorNotFoundException
+17:46:22.113 TRACK fault from 'Click Approve' handler='each_request' src=False SelectorNotFoundException
+17:46:22.115 TRACK fault from 'Click Approve' handler='spending_approval' src=False SelectorNotFoundException
+17:46:22.116 FAULT reached Reparo Process: UiPath.Core.SelectorNotFoundException: Could not find the UI element corresponding to this selector: (in Event Main.xaml#ReparoEvent_5, via each_request)
+17:46:22.122   Recovery 1 sent (recovery-1.json): Main.xaml#ReparoEvent_5 #2
+17:46:22.126   fake Reparo: waiting 8 s, then done: continue at Main.xaml#ReparoEvent_5 #2
+17:46:30.142 Continuation: entering at Main.xaml#ReparoEvent_5 #2
+17:46:30.156   restored Variables: approval_limit, pending, request_id, amount, remaining_budget
+17:46:30.156 For Each 'each_request' pass 2: request_id = 105
+17:46:30.160 If 'decide': Then (entering for the Continuation)
+17:46:30.163 Activity 'Approve the request' entered #2
+17:46:30.166   Continuation reached Main.xaml#ReparoEvent_5 #2
+17:46:30.166   Event 'Click Approve' #2 Main.xaml#ReparoEvent_5 starts; Variables {"approval_limit":500,"pending":[104,102,105,101,103],"request_id":105,"amount":450,"remaining_budget":700}
+17:46:30.939 Activity 'Return to the list' entered #2
+17:46:30.951   Event 'Go back to the requests' #2 Main.xaml#ReparoEvent_12 starts; Variables {"approval_limit":500,"pending":[104,102,105,101,103],"request_id":105,"amount":450,"remaining_budget":700}
+17:46:31.746 For Each 'each_request' pass 3: request_id = 101
+17:46:31.756 Activity 'Open the request' entered #3
+17:46:31.759   Event 'Open the request' #3 Main.xaml#ReparoEvent_3 starts; Variables {"approval_limit":500,"pending":[104,102,105,101,103],"request_id":101,"amount":450,"remaining_budget":700}
+17:46:32.529   Event 'Read the request' #3 Main.xaml#ReparoEvent_4 starts; Variables {"approval_limit":500,"pending":[104,102,105,101,103],"request_id":101,"amount":450,"remaining_budget":700}
+17:46:32.599 If 'decide': Else
+17:46:32.602 If 'over the limit': Else
+17:46:32.605 Activity 'Reject for budget' entered #3
+17:46:32.607   Event 'Open the Reason dropdown' #3 Main.xaml#ReparoEvent_9 starts; Variables {"approval_limit":500,"pending":[104,102,105,101,103],"request_id":101,"amount":400,"remaining_budget":250}
+17:46:33.397   Event 'Pick Budget exhausted' #3 Main.xaml#ReparoEvent_10 starts; Variables {"approval_limit":500,"pending":[104,102,105,101,103],"request_id":101,"amount":400,"remaining_budget":250}
+17:46:34.164   Event 'Click Reject' #3 Main.xaml#ReparoEvent_11 starts; Variables {"approval_limit":500,"pending":[104,102,105,101,103],"request_id":101,"amount":400,"remaining_budget":250}
+17:46:34.969 Activity 'Return to the list' entered #3
+17:46:34.982   Event 'Go back to the requests' #3 Main.xaml#ReparoEvent_12 starts; Variables {"approval_limit":500,"pending":[104,102,105,101,103],"request_id":101,"amount":400,"remaining_budget":250}
+17:46:35.817 For Each 'each_request' pass 4: request_id = 103
+17:46:35.828 Activity 'Open the request' entered #4
+17:46:35.838   Event 'Open the request' #4 Main.xaml#ReparoEvent_3 starts; Variables {"approval_limit":500,"pending":[104,102,105,101,103],"request_id":103,"amount":400,"remaining_budget":250}
+17:46:36.637   Event 'Read the request' #4 Main.xaml#ReparoEvent_4 starts; Variables {"approval_limit":500,"pending":[104,102,105,101,103],"request_id":103,"amount":400,"remaining_budget":250}
+17:46:36.689 If 'decide': Then
+17:46:36.692 Activity 'Approve the request' entered #4
+17:46:36.694   Event 'Click Approve' #4 Main.xaml#ReparoEvent_5 starts; Variables {"approval_limit":500,"pending":[104,102,105,101,103],"request_id":103,"amount":200,"remaining_budget":250}
+17:46:37.457 Activity 'Return to the list' entered #4
+17:46:37.461   Event 'Go back to the requests' #4 Main.xaml#ReparoEvent_12 starts; Variables {"approval_limit":500,"pending":[104,102,105,101,103],"request_id":103,"amount":200,"remaining_budget":250}
+17:46:38.244 For Each 'each_request' done after 5 passes
+17:46:38.249 Activity 'Record the final budget' entered
+17:46:38.252   Event 'Read the final budget' Main.xaml#ReparoEvent_13 starts; Variables {"approval_limit":500,"pending":[104,102,105,101,103],"request_id":103,"amount":200,"remaining_budget":250}
+17:46:38.276 === Process completed. UI log:
+17:46:38.276   Open the requests window  [Main.xaml#ReparoEvent_1]
+17:46:38.276   Read the pending requests  [Main.xaml#ReparoEvent_2]
+17:46:38.276   Open the request #0  [Main.xaml#ReparoEvent_3]
+17:46:38.276   Read the request #0  [Main.xaml#ReparoEvent_4]
+17:46:38.277   Click Approve #0  [Main.xaml#ReparoEvent_5]
+17:46:38.277   Go back to the requests #0  [Main.xaml#ReparoEvent_12]
+17:46:38.277   Open the request #1  [Main.xaml#ReparoEvent_3]
+17:46:38.277   Read the request #1  [Main.xaml#ReparoEvent_4]
+17:46:38.277   Open the Reason dropdown #1  [Main.xaml#ReparoEvent_6]
+17:46:38.278   Pick Over the approval limit #1  [Main.xaml#ReparoEvent_7]
+17:46:38.278   Click Reject #1  [Main.xaml#ReparoEvent_8]
+17:46:38.278   Go back to the requests #1  [Main.xaml#ReparoEvent_12]
+17:46:38.278   Open the request #2  [Main.xaml#ReparoEvent_3]
+17:46:38.278   Read the request #2  [Main.xaml#ReparoEvent_4]
+17:46:38.279   Click Approve #2  [Main.xaml#ReparoEvent_5]
+17:46:38.279   Go back to the requests #2  [Main.xaml#ReparoEvent_12]
+17:46:38.279   Open the request #3  [Main.xaml#ReparoEvent_3]
+17:46:38.279   Read the request #3  [Main.xaml#ReparoEvent_4]
+17:46:38.279   Open the Reason dropdown #3  [Main.xaml#ReparoEvent_9]
+17:46:38.279   Pick Budget exhausted #3  [Main.xaml#ReparoEvent_10]
+17:46:38.280   Click Reject #3  [Main.xaml#ReparoEvent_11]
+17:46:38.280   Go back to the requests #3  [Main.xaml#ReparoEvent_12]
+17:46:38.280   Open the request #4  [Main.xaml#ReparoEvent_3]
+17:46:38.280   Read the request #4  [Main.xaml#ReparoEvent_4]
+17:46:38.280   Click Approve #4  [Main.xaml#ReparoEvent_5]
+17:46:38.280   Go back to the requests #4  [Main.xaml#ReparoEvent_12]
+17:46:38.281   Read the final budget  [Main.xaml#ReparoEvent_13]
+17:46:38.281 Variables at the end: {"approval_limit":500,"pending":[104,102,105,101,103],"request_id":103,"amount":200,"remaining_budget":50}
