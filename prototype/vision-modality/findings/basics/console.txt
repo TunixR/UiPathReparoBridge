@@ -1,0 +1,83 @@
+session 1 user reparo
+--- probe.log
+20:14:02.740 === probe basics.json in ProbeCli (no DPI manifest), pid 6724, .NET 10.0.15
+20:14:02.760 # A: every Recovery action at 100%, typing keys/unicode/paste, a dialog Reparo opens
+20:14:02.762 info: process DPI awareness unaware (dpi 96), this thread unaware (dpi 96)
+20:14:02.763 info: as the thread is: virtual screen (0,0) 1920x1080, 1 monitor(s)
+20:14:02.763 info: pinned per-monitor v2 (set returned ok): virtual screen (0,0) 1920x1080, 1 monitor(s)
+20:14:02.766 info: monitor \\.\DISPLAY1 [0,0,1920,1080] primary=True dpi 96 (100%)
+20:14:02.768 info: foreground 'Reparo vision target' [120,90,1020,730], window dpi 96, layout 0x40A0C0A
+20:14:02.770 info: session 1, user reparo, elevated False
+20:14:02.771 session on \\.\DISPLAY1 [0,0,1920,1080] 1920x1080 dpi 96
+20:14:02.850 observe: 01-start.jpg 1920x1080, 176898 bytes, 78 ms
+20:14:02.869   integrity: window 'Reparo vision target' at (228,163) pid 3536 level 0x2000 vs Robot 0x2000
+20:14:02.960 act {"action_type":"left_single","action_inputs":{"start_box":[228, 163]}} -> {"success":true,"action_type":"left_single"}
+20:14:02.961   integrity: window 'Reparo vision target' at (228,163) pid 3536 level 0x2000 vs Robot 0x2000
+20:14:02.994 act {"action_type":"click","action_inputs":{"start_box":[148, 141, 308, 185]}} -> {"success":true,"action_type":"click"}
+20:14:02.996   integrity: window 'Reparo vision target' at (228,163) pid 3536 level 0x2000 vs Robot 0x2000
+20:14:03.041 act {"action_type":"left_single","action_inputs":{"start_box":[0.1190, 0.1514]}} -> {"success":true,"action_type":"left_single"}
+20:14:03.043   integrity: window 'Reparo vision target' at (872,155) pid 3536 level 0x2000 vs Robot 0x2000
+20:14:03.104 act {"action_type":"left_single","action_inputs":{"start_box":[872, 155]}} -> {"success":true,"action_type":"left_single"}
+20:14:03.111   integrity: window 'Reparo vision target' at (408,163) pid 3536 level 0x2000 vs Robot 0x2000
+20:14:03.167 act {"action_type":"left_double","action_inputs":{"start_box":[408, 163]}} -> {"success":true,"action_type":"left_double"}
+20:14:03.169   integrity: window 'Reparo vision target' at (588,163) pid 3536 level 0x2000 vs Robot 0x2000
+20:14:03.213 act {"action_type":"right_single","action_inputs":{"start_box":[588, 163]}} -> {"success":true,"action_type":"right_single"}
+20:14:03.215   integrity: window 'Reparo vision target' at (768,163) pid 3536 level 0x2000 vs Robot 0x2000
+20:14:03.216 act {"action_type":"hover","action_inputs":{"start_box":[768, 163]}} -> {"success":true,"action_type":"hover"}
+20:14:03.217   integrity: window 'Reparo vision target' at (399,286) pid 3536 level 0x2000 vs Robot 0x2000
+20:14:03.277 act {"action_type":"left_single","action_inputs":{"start_box":[399, 286]}} -> {"success":true,"action_type":"left_single"}
+20:14:03.277 # type_method keys (default): scan codes where the Spanish layout has the char, VK_PACKET otherwise
+20:14:03.283   integrity: window 'Reparo vision target' in the foreground pid 3536 level 0x2000 vs Robot 0x2000
+20:14:03.573   type: 19 chars as scan codes, 6 as VK_PACKET (layout 0x40A0C0A)
+20:14:03.575 settings: type Unicode, integrity check True, scroll 360
+20:14:03.577   integrity: window 'Reparo vision target' in the foreground pid 3536 level 0x2000 vs Robot 0x2000
+20:14:03.746   type: 0 chars as scan codes, 15 as VK_PACKET (layout 0x40A0C0A)
+20:14:03.746 settings: type Paste, integrity check True, scroll 360
+20:14:03.748   integrity: window 'Reparo vision target' in the foreground pid 3536 level 0x2000 vs Robot 0x2000
+20:14:04.088   type: pasted 14 chars, clipboard restored (text)
+20:14:04.088 settings: type Keys, integrity check True, scroll 360
+20:14:04.088 # held Shift from keydown, then type: the text must stay lowercase
+20:14:04.091   integrity: window 'Reparo vision target' in the foreground pid 3536 level 0x2000 vs Robot 0x2000
+20:14:04.096 act {"action_type":"keydown","action_inputs":{"key":"shift"}} -> {"success":true,"action_type":"keydown"}
+20:14:04.096   integrity: window 'Reparo vision target' in the foreground pid 3536 level 0x2000 vs Robot 0x2000
+20:14:04.136   type: 3 chars as scan codes, 0 as VK_PACKET (layout 0x40A0C0A)
+20:14:04.137 act {"action_type":"type","action_inputs":{"content":"abc"}} -> {"success":true,"action_type":"type"}
+20:14:04.138   integrity: window 'Reparo vision target' in the foreground pid 3536 level 0x2000 vs Robot 0x2000
+20:14:04.139 act {"action_type":"keyup","action_inputs":{"key":"shift"}} -> {"success":true,"action_type":"keyup"}
+20:14:04.140   integrity: window 'Reparo vision target' in the foreground pid 3536 level 0x2000 vs Robot 0x2000
+20:14:04.144 act {"action_type":"hotkey","action_inputs":{"hotkey":"ctrl a"}} -> {"success":true,"action_type":"hotkey"}
+20:14:04.145   integrity: window 'Reparo vision target' in the foreground pid 3536 level 0x2000 vs Robot 0x2000
+20:14:04.146 act {"action_type":"hotkey","action_inputs":{"hotkey":"ctrl+end"}} -> {"success":true,"action_type":"hotkey"}
+20:14:04.146   integrity: window 'Reparo vision target' in the foreground pid 3536 level 0x2000 vs Robot 0x2000
+20:14:04.147 act {"action_type":"hotkey","action_inputs":{"key":"shift home"}} -> {"success":true,"action_type":"hotkey"}
+20:14:04.148   integrity: window 'Reparo vision target' in the foreground pid 3536 level 0x2000 vs Robot 0x2000
+20:14:04.148 act {"action_type":"keydown","action_inputs":{"key":"ctrl"}} -> {"success":true,"action_type":"keydown"}
+20:14:04.149 released held keys
+20:14:04.150   integrity: window 'Reparo vision target' at (829,323) pid 3536 level 0x2000 vs Robot 0x2000
+20:14:04.263 act {"action_type":"scroll","action_inputs":{"start_box":[829, 323],"direction":"down"}} -> {"success":true,"action_type":"scroll"}
+20:14:04.666   integrity: window 'Reparo vision target' at (829,323) pid 3536 level 0x2000 vs Robot 0x2000
+20:14:04.794 act {"action_type":"scroll","action_inputs":{"start_box":[829, 323],"direction":"up"}} -> {"success":true,"action_type":"scroll"}
+20:14:05.203   integrity: window 'Reparo vision target' at (838,502) pid 3536 level 0x2000 vs Robot 0x2000
+20:14:05.342 act {"action_type":"scroll","action_inputs":{"start_box":[838, 502],"direction":"right"}} -> {"success":true,"action_type":"scroll"}
+20:14:05.745   integrity: window 'Reparo vision target' at (209,402) pid 3536 level 0x2000 vs Robot 0x2000
+20:14:06.135 act {"action_type":"drag","action_inputs":{"start_box":[209, 402],"end_box":[584, 532]}} -> {"success":true,"action_type":"drag"}
+20:14:06.644 act {"action_type":"wait","action_inputs":{"seconds":0.5}} -> {"success":true,"action_type":"wait"}
+20:14:06.709 observe: 02-after-actions.jpg 1920x1080, 182356 bytes, 65 ms
+20:14:06.710 # a window Reparo opens: it shows up on the monitor, nothing to follow
+20:14:06.711   integrity: window 'Reparo vision target' at (228,593) pid 3536 level 0x2000 vs Robot 0x2000
+20:14:06.769 act {"action_type":"left_single","action_inputs":{"start_box":[228, 593]}} -> {"success":true,"action_type":"left_single"}
+20:14:07.636 observe: 03-dialog.jpg 1920x1080, 175361 bytes, 66 ms
+20:14:07.638   integrity: window 'Reparo dialog' at (1008,643) pid 3536 level 0x2000 vs Robot 0x2000
+20:14:07.693 act {"action_type":"left_single","action_inputs":{"start_box":[1008, 643]}} -> {"success":true,"action_type":"left_single"}
+20:14:07.693 # rejections
+20:14:07.698 act {"action_type":"left_single","action_inputs":{"start_box":[5000, 10]}} -> {"success":false,"action_type":"left_single","error":"start_box (5000,10) is outside the screenshot 1920x1080"}
+20:14:07.704   integrity: window 'Reparo vision target' in the foreground pid 3536 level 0x2000 vs Robot 0x2000
+20:14:07.710 act {"action_type":"hotkey","action_inputs":{"hotkey":"ctrl foo"}} -> {"success":false,"action_type":"hotkey","error":"unknown key \u0027foo\u0027"}
+20:14:07.711   integrity: window 'Reparo vision target' at (829,323) pid 3536 level 0x2000 vs Robot 0x2000
+20:14:07.756 act {"action_type":"scroll","action_inputs":{"start_box":[829, 323],"direction":"sideways"}} -> {"success":false,"action_type":"scroll","error":"Invalid scroll direction: sideways. Must be \u0027up\u0027, \u0027down\u0027, \u0027left\u0027, or \u0027right\u0027."}
+20:14:07.757 act {"action_type":"fly","action_inputs":{}} -> {"success":false,"action_type":"fly","error":"Unsupported action_type: fly"}
+20:14:07.757 # the app's window closes: the screen stays, the Recovery goes on
+20:14:07.757   integrity: window 'Reparo vision target' at (408,593) pid 3536 level 0x2000 vs Robot 0x2000
+20:14:07.829 act {"action_type":"left_single","action_inputs":{"start_box":[408, 593]}} -> {"success":true,"action_type":"left_single"}
+20:14:08.700 observe: 04-app-closed.jpg 1920x1080, 170189 bytes, 68 ms
+20:14:08.701 === done

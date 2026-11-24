@@ -1,0 +1,15 @@
+[
+ {"do":"note","text":"C: display scaling changed live; the probe process has no DPI manifest (unaware)"},
+ {"do":"info"},
+ {"do":"session"},
+ {"do":"observe","save":"scaled"},
+ {"do":"act","action":{"action_type":"left_single","action_inputs":{"start_box":"@click"}}},
+ {"do":"act","action":{"action_type":"left_single","action_inputs":{"start_box":"@click%"}}},
+ {"do":"act","action":{"action_type":"left_single","action_inputs":{"start_box":"@tiny"}}},
+ {"do":"act","action":{"action_type":"left_double","action_inputs":{"start_box":"@double"}}},
+ {"do":"act","action":{"action_type":"scroll","action_inputs":{"start_box":"@list","direction":"down"}}},
+ {"do":"sleep","ms":400},
+ {"do":"act","action":{"action_type":"drag","action_inputs":{"start_box":"@dragfrom","end_box":"@dropto"}}},
+ {"do":"act","action":{"action_type":"left_single","action_inputs":{"start_box":"@text"}}},
+ {"do":"act","action":{"action_type":"type","action_inputs":{"content":"escalado ñ@\n"}}}
+]

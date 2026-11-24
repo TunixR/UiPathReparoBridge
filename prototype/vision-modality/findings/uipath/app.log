@@ -1,0 +1,127 @@
+20:19:52.048 [app] shown at {X=120,Y=90,Width=900,Height=640} (physical), dpi 96, elevated False
+20:20:15.928 [app] click: MouseDown Left at {X=228,Y=163}, +0,+0 from centre of {X=148,Y=141,Width=160,Height=44}
+20:20:15.929 [app] click: Click
+20:20:16.007 [app] tiny: MouseDown Left at {X=408,Y=163}, -464,+8 from centre of {X=868,Y=151,Width=8,Height=8}
+20:20:16.052 [app] double: DoubleClick
+20:20:16.085 [app] list: MouseWheel delta -120, top row now 0
+20:20:16.112 [app] list: MouseWheel delta -120, top row now 3
+20:20:16.144 [app] list: MouseWheel delta -120, top row now 6
+20:20:16.235 [app] text: KEYDOWN vk 0x44 scan 0x20 mods None
+20:20:16.236 [app] text: CHAR U+0064 'd'
+20:20:16.240 [app] text: now "d"
+20:20:16.241 [app] text: KEYUP vk 0x44
+20:20:16.243 [app] text: KEYDOWN vk 0x45 scan 0x12 mods None
+20:20:16.244 [app] text: CHAR U+0065 'e'
+20:20:16.245 [app] text: now "de"
+20:20:16.245 [app] text: KEYUP vk 0x45
+20:20:16.257 [app] text: KEYDOWN vk 0x53 scan 0x1F mods None
+20:20:16.257 [app] text: CHAR U+0073 's'
+20:20:16.258 [app] text: now "des"
+20:20:16.259 [app] text: KEYUP vk 0x53
+20:20:16.269 [app] text: KEYDOWN vk 0x44 scan 0x20 mods None
+20:20:16.270 [app] text: CHAR U+0064 'd'
+20:20:16.272 [app] text: now "desd"
+20:20:16.272 [app] text: KEYUP vk 0x44
+20:20:16.272 [app] list: top row 9
+20:20:16.285 [app] text: KEYDOWN vk 0x45 scan 0x12 mods None
+20:20:16.285 [app] text: CHAR U+0065 'e'
+20:20:16.286 [app] text: now "desde"
+20:20:16.287 [app] text: KEYUP vk 0x45
+20:20:16.290 [app] text: KEYDOWN vk 0x20 scan 0x39 mods None
+20:20:16.290 [app] text: CHAR U+0020 ' '
+20:20:16.292 [app] text: now "desde "
+20:20:16.292 [app] text: KEYUP vk 0x20
+20:20:16.301 [app] text: KEYDOWN vk 0x10 scan 0x2A mods Shift
+20:20:16.302 [app] text: KEYDOWN vk 0x55 scan 0x16 mods Shift
+20:20:16.302 [app] text: CHAR U+0055 'U'
+20:20:16.304 [app] text: now "desde U"
+20:20:16.304 [app] text: KEYUP vk 0x55
+20:20:16.305 [app] text: KEYUP vk 0x10
+20:20:16.316 [app] text: KEYDOWN vk 0x49 scan 0x17 mods None
+20:20:16.316 [app] text: CHAR U+0069 'i'
+20:20:16.318 [app] text: now "desde Ui"
+20:20:16.318 [app] text: KEYUP vk 0x49
+20:20:16.321 [app] text: KEYDOWN vk 0x10 scan 0x2A mods Shift
+20:20:16.321 [app] text: KEYDOWN vk 0x50 scan 0x19 mods Shift
+20:20:16.322 [app] text: CHAR U+0050 'P'
+20:20:16.323 [app] text: now "desde UiP"
+20:20:16.323 [app] text: KEYUP vk 0x50
+20:20:16.323 [app] text: KEYUP vk 0x10
+20:20:16.326 [app] text: KEYDOWN vk 0x41 scan 0x1E mods None
+20:20:16.327 [app] text: CHAR U+0061 'a'
+20:20:16.328 [app] text: now "desde UiPa"
+20:20:16.328 [app] text: KEYUP vk 0x41
+20:20:16.333 [app] text: KEYDOWN vk 0x54 scan 0x14 mods None
+20:20:16.334 [app] text: CHAR U+0074 't'
+20:20:16.335 [app] text: now "desde UiPat"
+20:20:16.335 [app] text: KEYUP vk 0x54
+20:20:16.347 [app] text: KEYDOWN vk 0x48 scan 0x23 mods None
+20:20:16.348 [app] text: CHAR U+0068 'h'
+20:20:16.349 [app] text: now "desde UiPath"
+20:20:16.350 [app] text: KEYUP vk 0x48
+20:20:16.363 [app] text: KEYDOWN vk 0x20 scan 0x39 mods None
+20:20:16.364 [app] text: CHAR U+0020 ' '
+20:20:16.365 [app] text: now "desde UiPath "
+20:20:16.365 [app] text: KEYUP vk 0x20
+20:20:16.379 [app] text: KEYDOWN vk 0xC0 scan 0x27 mods None
+20:20:16.379 [app] text: CHAR U+00F1 'ñ'
+20:20:16.381 [app] text: now "desde UiPath ñ"
+20:20:16.381 [app] text: KEYUP vk 0xC0
+20:20:16.395 [app] text: KEYDOWN vk 0x11 scan 0x1D mods Control
+20:20:16.396 [app] text: KEYDOWN vk 0x12 scan 0x38 ext mods Control, Alt
+20:20:16.397 [app] text: KEYDOWN vk 0x32 scan 0x03 mods Control, Alt
+20:20:16.397 [app] text: CHAR U+0040 '@'
+20:20:16.399 [app] text: now "desde UiPath ñ@"
+20:20:16.399 [app] text: KEYUP vk 0x32
+20:20:16.400 [app] text: KEYUP vk 0x12
+20:20:16.400 [app] text: KEYUP vk 0x11
+20:20:16.401 [app] text: KEYDOWN vk 0x11 scan 0x1D mods Control
+20:20:16.401 [app] text: KEYDOWN vk 0x12 scan 0x38 ext mods Control, Alt
+20:20:16.402 [app] text: KEYDOWN vk 0x35 scan 0x06 mods Control, Alt
+20:20:16.402 [app] text: CHAR U+20AC '€'
+20:20:16.406 [app] text: now "desde UiPath ñ@€"
+20:20:16.407 [app] text: KEYUP vk 0x35
+20:20:16.407 [app] text: KEYUP vk 0x12
+20:20:16.407 [app] text: KEYUP vk 0x11
+20:20:16.411 [app] text: KEYDOWN vk 0xE7 scan 0x00 mods None
+20:20:16.411 [app] text: CHAR U+00E9 'é'
+20:20:16.413 [app] text: now "desde UiPath ñ@€é"
+20:20:16.413 [app] text: KEYUP vk 0xE7
+20:20:16.426 [app] text: KEYDOWN vk 0x20 scan 0x39 mods None
+20:20:16.426 [app] text: CHAR U+0020 ' '
+20:20:16.428 [app] text: now "desde UiPath ñ@€é "
+20:20:16.429 [app] text: KEYUP vk 0x20
+20:20:16.431 [app] text: KEYDOWN vk 0xE7 scan 0x00 mods None
+20:20:16.431 [app] text: CHAR U+6F22 '漢'
+20:20:16.541 [app] text: now "desde UiPath ñ@€é 漢"
+20:20:16.541 [app] text: KEYUP vk 0xE7
+20:20:16.541 [app] text: KEYDOWN vk 0x20 scan 0x39 mods None
+20:20:16.541 [app] text: CHAR U+0020 ' '
+20:20:16.543 [app] text: now "desde UiPath ñ@€é 漢 "
+20:20:16.543 [app] text: KEYUP vk 0x20
+20:20:16.543 [app] text: KEYDOWN vk 0xE7 scan 0x00 mods None
+20:20:16.543 [app] text: CHAR U+D83D '�'
+20:20:16.545 [app] text: now "desde UiPath ñ@€é 漢 �"
+20:20:16.545 [app] text: KEYUP vk 0xE7
+20:20:16.545 [app] text: KEYDOWN vk 0xE7 scan 0x00 mods None
+20:20:16.546 [app] text: CHAR U+DE00 '�'
+20:20:16.636 [app] text: now "desde UiPath ñ@€é 漢 😀"
+20:20:16.637 [app] text: KEYUP vk 0xE7
+20:20:16.637 [app] text: KEYDOWN vk 0x0D scan 0x1C mods None
+20:20:16.637 [app] text: CHAR U+000D '^M'
+20:20:16.639 [app] text: now "desde UiPath ñ@€é 漢 😀\n"
+20:20:16.639 [app] text: KEYUP vk 0x0D
+20:20:16.650 [app] text: KEYDOWN vk 0x11 scan 0x1D mods Control
+20:20:16.651 [app] text: KEYDOWN vk 0x56 scan 0x2F mods Control
+20:20:16.651 [app] text: CHAR U+0016 '^V'
+20:20:16.655 [app] text: now "desde UiPath ñ@€é 漢 😀\npegado ñ@"
+20:20:16.655 [app] text: now "desde UiPath ñ@€é 漢 😀\npegado ñ@"
+20:20:16.655 [app] text: KEYUP vk 0x56
+20:20:16.655 [app] text: KEYUP vk 0x11
+20:20:16.961 [app] text: KEYDOWN vk 0x0D scan 0x1C mods None
+20:20:16.962 [app] text: CHAR U+000D '^M'
+20:20:16.963 [app] text: now "desde UiPath ñ@€é 漢 😀\npegado ñ@\n"
+20:20:16.964 [app] text: KEYUP vk 0x0D
+20:20:16.968 [app] text: KEYDOWN vk 0x11 scan 0x1D mods Control
+20:20:16.970 [app] text: KEYUP vk 0x41
+20:20:16.970 [app] text: KEYUP vk 0x11

@@ -1,0 +1,10 @@
+<!-- PROTOTYPE for ReparoHome#49: a desktop target that logs every input it gets. -->
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net10.0-windows</TargetFramework>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ApplicationHighDpiMode>PerMonitorV2</ApplicationHighDpiMode>
+    <Nullable>disable</Nullable>
+  </PropertyGroup>
+</Project>

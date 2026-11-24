@@ -1,0 +1,65 @@
+20:15:49.708 [app] shown at {X=120,Y=90,Width=900,Height=640} (physical), dpi 144, elevated False
+20:15:51.074 [app] click: MouseDown Left at {X=231,Y=177}, +0,+0 from centre of {X=151,Y=155,Width=160,Height=44}
+20:15:51.075 [app] click: Click
+20:15:51.136 [app] click: MouseDown Left at {X=231,Y=177}, +0,+0 from centre of {X=151,Y=155,Width=160,Height=44}
+20:15:51.138 [app] click: Click
+20:15:51.184 [app] tiny: MouseDown Left at {X=875,Y=169}, +0,+0 from centre of {X=871,Y=165,Width=8,Height=8}
+20:15:51.246 [app] double: DoubleClick
+20:15:51.279 [app] list: MouseWheel delta -120, top row now 0
+20:15:51.301 [app] list: MouseWheel delta -120, top row now 3
+20:15:51.322 [app] list: MouseWheel delta -120, top row now 6
+20:15:51.447 [app] list: top row 9
+20:15:51.824 [app] drag: down at {X=230,Y=422}
+20:15:52.123 [app] drag: up at {X=587,Y=546} after 20 moves (from {X=230,Y=422})
+20:15:52.196 [app] text: KEYDOWN vk 0x45 scan 0x12 mods None
+20:15:52.196 [app] text: CHAR U+0065 'e'
+20:15:52.201 [app] text: now "e"
+20:15:52.201 [app] text: KEYUP vk 0x45
+20:15:52.204 [app] text: KEYDOWN vk 0x53 scan 0x1F mods None
+20:15:52.204 [app] text: CHAR U+0073 's'
+20:15:52.206 [app] text: now "es"
+20:15:52.206 [app] text: KEYUP vk 0x53
+20:15:52.209 [app] text: KEYDOWN vk 0x43 scan 0x2E mods None
+20:15:52.210 [app] text: CHAR U+0063 'c'
+20:15:52.211 [app] text: now "esc"
+20:15:52.211 [app] text: KEYUP vk 0x43
+20:15:52.232 [app] text: KEYDOWN vk 0x41 scan 0x1E mods None
+20:15:52.232 [app] text: CHAR U+0061 'a'
+20:15:52.233 [app] text: now "esca"
+20:15:52.233 [app] text: KEYUP vk 0x41
+20:15:52.237 [app] text: KEYDOWN vk 0x4C scan 0x26 mods None
+20:15:52.237 [app] text: CHAR U+006C 'l'
+20:15:52.239 [app] text: now "escal"
+20:15:52.239 [app] text: KEYUP vk 0x4C
+20:15:52.247 [app] text: KEYDOWN vk 0x41 scan 0x1E mods None
+20:15:52.247 [app] text: CHAR U+0061 'a'
+20:15:52.248 [app] text: now "escala"
+20:15:52.248 [app] text: KEYUP vk 0x41
+20:15:52.253 [app] text: KEYDOWN vk 0x44 scan 0x20 mods None
+20:15:52.253 [app] text: CHAR U+0064 'd'
+20:15:52.254 [app] text: now "escalad"
+20:15:52.254 [app] text: KEYUP vk 0x44
+20:15:52.258 [app] text: KEYDOWN vk 0x4F scan 0x18 mods None
+20:15:52.258 [app] text: CHAR U+006F 'o'
+20:15:52.259 [app] text: now "escalado"
+20:15:52.260 [app] text: KEYUP vk 0x4F
+20:15:52.265 [app] text: KEYDOWN vk 0x20 scan 0x39 mods None
+20:15:52.266 [app] text: CHAR U+0020 ' '
+20:15:52.267 [app] text: now "escalado "
+20:15:52.267 [app] text: KEYUP vk 0x20
+20:15:52.277 [app] text: KEYDOWN vk 0xC0 scan 0x27 mods None
+20:15:52.278 [app] text: CHAR U+00F1 'ñ'
+20:15:52.279 [app] text: now "escalado ñ"
+20:15:52.279 [app] text: KEYUP vk 0xC0
+20:15:52.293 [app] text: KEYDOWN vk 0x11 scan 0x1D mods Control
+20:15:52.295 [app] text: KEYDOWN vk 0x12 scan 0x38 ext mods Control, Alt
+20:15:52.296 [app] text: KEYDOWN vk 0x32 scan 0x03 mods Control, Alt
+20:15:52.296 [app] text: CHAR U+0040 '@'
+20:15:52.298 [app] text: now "escalado ñ@"
+20:15:52.298 [app] text: KEYUP vk 0x32
+20:15:52.298 [app] text: KEYUP vk 0x12
+20:15:52.299 [app] text: KEYUP vk 0x11
+20:15:52.309 [app] text: KEYDOWN vk 0x0D scan 0x1C mods None
+20:15:52.310 [app] text: CHAR U+000D '^M'
+20:15:52.311 [app] text: now "escalado ñ@\n"
+20:15:52.311 [app] text: KEYUP vk 0x0D

@@ -1,0 +1,6 @@
+[
+ {"do":"note","text":"E: the console is locked (Winlogon is the input desktop)"},
+ {"do":"session"},
+ {"do":"observe","save":"locked"},
+ {"do":"act","action":{"action_type":"left_single","action_inputs":{"start_box":[100, 100]}}}
+]

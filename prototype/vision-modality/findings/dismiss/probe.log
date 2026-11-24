@@ -1,0 +1,8 @@
+20:18:29.333 === probe dismiss.json in ProbeCli (no DPI manifest), pid 3096, .NET 10.0.15
+20:18:29.360 # dismiss the Shutdown Event Tracker: Cancel, read off the screenshot by eye
+20:18:29.366 session on \\.\DISPLAY1 [0,0,1920,1080] 1920x1080 dpi 96
+20:18:29.440 observe: 01-tracker.jpg 1920x1080, 142420 bytes, 73 ms
+20:18:29.449   integrity: window 'C:\WINDOWS\System32\WindowsPowerShell\v1.0\powershell.EXE' at (1038,661) pid 5272 level 0x2000 vs Robot 0x2000
+20:18:29.557 act {"action_type":"left_single","action_inputs":{"start_box":[1022, 650, 1054, 672]}} -> {"success":true,"action_type":"left_single"}
+20:18:30.432 observe: 02-after.jpg 1920x1080, 142639 bytes, 65 ms
+20:18:30.432 === done

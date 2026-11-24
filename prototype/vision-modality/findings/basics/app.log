@@ -1,0 +1,251 @@
+20:14:01.604 [app] shown at {X=120,Y=90,Width=900,Height=640} (physical), dpi 96, elevated False
+20:14:02.934 [app] click: MouseDown Left at {X=228,Y=163}, +0,+0 from centre of {X=148,Y=141,Width=160,Height=44}
+20:14:02.935 [app] click: Click
+20:14:02.994 [app] click: MouseDown Left at {X=228,Y=163}, +0,+0 from centre of {X=148,Y=141,Width=160,Height=44}
+20:14:02.995 [app] click: Click
+20:14:03.041 [app] click: MouseDown Left at {X=228,Y=163}, +0,+0 from centre of {X=148,Y=141,Width=160,Height=44}
+20:14:03.043 [app] click: Click
+20:14:03.106 [app] tiny: MouseDown Left at {X=872,Y=155}, +0,+0 from centre of {X=868,Y=151,Width=8,Height=8}
+20:14:03.168 [app] double: DoubleClick
+20:14:03.214 [app] right: MouseUp Right
+20:14:03.215 [app] hover: MouseEnter at {X=768,Y=163}
+20:14:03.287 [app] text: KEYDOWN vk 0x10 scan 0x2A mods Shift
+20:14:03.288 [app] text: KEYDOWN vk 0x48 scan 0x23 mods Shift
+20:14:03.288 [app] text: CHAR U+0048 'H'
+20:14:03.292 [app] text: now "H"
+20:14:03.292 [app] text: KEYUP vk 0x48
+20:14:03.293 [app] text: KEYUP vk 0x10
+20:14:03.294 [app] text: KEYDOWN vk 0x4F scan 0x18 mods None
+20:14:03.295 [app] text: CHAR U+006F 'o'
+20:14:03.296 [app] text: now "Ho"
+20:14:03.296 [app] text: KEYUP vk 0x4F
+20:14:03.307 [app] text: KEYDOWN vk 0x4C scan 0x26 mods None
+20:14:03.307 [app] text: CHAR U+006C 'l'
+20:14:03.309 [app] text: now "Hol"
+20:14:03.309 [app] text: KEYUP vk 0x4C
+20:14:03.323 [app] text: KEYDOWN vk 0x41 scan 0x1E mods None
+20:14:03.324 [app] text: CHAR U+0061 'a'
+20:14:03.325 [app] text: now "Hola"
+20:14:03.325 [app] text: KEYUP vk 0x41
+20:14:03.339 [app] text: KEYDOWN vk 0x20 scan 0x39 mods None
+20:14:03.339 [app] text: CHAR U+0020 ' '
+20:14:03.340 [app] text: now "Hola "
+20:14:03.341 [app] text: KEYUP vk 0x20
+20:14:03.345 [app] text: KEYDOWN vk 0xC0 scan 0x27 mods None
+20:14:03.346 [app] text: CHAR U+00F1 'ñ'
+20:14:03.347 [app] text: now "Hola ñ"
+20:14:03.347 [app] text: KEYUP vk 0xC0
+20:14:03.354 [app] text: KEYDOWN vk 0x41 scan 0x1E mods None
+20:14:03.355 [app] text: CHAR U+0061 'a'
+20:14:03.356 [app] text: now "Hola ña"
+20:14:03.356 [app] text: KEYUP vk 0x41
+20:14:03.370 [app] text: KEYDOWN vk 0x4E scan 0x31 mods None
+20:14:03.371 [app] text: CHAR U+006E 'n'
+20:14:03.372 [app] text: now "Hola ñan"
+20:14:03.373 [app] text: KEYUP vk 0x4E
+20:14:03.386 [app] text: KEYDOWN vk 0x44 scan 0x20 mods None
+20:14:03.386 [app] text: CHAR U+0064 'd'
+20:14:03.387 [app] text: now "Hola ñand"
+20:14:03.387 [app] text: KEYUP vk 0x44
+20:14:03.392 [app] text: KEYDOWN vk 0xE7 scan 0x00 mods None
+20:14:03.392 [app] text: CHAR U+00FA 'ú'
+20:14:03.393 [app] text: now "Hola ñandú"
+20:14:03.394 [app] text: KEYUP vk 0xE7
+20:14:03.401 [app] text: KEYDOWN vk 0x20 scan 0x39 mods None
+20:14:03.401 [app] text: CHAR U+0020 ' '
+20:14:03.402 [app] text: now "Hola ñandú "
+20:14:03.403 [app] text: KEYUP vk 0x20
+20:14:03.408 [app] text: KEYDOWN vk 0x11 scan 0x1D mods Control
+20:14:03.409 [app] text: KEYDOWN vk 0x12 scan 0x38 ext mods Control, Alt
+20:14:03.409 [app] text: KEYDOWN vk 0x32 scan 0x03 mods Control, Alt
+20:14:03.410 [app] text: CHAR U+0040 '@'
+20:14:03.411 [app] text: now "Hola ñandú @"
+20:14:03.411 [app] text: KEYUP vk 0x32
+20:14:03.411 [app] text: KEYUP vk 0x12
+20:14:03.412 [app] text: KEYUP vk 0x11
+20:14:03.418 [app] text: KEYDOWN vk 0x20 scan 0x39 mods None
+20:14:03.419 [app] text: CHAR U+0020 ' '
+20:14:03.420 [app] text: now "Hola ñandú @ "
+20:14:03.420 [app] text: KEYUP vk 0x20
+20:14:03.425 [app] text: KEYDOWN vk 0x35 scan 0x06 mods None
+20:14:03.425 [app] text: CHAR U+0035 '5'
+20:14:03.426 [app] text: now "Hola ñandú @ 5"
+20:14:03.426 [app] text: KEYUP vk 0x35
+20:14:03.432 [app] text: KEYDOWN vk 0x11 scan 0x1D mods Control
+20:14:03.433 [app] text: KEYDOWN vk 0x12 scan 0x38 ext mods Control, Alt
+20:14:03.434 [app] text: KEYDOWN vk 0x35 scan 0x06 mods Control, Alt
+20:14:03.434 [app] text: CHAR U+20AC '€'
+20:14:03.436 [app] text: now "Hola ñandú @ 5€"
+20:14:03.436 [app] text: KEYUP vk 0x35
+20:14:03.436 [app] text: KEYUP vk 0x12
+20:14:03.436 [app] text: KEYUP vk 0x11
+20:14:03.448 [app] text: KEYDOWN vk 0x20 scan 0x39 mods None
+20:14:03.448 [app] text: CHAR U+0020 ' '
+20:14:03.450 [app] text: now "Hola ñandú @ 5€ "
+20:14:03.450 [app] text: KEYUP vk 0x20
+20:14:03.455 [app] text: KEYDOWN vk 0x10 scan 0x2A mods Shift
+20:14:03.455 [app] text: KEYDOWN vk 0xDD scan 0x0D mods Shift
+20:14:03.455 [app] text: CHAR U+00BF '¿'
+20:14:03.456 [app] text: now "Hola ñandú @ 5€ ¿"
+20:14:03.457 [app] text: KEYUP vk 0xDD
+20:14:03.457 [app] text: KEYUP vk 0x10
+20:14:03.463 [app] text: KEYDOWN vk 0xE7 scan 0x00 mods None
+20:14:03.464 [app] text: CHAR U+00E9 'é'
+20:14:03.465 [app] text: now "Hola ñandú @ 5€ ¿é"
+20:14:03.465 [app] text: KEYUP vk 0xE7
+20:14:03.479 [app] text: KEYDOWN vk 0x10 scan 0x2A mods Shift
+20:14:03.480 [app] text: KEYDOWN vk 0xDB scan 0x0C mods Shift
+20:14:03.480 [app] text: CHAR U+003F '?'
+20:14:03.481 [app] text: now "Hola ñandú @ 5€ ¿é?"
+20:14:03.481 [app] text: KEYUP vk 0xDB
+20:14:03.482 [app] text: KEYUP vk 0x10
+20:14:03.495 [app] text: KEYDOWN vk 0x20 scan 0x39 mods None
+20:14:03.495 [app] text: CHAR U+0020 ' '
+20:14:03.496 [app] text: now "Hola ñandú @ 5€ ¿é? "
+20:14:03.497 [app] text: KEYUP vk 0x20
+20:14:03.510 [app] text: KEYDOWN vk 0xE7 scan 0x00 mods None
+20:14:03.511 [app] text: CHAR U+6F22 '漢'
+20:14:03.513 [app] text: now "Hola ñandú @ 5€ ¿é? 漢"
+20:14:03.514 [app] text: KEYUP vk 0xE7
+20:14:03.517 [app] text: KEYDOWN vk 0xE7 scan 0x00 mods None
+20:14:03.517 [app] text: CHAR U+5B57 '字'
+20:14:03.519 [app] text: now "Hola ñandú @ 5€ ¿é? 漢字"
+20:14:03.519 [app] text: KEYUP vk 0xE7
+20:14:03.526 [app] text: KEYDOWN vk 0x20 scan 0x39 mods None
+20:14:03.526 [app] text: CHAR U+0020 ' '
+20:14:03.528 [app] text: now "Hola ñandú @ 5€ ¿é? 漢字 "
+20:14:03.528 [app] text: KEYUP vk 0x20
+20:14:03.543 [app] text: KEYDOWN vk 0xE7 scan 0x00 mods None
+20:14:03.543 [app] text: CHAR U+D83D '�'
+20:14:03.545 [app] text: now "Hola ñandú @ 5€ ¿é? 漢字 �"
+20:14:03.545 [app] text: KEYUP vk 0xE7
+20:14:03.557 [app] text: KEYDOWN vk 0xE7 scan 0x00 mods None
+20:14:03.558 [app] text: CHAR U+DE00 '�'
+20:14:03.588 [app] text: now "Hola ñandú @ 5€ ¿é? 漢字 😀"
+20:14:03.589 [app] text: KEYUP vk 0xE7
+20:14:03.589 [app] text: KEYDOWN vk 0x0D scan 0x1C mods None
+20:14:03.590 [app] text: CHAR U+000D '^M'
+20:14:03.591 [app] text: now "Hola ñandú @ 5€ ¿é? 漢字 😀\n"
+20:14:03.591 [app] text: KEYUP vk 0x0D
+20:14:03.591 [app] text: KEYDOWN vk 0xE7 scan 0x00 mods None
+20:14:03.591 [app] text: CHAR U+0055 'U'
+20:14:03.592 [app] text: now "Hola ñandú @ 5€ ¿é? 漢字 😀\nU"
+20:14:03.592 [app] text: KEYUP vk 0xE7
+20:14:03.593 [app] text: KEYDOWN vk 0xE7 scan 0x00 mods None
+20:14:03.593 [app] text: CHAR U+006E 'n'
+20:14:03.594 [app] text: now "Hola ñandú @ 5€ ¿é? 漢字 😀\nUn"
+20:14:03.594 [app] text: KEYUP vk 0xE7
+20:14:03.594 [app] text: KEYDOWN vk 0xE7 scan 0x00 mods None
+20:14:03.594 [app] text: CHAR U+0069 'i'
+20:14:03.595 [app] text: now "Hola ñandú @ 5€ ¿é? 漢字 😀\nUni"
+20:14:03.595 [app] text: KEYUP vk 0xE7
+20:14:03.595 [app] text: KEYDOWN vk 0xE7 scan 0x00 mods None
+20:14:03.596 [app] text: CHAR U+0063 'c'
+20:14:03.596 [app] text: now "Hola ñandú @ 5€ ¿é? 漢字 😀\nUnic"
+20:14:03.597 [app] text: KEYUP vk 0xE7
+20:14:03.604 [app] text: KEYDOWN vk 0xE7 scan 0x00 mods None
+20:14:03.605 [app] text: CHAR U+006F 'o'
+20:14:03.606 [app] text: now "Hola ñandú @ 5€ ¿é? 漢字 😀\nUnico"
+20:14:03.606 [app] text: KEYUP vk 0xE7
+20:14:03.620 [app] text: KEYDOWN vk 0xE7 scan 0x00 mods None
+20:14:03.621 [app] text: CHAR U+0064 'd'
+20:14:03.622 [app] text: now "Hola ñandú @ 5€ ¿é? 漢字 😀\nUnicod"
+20:14:03.622 [app] text: KEYUP vk 0xE7
+20:14:03.627 [app] text: KEYDOWN vk 0xE7 scan 0x00 mods None
+20:14:03.627 [app] text: CHAR U+0065 'e'
+20:14:03.628 [app] text: now "Hola ñandú @ 5€ ¿é? 漢字 😀\nUnicode"
+20:14:03.628 [app] text: KEYUP vk 0xE7
+20:14:03.634 [app] text: KEYDOWN vk 0xE7 scan 0x00 mods None
+20:14:03.634 [app] text: CHAR U+0020 ' '
+20:14:03.635 [app] text: now "Hola ñandú @ 5€ ¿é? 漢字 😀\nUnicode "
+20:14:03.635 [app] text: KEYUP vk 0xE7
+20:14:03.639 [app] text: KEYDOWN vk 0xE7 scan 0x00 mods None
+20:14:03.639 [app] text: CHAR U+00F1 'ñ'
+20:14:03.640 [app] text: now "Hola ñandú @ 5€ ¿é? 漢字 😀\nUnicode ñ"
+20:14:03.640 [app] text: KEYUP vk 0xE7
+20:14:03.651 [app] text: KEYDOWN vk 0xE7 scan 0x00 mods None
+20:14:03.652 [app] text: CHAR U+0040 '@'
+20:14:03.653 [app] text: now "Hola ñandú @ 5€ ¿é? 漢字 😀\nUnicode ñ@"
+20:14:03.653 [app] text: KEYUP vk 0xE7
+20:14:03.667 [app] text: KEYDOWN vk 0xE7 scan 0x00 mods None
+20:14:03.668 [app] text: CHAR U+20AC '€'
+20:14:03.669 [app] text: now "Hola ñandú @ 5€ ¿é? 漢字 😀\nUnicode ñ@€"
+20:14:03.669 [app] text: KEYUP vk 0xE7
+20:14:03.685 [app] text: KEYDOWN vk 0xE7 scan 0x00 mods None
+20:14:03.685 [app] text: CHAR U+00E9 'é'
+20:14:03.686 [app] text: now "Hola ñandú @ 5€ ¿é? 漢字 😀\nUnicode ñ@€é"
+20:14:03.686 [app] text: KEYUP vk 0xE7
+20:14:03.699 [app] text: KEYDOWN vk 0xE7 scan 0x00 mods None
+20:14:03.699 [app] text: CHAR U+6F22 '漢'
+20:14:03.700 [app] text: now "Hola ñandú @ 5€ ¿é? 漢字 😀\nUnicode ñ@€é漢"
+20:14:03.700 [app] text: KEYUP vk 0xE7
+20:14:03.714 [app] text: KEYDOWN vk 0xE7 scan 0x00 mods None
+20:14:03.715 [app] text: CHAR U+D83D '�'
+20:14:03.716 [app] text: now "Hola ñandú @ 5€ ¿é? 漢字 😀\nUnicode ñ@€é漢�"
+20:14:03.716 [app] text: KEYUP vk 0xE7
+20:14:03.731 [app] text: KEYDOWN vk 0xE7 scan 0x00 mods None
+20:14:03.731 [app] text: CHAR U+DE00 '�'
+20:14:03.732 [app] text: now "Hola ñandú @ 5€ ¿é? 漢字 😀\nUnicode ñ@€é漢😀"
+20:14:03.733 [app] text: KEYUP vk 0xE7
+20:14:03.746 [app] text: KEYDOWN vk 0x0D scan 0x1C mods None
+20:14:03.746 [app] text: CHAR U+000D '^M'
+20:14:03.748 [app] text: now "Hola ñandú @ 5€ ¿é? 漢字 😀\nUnicode ñ@€é漢😀\n"
+20:14:03.748 [app] text: KEYUP vk 0x0D
+20:14:03.783 [app] text: KEYDOWN vk 0x11 scan 0x1D mods Control
+20:14:03.784 [app] text: KEYDOWN vk 0x56 scan 0x2F mods Control
+20:14:03.784 [app] text: CHAR U+0016 '^V'
+20:14:03.786 [app] text: now "Hola ñandú @ 5€ ¿é? 漢字 😀\nUnicode ñ@€é漢😀\nPegado ñ@€é漢😀"
+20:14:03.786 [app] text: now "Hola ñandú @ 5€ ¿é? 漢字 😀\nUnicode ñ@€é漢😀\nPegado ñ@€é漢😀"
+20:14:03.787 [app] text: KEYUP vk 0x56
+20:14:03.787 [app] text: KEYUP vk 0x11
+20:14:04.088 [app] text: KEYDOWN vk 0x0D scan 0x1C mods None
+20:14:04.088 [app] text: CHAR U+000D '^M'
+20:14:04.090 [app] text: now "Hola ñandú @ 5€ ¿é? 漢字 😀\nUnicode ñ@€é漢😀\nPegado ñ@€é漢😀\n"
+20:14:04.090 [app] text: KEYUP vk 0x0D
+20:14:04.094 [app] text: KEYDOWN vk 0x10 scan 0x2A mods Shift
+20:14:04.097 [app] text: KEYUP vk 0x10
+20:14:04.097 [app] text: KEYDOWN vk 0x41 scan 0x1E mods None
+20:14:04.098 [app] text: CHAR U+0061 'a'
+20:14:04.098 [app] text: now "Hola ñandú @ 5€ ¿é? 漢字 😀\nUnicode ñ@€é漢😀\nPegado ñ@€é漢😀\na"
+20:14:04.099 [app] text: KEYUP vk 0x41
+20:14:04.105 [app] text: KEYDOWN vk 0x42 scan 0x30 mods None
+20:14:04.105 [app] text: CHAR U+0062 'b'
+20:14:04.107 [app] text: now "Hola ñandú @ 5€ ¿é? 漢字 😀\nUnicode ñ@€é漢😀\nPegado ñ@€é漢😀\nab"
+20:14:04.107 [app] text: KEYUP vk 0x42
+20:14:04.121 [app] text: KEYDOWN vk 0x43 scan 0x2E mods None
+20:14:04.122 [app] text: CHAR U+0063 'c'
+20:14:04.123 [app] text: now "Hola ñandú @ 5€ ¿é? 漢字 😀\nUnicode ñ@€é漢😀\nPegado ñ@€é漢😀\nabc"
+20:14:04.123 [app] text: KEYUP vk 0x43
+20:14:04.137 [app] text: KEYDOWN vk 0x10 scan 0x2A mods Shift
+20:14:04.138 [app] text: KEYUP vk 0x10
+20:14:04.143 [app] text: KEYDOWN vk 0x11 scan 0x1D mods Control
+20:14:04.145 [app] text: KEYUP vk 0x41
+20:14:04.145 [app] text: KEYUP vk 0x11
+20:14:04.146 [app] text: KEYDOWN vk 0x11 scan 0x1D mods Control
+20:14:04.146 [app] text: KEYDOWN vk 0x23 scan 0x4F ext mods Control
+20:14:04.147 [app] text: KEYUP vk 0x23
+20:14:04.147 [app] text: KEYUP vk 0x11
+20:14:04.148 [app] text: KEYDOWN vk 0x10 scan 0x2A mods Shift
+20:14:04.148 [app] text: KEYDOWN vk 0x24 scan 0x47 ext mods Shift
+20:14:04.149 [app] text: KEYUP vk 0x24
+20:14:04.149 [app] text: KEYUP vk 0x10
+20:14:04.149 [app] text: KEYDOWN vk 0x11 scan 0x1D mods Control
+20:14:04.149 [app] text: KEYUP vk 0x11
+20:14:04.185 [app] list: MouseWheel delta -120, top row now 0
+20:14:04.205 [app] list: MouseWheel delta -120, top row now 3
+20:14:04.231 [app] list: MouseWheel delta -120, top row now 6
+20:14:04.387 [app] list: top row 9
+20:14:04.703 [app] list: MouseWheel delta 120, top row now 9
+20:14:04.732 [app] list: MouseWheel delta 120, top row now 6
+20:14:04.764 [app] list: MouseWheel delta 120, top row now 3
+20:14:04.794 [app] list: top row 0
+20:14:05.249 [app] hscroll: WM_MOUSEHWHEEL delta 120
+20:14:05.280 [app] hscroll: WM_MOUSEHWHEEL delta 120
+20:14:05.311 [app] hscroll: WM_MOUSEHWHEEL delta 120
+20:14:05.813 [app] drag: down at {X=209,Y=402}
+20:14:06.128 [app] drag: up at {X=584,Y=532} after 20 moves (from {X=209,Y=402})
+20:14:06.791 [app] dialog shown at {X=900,Y=570,Width=360,Height=220}, outside the main window: True
+20:14:07.693 [app] dialogok: MouseDown at {X=1008,Y=643}
+20:14:07.695 [app] dialogok: Click, closing dialog
+20:14:07.806 [app] quit: closing
+20:14:07.807 [app] closed

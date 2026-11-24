@@ -1,0 +1,15 @@
+[
+ {"do":"note","text":"D: the vision Modality inside the UiPath Robot Executor"},
+ {"do":"info"},
+ {"do":"session"},
+ {"do":"observe","save":"in-uipath"},
+ {"do":"act","action":{"action_type":"left_single","action_inputs":{"start_box":"@click"}}},
+ {"do":"act","action":{"action_type":"left_single","action_inputs":{"start_box":"@tiny"}}},
+ {"do":"act","action":{"action_type":"left_double","action_inputs":{"start_box":"@double"}}},
+ {"do":"act","action":{"action_type":"scroll","action_inputs":{"start_box":"@list","direction":"down"}}},
+ {"do":"act","action":{"action_type":"left_single","action_inputs":{"start_box":"@text"}}},
+ {"do":"act","action":{"action_type":"type","action_inputs":{"content":"desde UiPath ñ@€é 漢 😀\n"}}},
+ {"do":"settings","type_method":"paste"},
+ {"do":"act","action":{"action_type":"type","action_inputs":{"content":"pegado ñ@\n"}}},
+ {"do":"act","action":{"action_type":"hotkey","action_inputs":{"hotkey":"ctrl a"}}}
+]

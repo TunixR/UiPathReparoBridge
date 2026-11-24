@@ -1,0 +1,28 @@
+20:15:50.878 === probe scaled.json in ProbeCli (no DPI manifest), pid 1824, .NET 10.0.15
+20:15:50.906 # C: display scaling changed live; the probe process has no DPI manifest (unaware)
+20:15:50.908 info: process DPI awareness unaware (dpi 96), this thread unaware (dpi 96)
+20:15:50.909 info: as the thread is: virtual screen (0,0) 1280x720, 1 monitor(s)
+20:15:50.909 info: pinned per-monitor v2 (set returned ok): virtual screen (0,0) 1920x1080, 1 monitor(s)
+20:15:50.912 info: monitor \\.\DISPLAY1 [0,0,1920,1080] primary=True dpi 144 (150%)
+20:15:50.913 info: foreground 'Reparo vision target' [120,90,1020,730], window dpi 144, layout 0x40A0C0A
+20:15:50.916 info: session 1, user reparo, elevated False
+20:15:50.917 session on \\.\DISPLAY1 [0,0,1920,1080] 1920x1080 dpi 144
+20:15:50.991 observe: 01-scaled.jpg 1920x1080, 169853 bytes, 73 ms
+20:15:51.010   integrity: window 'Reparo vision target' at (231,177) pid 1316 level 0x2000 vs Robot 0x2000
+20:15:51.102 act {"action_type":"left_single","action_inputs":{"start_box":[231, 177]}} -> {"success":true,"action_type":"left_single"}
+20:15:51.104   integrity: window 'Reparo vision target' at (231,177) pid 1316 level 0x2000 vs Robot 0x2000
+20:15:51.136 act {"action_type":"left_single","action_inputs":{"start_box":[0.1206, 0.1644]}} -> {"success":true,"action_type":"left_single"}
+20:15:51.138   integrity: window 'Reparo vision target' at (875,169) pid 1316 level 0x2000 vs Robot 0x2000
+20:15:51.182 act {"action_type":"left_single","action_inputs":{"start_box":[875, 169]}} -> {"success":true,"action_type":"left_single"}
+20:15:51.187   integrity: window 'Reparo vision target' at (411,177) pid 1316 level 0x2000 vs Robot 0x2000
+20:15:51.245 act {"action_type":"left_double","action_inputs":{"start_box":[411, 177]}} -> {"success":true,"action_type":"left_double"}
+20:15:51.247   integrity: window 'Reparo vision target' at (828,339) pid 1316 level 0x2000 vs Robot 0x2000
+20:15:51.353 act {"action_type":"scroll","action_inputs":{"start_box":[828, 339],"direction":"down"}} -> {"success":true,"action_type":"scroll"}
+20:15:51.755   integrity: window 'Reparo vision target' at (212,416) pid 1316 level 0x2000 vs Robot 0x2000
+20:15:52.123 act {"action_type":"drag","action_inputs":{"start_box":[212, 416],"end_box":[587, 546]}} -> {"success":true,"action_type":"drag"}
+20:15:52.125   integrity: window 'Reparo vision target' at (398,300) pid 1316 level 0x2000 vs Robot 0x2000
+20:15:52.184 act {"action_type":"left_single","action_inputs":{"start_box":[398, 300]}} -> {"success":true,"action_type":"left_single"}
+20:15:52.191   integrity: window 'Reparo vision target' in the foreground pid 1316 level 0x2000 vs Robot 0x2000
+20:15:52.310   type: 11 chars as scan codes, 0 as VK_PACKET (layout 0x40A0C0A)
+20:15:52.310 act {"action_type":"type","action_inputs":{"content":"escalado ñ@\n"}} -> {"success":true,"action_type":"type"}
+20:15:52.310 === done

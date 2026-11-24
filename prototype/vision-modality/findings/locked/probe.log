@@ -1,0 +1,6 @@
+20:16:18.754 === probe locked.json in ProbeCli (no DPI manifest), pid 2532, .NET 10.0.15
+20:16:18.780 # E: the console is locked (Winlogon is the input desktop)
+20:16:18.786 session on \\.\DISPLAY1 [0,0,1920,1080] 1920x1080 dpi 96
+20:16:18.791 observe: SESSION LOST: the input desktop can't be opened (error 5): locked, UAC or Ctrl+Alt+Del (an Infrastructure failure)
+20:16:18.793 act: SESSION LOST: the input desktop can't be opened (error 5): locked, UAC or Ctrl+Alt+Del (an Infrastructure failure)
+20:16:18.793 === done

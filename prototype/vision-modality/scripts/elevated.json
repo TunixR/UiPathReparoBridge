@@ -1,0 +1,14 @@
+[
+ {"do":"note","text":"B: an elevated TargetApp, the Robot unelevated"},
+ {"do":"info"},
+ {"do":"session"},
+ {"do":"observe","save":"elevated"},
+ {"do":"act","action":{"action_type":"left_single","action_inputs":{"start_box":"@click"}}},
+ {"do":"act","action":{"action_type":"type","action_inputs":{"content":"x"}}},
+ {"do":"settings","check_integrity":false},
+ {"do":"note","text":"without the check: does SendInput report anything?"},
+ {"do":"act","action":{"action_type":"left_single","action_inputs":{"start_box":"@click"}}},
+ {"do":"act","action":{"action_type":"left_single","action_inputs":{"start_box":"@text"}}},
+ {"do":"act","action":{"action_type":"type","action_inputs":{"content":"blocked?"}}},
+ {"do":"sleep","ms":500}
+]

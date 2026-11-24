@@ -1,0 +1,32 @@
+session 1 user reparo
+--- probe.log
+20:15:25.789 === probe elevated.json in ProbeCli (no DPI manifest), pid 7532, .NET 10.0.15
+20:15:25.810 # B: an elevated TargetApp, the Robot unelevated
+20:15:25.812 info: process DPI awareness unaware (dpi 96), this thread unaware (dpi 96)
+20:15:25.813 info: as the thread is: virtual screen (0,0) 1920x1080, 1 monitor(s)
+20:15:25.813 info: pinned per-monitor v2 (set returned ok): virtual screen (0,0) 1920x1080, 1 monitor(s)
+20:15:25.817 info: monitor \\.\DISPLAY1 [0,0,1920,1080] primary=True dpi 96 (100%)
+20:15:25.818 info: foreground 'Shutdown Event Tracker' [746,334,1173,698], window dpi 96, layout 0x40A0C0A
+20:15:25.821 info: session 1, user reparo, elevated False
+20:15:25.822 session on \\.\DISPLAY1 [0,0,1920,1080] 1920x1080 dpi 96
+20:15:25.893 observe: 01-elevated.jpg 1920x1080, 185639 bytes, 69 ms
+20:15:25.916   integrity: window 'Reparo vision target (ELEVATED)' at (228,163) pid 7024 level 0x3000 vs Robot 0x2000
+20:15:25.943 act {"action_type":"left_single","action_inputs":{"start_box":[228, 163]}} -> {"success":false,"action_type":"left_single","error":"the target window \u0027Reparo vision target (ELEVATED)\u0027 runs elevated (integrity 0x3000 above the Robot\u0027s 0x2000); Windows would drop the input"}
+20:15:25.947   integrity: window 'Shutdown Event Tracker' in the foreground pid 3928 level 0x2000 vs Robot 0x2000
+20:15:25.955   type: 1 chars as scan codes, 0 as VK_PACKET (layout 0x40A0C0A)
+20:15:25.956 act {"action_type":"type","action_inputs":{"content":"x"}} -> {"success":true,"action_type":"type"}
+20:15:25.957 settings: type Keys, integrity check False, scroll 360
+20:15:25.957 # without the check: does SendInput report anything?
+20:15:26.005 act {"action_type":"left_single","action_inputs":{"start_box":[228, 163]}} -> {"success":true,"action_type":"left_single"}
+20:15:26.067 act {"action_type":"left_single","action_inputs":{"start_box":[399, 286]}} -> {"success":true,"action_type":"left_single"}
+20:15:26.192   type: 8 chars as scan codes, 0 as VK_PACKET (layout 0x40A0C0A)
+20:15:26.192 act {"action_type":"type","action_inputs":{"content":"blocked?"}} -> {"success":true,"action_type":"type"}
+20:15:26.693 === done
+Stop-Process : Cannot stop process "TargetApp (7024)" because of the following error: Access is denied
+At C:\Users\reparo\UiPath\reparo\proto49\vision-modality\vm\vision.ps1:17 char:31
++ Get-Process TargetApp -EA 0 | Stop-Process -Force
++                               ~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : CloseError: (System.Diagnostics.Process (TargetApp):Process) [Stop-Process], ProcessComm 
+   andException
+    + FullyQualifiedErrorId : CouldNotStopProcess,Microsoft.PowerShell.Commands.StopProcessCommand
+ 
