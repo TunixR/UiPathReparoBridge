@@ -1,0 +1,346 @@
+session 1 user reparo
+### SpendingApproval / go-back  (2026-11-24T19:43:10, 37 s)
+--- fake done
+{"delay_s": 4, "ui_command": "back", "continue_from_model_event_id": "Main.xaml#ReparoEvent_3", "loop_iteration": [2]}
+--- trace
+19:42:36.899 === Process 'spending_approval' id=Main.xaml#ReparoProcess_1; CancelBeforeRecovery=False; Variables: approval_limit:Int32, pending:List`1, request_id:Int32, fields:List`1, field:String, values:Dictionary`2, amount:Int32, remaining_budget:Int32, decisions:DataTable, started:DateTimeOffset, tags:String[], contact:SecureString
+19:42:36.901   ReparoProcess 'spending_approval' Main.xaml#ReparoProcess_1
+19:42:36.901     ReparoActivity 'Open the spending requests' Main.xaml#ReparoActivity_1
+19:42:36.902       ReparoEvent 'Open the requests window' Main.xaml#ReparoEvent_1
+19:42:36.902       ReparoEvent 'Read the pending requests' Main.xaml#ReparoEvent_2
+19:42:36.903     ReparoForEach 'each_request' Main.xaml#ReparoForEach_2
+19:42:36.903       ReparoActivity 'Open the request' Main.xaml#ReparoActivity_2
+19:42:36.904         ReparoEvent 'Open the request' Main.xaml#ReparoEvent_3
+19:42:36.904       ReparoForEach 'each_field' Main.xaml#ReparoForEach_1
+19:42:36.904         ReparoActivity 'Read the request' Main.xaml#ReparoActivity_3
+19:42:36.904           ReparoEvent 'Read a field' Main.xaml#ReparoEvent_4
+19:42:36.905       ReparoActivity 'Record the request' Main.xaml#ReparoActivity_4
+19:42:36.905         ReparoEvent 'Copy the fields' Main.xaml#ReparoEvent_5
+19:42:36.905       ReparoIf 'decide' Main.xaml#ReparoIf_2
+19:42:36.905         ReparoActivity 'Approve the request' Main.xaml#ReparoActivity_5
+19:42:36.906           ReparoEvent 'Click Approve' Main.xaml#ReparoEvent_6
+19:42:36.906           ReparoEvent 'Log the approval' Main.xaml#ReparoEvent_7
+19:42:36.906         ReparoIf 'over the limit' Main.xaml#ReparoIf_1
+19:42:36.907           ReparoActivity 'Reject over limit' Main.xaml#ReparoActivity_6
+19:42:36.907             ReparoEvent 'Open the Reason dropdown' Main.xaml#ReparoEvent_8
+19:42:36.907             ReparoEvent 'Pick Over the approval limit' Main.xaml#ReparoEvent_9
+19:42:36.907             ReparoEvent 'Click Reject' Main.xaml#ReparoEvent_10
+19:42:36.908             ReparoEvent 'Log the rejection' Main.xaml#ReparoEvent_11
+19:42:36.908           ReparoActivity 'Reject for budget' Main.xaml#ReparoActivity_7
+19:42:36.908             ReparoEvent 'Open the Reason dropdown' Main.xaml#ReparoEvent_12
+19:42:36.908             ReparoEvent 'Pick Budget exhausted' Main.xaml#ReparoEvent_13
+19:42:36.908             ReparoEvent 'Click Reject' Main.xaml#ReparoEvent_14
+19:42:36.909             ReparoEvent 'Log the rejection' Main.xaml#ReparoEvent_15
+19:42:36.909       ReparoActivity 'Return to the list' Main.xaml#ReparoActivity_8
+19:42:36.909         ReparoEvent 'Go back to the requests' Main.xaml#ReparoEvent_16
+19:42:36.909     ReparoActivity 'Record the final budget' Main.xaml#ReparoActivity_9
+19:42:36.909       ReparoEvent 'Read the final budget' Main.xaml#ReparoEvent_17
+19:42:36.920 Activity 'Open the spending requests' entered
+19:42:36.931     Variable contact (SecureString) not carried: JSON differs after the round trip
+19:42:36.932   Event 'Open the requests window' Main.xaml#ReparoEvent_1 starts; Variables {"approval_limit":"500","pending":"null","request_id":"0","fields":"[\"amount\",\"budget\"]","field":"null","values":"{}","amount":"0","remaining_budget":"0","decisions":"null","started":"\"2026-11-24T19:42:36.8959491+00:00\"","tags":"[\"proto48\"]"}
+19:42:40.032   Event 'Read the pending requests' Main.xaml#ReparoEvent_2 starts; Variables {"approval_limit":"500","pending":"null","request_id":"0","fields":"[\"amount\",\"budget\"]","field":"null","values":"{}","amount":"0","remaining_budget":"0","decisions":"null","started":"\"2026-11-24T19:42:36.8959491+00:00\"","tags":"[\"proto48\"]"}
+19:42:40.489 For Each 'each_request' pass 0: request_id = 104
+19:42:40.493 Activity 'Open the request' entered #0
+19:42:40.497   Event 'Open the request' #0 Main.xaml#ReparoEvent_3 starts; Variables {"approval_limit":"500","pending":"[104,102,105,101,103]","request_id":"104","fields":"[\"amount\",\"budget\"]","field":"null","values":"{}","amount":"0","remaining_budget":"0","decisions":"[]","started":"\"2026-11-24T19:42:36.8959491+00:00\"","tags":"[\"proto48\"]"}
+19:42:41.242 For Each 'each_field' pass 0: field = amount
+19:42:41.245 Activity 'Read the request' entered #0#0
+19:42:41.253   Event 'Read a field' #0#0 Main.xaml#ReparoEvent_4 starts; Variables {"approval_limit":"500","pending":"[104,102,105,101,103]","request_id":"104","fields":"[\"amount\",\"budget\"]","field":"\"amount\"","values":"{}","amount":"0","remaining_budget":"0","decisions":"[]","started":"\"2026-11-24T19:42:36.8959491+00:00\"","tags":"[\"proto48\"]"}
+19:42:41.282 For Each 'each_field' pass 1: field = budget
+19:42:41.285 Activity 'Read the request' entered #0#1
+19:42:41.287   Event 'Read a field' #0#1 Main.xaml#ReparoEvent_4 starts; Variables {"approval_limit":"500","pending":"[104,102,105,101,103]","request_id":"104","fields":"[\"amount\",\"budget\"]","field":"\"budget\"","values":"{\"amount\":300}","amount":"0","remaining_budget":"0","decisions":"[]","started":"\"2026-11-24T19:42:36.8959491+00:00\"","tags":"[\"proto48\"]"}
+19:42:41.313 For Each 'each_field' done after 2 passes
+19:42:41.319 Activity 'Record the request' entered #0
+19:42:41.323   Event 'Copy the fields' #0 Main.xaml#ReparoEvent_5 starts; Variables {"approval_limit":"500","pending":"[104,102,105,101,103]","request_id":"104","fields":"[\"amount\",\"budget\"]","field":"\"budget\"","values":"{\"amount\":300,\"budget\":1000}","amount":"0","remaining_budget":"0","decisions":"[]","started":"\"2026-11-24T19:42:36.8959491+00:00\"","tags":"[\"proto48\"...
+19:42:41.340 If 'decide': Then
+19:42:41.342 Activity 'Approve the request' entered #0
+19:42:41.343   Event 'Click Approve' #0 Main.xaml#ReparoEvent_6 starts; Variables {"approval_limit":"500","pending":"[104,102,105,101,103]","request_id":"104","fields":"[\"amount\",\"budget\"]","field":"\"budget\"","values":"{\"amount\":300,\"budget\":1000}","amount":"300","remaining_budget":"1000","decisions":"[]","started":"\"2026-11-24T19:42:36.8959491+00:00\"","tags":"[\"prot...
+19:42:42.094   Event 'Log the approval' #0 Main.xaml#ReparoEvent_7 starts; Variables {"approval_limit":"500","pending":"[104,102,105,101,103]","request_id":"104","fields":"[\"amount\",\"budget\"]","field":"\"budget\"","values":"{\"amount\":300,\"budget\":1000}","amount":"300","remaining_budget":"1000","decisions":"[]","started":"\"2026-11-24T19:42:36.8959491+00:00\"","tags":"[\"prot...
+19:42:42.109 Activity 'Return to the list' entered #0
+19:42:42.111   Event 'Go back to the requests' #0 Main.xaml#ReparoEvent_16 starts; Variables {"approval_limit":"500","pending":"[104,102,105,101,103]","request_id":"104","fields":"[\"amount\",\"budget\"]","field":"\"budget\"","values":"{\"amount\":300,\"budget\":1000}","amount":"300","remaining_budget":"1000","decisions":"[{\"request_id\":104,\"decision\":\"approval\",\"amount\":300}]","sta...
+19:42:42.854 For Each 'each_request' pass 1: request_id = 102
+19:42:42.865 Activity 'Open the request' entered #1
+19:42:42.877   Event 'Open the request' #1 Main.xaml#ReparoEvent_3 starts; Variables {"approval_limit":"500","pending":"[104,102,105,101,103]","request_id":"102","fields":"[\"amount\",\"budget\"]","field":"\"budget\"","values":"{\"amount\":300,\"budget\":1000}","amount":"300","remaining_budget":"1000","decisions":"[{\"request_id\":104,\"decision\":\"approval\",\"amount\":300}]","sta...
+19:42:43.654 For Each 'each_field' pass 0: field = amount
+19:42:43.664 Activity 'Read the request' entered #1#0
+19:42:43.674   Event 'Read a field' #1#0 Main.xaml#ReparoEvent_4 starts; Variables {"approval_limit":"500","pending":"[104,102,105,101,103]","request_id":"102","fields":"[\"amount\",\"budget\"]","field":"\"amount\"","values":"{\"amount\":300,\"budget\":1000}","amount":"300","remaining_budget":"1000","decisions":"[{\"request_id\":104,\"decision\":\"approval\",\"amount\":300}]","sta...
+19:42:43.696 For Each 'each_field' pass 1: field = budget
+19:42:43.701 Activity 'Read the request' entered #1#1
+19:42:43.703   Event 'Read a field' #1#1 Main.xaml#ReparoEvent_4 starts; Variables {"approval_limit":"500","pending":"[104,102,105,101,103]","request_id":"102","fields":"[\"amount\",\"budget\"]","field":"\"budget\"","values":"{\"amount\":800,\"budget\":1000}","amount":"300","remaining_budget":"1000","decisions":"[{\"request_id\":104,\"decision\":\"approval\",\"amount\":300}]","sta...
+19:42:43.726 For Each 'each_field' done after 2 passes
+19:42:43.729 Activity 'Record the request' entered #1
+19:42:43.730   Event 'Copy the fields' #1 Main.xaml#ReparoEvent_5 starts; Variables {"approval_limit":"500","pending":"[104,102,105,101,103]","request_id":"102","fields":"[\"amount\",\"budget\"]","field":"\"budget\"","values":"{\"amount\":800,\"budget\":700}","amount":"300","remaining_budget":"1000","decisions":"[{\"request_id\":104,\"decision\":\"approval\",\"amount\":300}]","star...
+19:42:43.743 If 'decide': Else
+19:42:43.747 If 'over the limit': Then
+19:42:43.749 Activity 'Reject over limit' entered #1
+19:42:43.750   Event 'Open the Reason dropdown' #1 Main.xaml#ReparoEvent_8 starts; Variables {"approval_limit":"500","pending":"[104,102,105,101,103]","request_id":"102","fields":"[\"amount\",\"budget\"]","field":"\"budget\"","values":"{\"amount\":800,\"budget\":700}","amount":"800","remaining_budget":"700","decisions":"[{\"request_id\":104,\"decision\":\"approval\",\"amount\":300}]","start...
+19:42:44.518   Event 'Pick Over the approval limit' #1 Main.xaml#ReparoEvent_9 starts; Variables {"approval_limit":"500","pending":"[104,102,105,101,103]","request_id":"102","fields":"[\"amount\",\"budget\"]","field":"\"budget\"","values":"{\"amount\":800,\"budget\":700}","amount":"800","remaining_budget":"700","decisions":"[{\"request_id\":104,\"decision\":\"approval\",\"amount\":300}]","start...
+19:42:45.350   Event 'Click Reject' #1 Main.xaml#ReparoEvent_10 starts; Variables {"approval_limit":"500","pending":"[104,102,105,101,103]","request_id":"102","fields":"[\"amount\",\"budget\"]","field":"\"budget\"","values":"{\"amount\":800,\"budget\":700}","amount":"800","remaining_budget":"700","decisions":"[{\"request_id\":104,\"decision\":\"approval\",\"amount\":300}]","start...
+19:42:48.882   Event 'Log the rejection' #1 Main.xaml#ReparoEvent_11 starts; Variables {"approval_limit":"500","pending":"[104,102,105,101,103]","request_id":"102","fields":"[\"amount\",\"budget\"]","field":"\"budget\"","values":"{\"amount\":800,\"budget\":700}","amount":"800","remaining_budget":"700","decisions":"[{\"request_id\":104,\"decision\":\"approval\",\"amount\":300}]","start...
+19:42:48.904 Activity 'Return to the list' entered #1
+19:42:48.908   Event 'Go back to the requests' #1 Main.xaml#ReparoEvent_16 starts; Variables {"approval_limit":"500","pending":"[104,102,105,101,103]","request_id":"102","fields":"[\"amount\",\"budget\"]","field":"\"budget\"","values":"{\"amount\":800,\"budget\":700}","amount":"800","remaining_budget":"700","decisions":"[{\"request_id\":104,\"decision\":\"approval\",\"amount\":300},{\"reque...
+19:42:49.668 For Each 'each_request' pass 2: request_id = 105
+19:42:49.671 Activity 'Open the request' entered #2
+19:42:49.675   Event 'Open the request' #2 Main.xaml#ReparoEvent_3 starts; Variables {"approval_limit":"500","pending":"[104,102,105,101,103]","request_id":"105","fields":"[\"amount\",\"budget\"]","field":"\"budget\"","values":"{\"amount\":800,\"budget\":700}","amount":"800","remaining_budget":"700","decisions":"[{\"request_id\":104,\"decision\":\"approval\",\"amount\":300},{\"reque...
+19:42:50.397 For Each 'each_field' pass 0: field = amount
+19:42:50.400 Activity 'Read the request' entered #2#0
+19:42:50.403   Event 'Read a field' #2#0 Main.xaml#ReparoEvent_4 starts; Variables {"approval_limit":"500","pending":"[104,102,105,101,103]","request_id":"105","fields":"[\"amount\",\"budget\"]","field":"\"amount\"","values":"{\"amount\":800,\"budget\":700}","amount":"800","remaining_budget":"700","decisions":"[{\"request_id\":104,\"decision\":\"approval\",\"amount\":300},{\"reque...
+19:42:50.428 For Each 'each_field' pass 1: field = budget
+19:42:50.431 Activity 'Read the request' entered #2#1
+19:42:50.433   Event 'Read a field' #2#1 Main.xaml#ReparoEvent_4 starts; Variables {"approval_limit":"500","pending":"[104,102,105,101,103]","request_id":"105","fields":"[\"amount\",\"budget\"]","field":"\"budget\"","values":"{\"amount\":450,\"budget\":700}","amount":"800","remaining_budget":"700","decisions":"[{\"request_id\":104,\"decision\":\"approval\",\"amount\":300},{\"reque...
+19:42:50.456 For Each 'each_field' done after 2 passes
+19:42:50.459 Activity 'Record the request' entered #2
+19:42:50.460   Event 'Copy the fields' #2 Main.xaml#ReparoEvent_5 starts; Variables {"approval_limit":"500","pending":"[104,102,105,101,103]","request_id":"105","fields":"[\"amount\",\"budget\"]","field":"\"budget\"","values":"{\"amount\":450,\"budget\":700}","amount":"800","remaining_budget":"700","decisions":"[{\"request_id\":104,\"decision\":\"approval\",\"amount\":300},{\"reque...
+19:42:50.473 If 'decide': Then
+19:42:50.474 Activity 'Approve the request' entered #2
+19:42:50.476   Event 'Click Approve' #2 Main.xaml#ReparoEvent_6 starts; Variables {"approval_limit":"500","pending":"[104,102,105,101,103]","request_id":"105","fields":"[\"amount\",\"budget\"]","field":"\"budget\"","values":"{\"amount\":450,\"budget\":700}","amount":"450","remaining_budget":"700","decisions":"[{\"request_id\":104,\"decision\":\"approval\",\"amount\":300},{\"reque...
+19:42:52.759 TRACK state Faulted UiPath.Core.Activities.Click 'Click Approve' id=1.355 inst=141
+19:42:52.759 TRACK fault from 'Click Approve' handler='Sequence' src=True SelectorNotFoundException
+19:42:52.773 TRACK fault from 'Click Approve' handler='Click Approve' src=False SelectorNotFoundException
+19:42:52.780 TRACK fault from 'Click Approve' handler='Approve the request' src=False SelectorNotFoundException
+19:42:52.782 TRACK fault from 'Click Approve' handler='decide' src=False SelectorNotFoundException
+19:42:52.785 TRACK fault from 'Click Approve' handler='each_request' src=False SelectorNotFoundException
+19:42:52.786 TRACK fault from 'Click Approve' handler='spending_approval' src=False SelectorNotFoundException
+19:42:52.788 FAULT reached Reparo Process: UiPath.Core.SelectorNotFoundException: Could not find the UI element corresponding to this selector:
+ (in Event Main.xaml#ReparoEvent_6, via each_request, state Executing) on thread 1
+19:42:52.790   UI at the fault: SpendApp pid 2720 window 'Spending requests' handle present
+19:42:52.790   Recovery requested for Main.xaml#ReparoEvent_6 #2; carried Variables: approval_limit, pending, request_id, fields, field, values, amount, remaining_budget, decisions, started, tags; kept live: contact
+19:42:52.791   Recovery wait starts on thread 1 (the workflow thread); fake Reparo runs off it
+19:42:52.794   fake Reparo on thread 10: payload written (recovery-1.json); UI now: SpendApp pid 2720 window 'Spending requests' handle present
+19:42:52.805   faulted branch 'each_request' ended: Closed; UI SpendApp pid 2720 window 'Spending requests' handle present
+19:42:54.808   fake Reparo acts on the UI: back
+19:42:55.811   fake Reparo, mid-Recovery: UI SpendApp pid 2720 window 'Spending requests' handle present
+19:42:56.814   fake Reparo answers done: {"success":true,"process_finished":false,"continue_from_model_event_id":"Main.xaml#ReparoEvent_3","loop_iteration":[2],"variables":{"approval_limit":500,"pending":[104,102,105,101,103],"request_id":105,"fields":["amount","budget"],"field":"budget","values":{"amount":450,"budget":700},"amount":450,"remaining_budget":700,"decisions":[{"request_id":104,"decision":"approval","amount":300},{"request_id":102,"decision":"rejection","amount":800}],"started":"2026-11-24T19:42:36.8959491+00:00","tags":["proto48"]}}
+19:42:56.818   Recovery wait ends on thread 1
+19:42:56.823   Reparo answered; faulted branch is already ended
+19:42:56.828 Continuation: entering at Main.xaml#ReparoEvent_3 #2; UI SpendApp pid 2720 window 'Spending requests' handle present
+19:42:56.832   restored approval_limit = 500
+19:42:56.832   restored pending = [104,102,105,101,103]
+19:42:56.832   restored request_id = 105
+19:42:56.832   restored fields = ["amount","budget"]
+19:42:56.832   restored field = "budget"
+19:42:56.833   restored values = {"amount":450,"budget":700}
+19:42:56.833   restored amount = 450
+19:42:56.833   restored remaining_budget = 700
+19:42:56.834   restored decisions = DataTable[2 rows; request_id:Int32,decision:String,amount:Int32]
+19:42:56.834   restored started = "2026-11-24T19:42:36.8959491+00:00"
+19:42:56.834   restored tags = ["proto48"]
+19:42:56.834   restored contact = {"Length":6}
+19:42:56.835 For Each 'each_request' pass 2: request_id = 105
+19:42:56.837 Activity 'Open the request' entered #2
+19:42:56.838   Continuation reached Main.xaml#ReparoEvent_3 #2
+19:42:56.838   Event 'Open the request' #2 Main.xaml#ReparoEvent_3 starts; Variables {"approval_limit":"500","pending":"[104,102,105,101,103]","request_id":"105","fields":"[\"amount\",\"budget\"]","field":"\"budget\"","values":"{\"amount\":450,\"budget\":700}","amount":"450","remaining_budget":"700","decisions":"[{\"request_id\":104,\"decision\":\"approval\",\"amount\":300},{\"reque...
+19:42:57.597 For Each 'each_field' pass 0: field = amount
+19:42:57.609 Activity 'Read the request' entered #2#0
+19:42:57.621   Event 'Read a field' #2#0 Main.xaml#ReparoEvent_4 starts; Variables {"approval_limit":"500","pending":"[104,102,105,101,103]","request_id":"105","fields":"[\"amount\",\"budget\"]","field":"\"amount\"","values":"{\"amount\":450,\"budget\":700}","amount":"450","remaining_budget":"700","decisions":"[{\"request_id\":104,\"decision\":\"approval\",\"amount\":300},{\"reque...
+19:42:57.651 For Each 'each_field' pass 1: field = budget
+19:42:57.654 Activity 'Read the request' entered #2#1
+19:42:57.657   Event 'Read a field' #2#1 Main.xaml#ReparoEvent_4 starts; Variables {"approval_limit":"500","pending":"[104,102,105,101,103]","request_id":"105","fields":"[\"amount\",\"budget\"]","field":"\"budget\"","values":"{\"amount\":450,\"budget\":700}","amount":"450","remaining_budget":"700","decisions":"[{\"request_id\":104,\"decision\":\"approval\",\"amount\":300},{\"reque...
+19:42:57.683 For Each 'each_field' done after 2 passes
+19:42:57.686 Activity 'Record the request' entered #2
+19:42:57.688   Event 'Copy the fields' #2 Main.xaml#ReparoEvent_5 starts; Variables {"approval_limit":"500","pending":"[104,102,105,101,103]","request_id":"105","fields":"[\"amount\",\"budget\"]","field":"\"budget\"","values":"{\"amount\":450,\"budget\":700}","amount":"450","remaining_budget":"700","decisions":"[{\"request_id\":104,\"decision\":\"approval\",\"amount\":300},{\"reque...
+19:42:57.700 If 'decide': Then
+19:42:57.702 Activity 'Approve the request' entered #2
+19:42:57.704   Event 'Click Approve' #2 Main.xaml#ReparoEvent_6 starts; Variables {"approval_limit":"500","pending":"[104,102,105,101,103]","request_id":"105","fields":"[\"amount\",\"budget\"]","field":"\"budget\"","values":"{\"amount\":450,\"budget\":700}","amount":"450","remaining_budget":"700","decisions":"[{\"request_id\":104,\"decision\":\"approval\",\"amount\":300},{\"reque...
+19:42:58.452   Event 'Log the approval' #2 Main.xaml#ReparoEvent_7 starts; Variables {"approval_limit":"500","pending":"[104,102,105,101,103]","request_id":"105","fields":"[\"amount\",\"budget\"]","field":"\"budget\"","values":"{\"amount\":450,\"budget\":700}","amount":"450","remaining_budget":"700","decisions":"[{\"request_id\":104,\"decision\":\"approval\",\"amount\":300},{\"reque...
+19:42:58.482 Activity 'Return to the list' entered #2
+19:42:58.486   Event 'Go back to the requests' #2 Main.xaml#ReparoEvent_16 starts; Variables {"approval_limit":"500","pending":"[104,102,105,101,103]","request_id":"105","fields":"[\"amount\",\"budget\"]","field":"\"budget\"","values":"{\"amount\":450,\"budget\":700}","amount":"450","remaining_budget":"700","decisions":"[{\"request_id\":104,\"decision\":\"approval\",\"amount\":300},{\"reque...
+19:42:59.274 For Each 'each_request' pass 3: request_id = 101
+19:42:59.283 Activity 'Open the request' entered #3
+19:42:59.287   Event 'Open the request' #3 Main.xaml#ReparoEvent_3 starts; Variables {"approval_limit":"500","pending":"[104,102,105,101,103]","request_id":"101","fields":"[\"amount\",\"budget\"]","field":"\"budget\"","values":"{\"amount\":450,\"budget\":700}","amount":"450","remaining_budget":"700","decisions":"[{\"request_id\":104,\"decision\":\"approval\",\"amount\":300},{\"reque...
+19:43:00.051 For Each 'each_field' pass 0: field = amount
+19:43:00.061 Activity 'Read the request' entered #3#0
+19:43:00.065   Event 'Read a field' #3#0 Main.xaml#ReparoEvent_4 starts; Variables {"approval_limit":"500","pending":"[104,102,105,101,103]","request_id":"101","fields":"[\"amount\",\"budget\"]","field":"\"amount\"","values":"{\"amount\":450,\"budget\":700}","amount":"450","remaining_budget":"700","decisions":"[{\"request_id\":104,\"decision\":\"approval\",\"amount\":300},{\"reque...
+19:43:00.090 For Each 'each_field' pass 1: field = budget
+19:43:00.092 Activity 'Read the request' entered #3#1
+19:43:00.093   Event 'Read a field' #3#1 Main.xaml#ReparoEvent_4 starts; Variables {"approval_limit":"500","pending":"[104,102,105,101,103]","request_id":"101","fields":"[\"amount\",\"budget\"]","field":"\"budget\"","values":"{\"amount\":400,\"budget\":700}","amount":"450","remaining_budget":"700","decisions":"[{\"request_id\":104,\"decision\":\"approval\",\"amount\":300},{\"reque...
+19:43:00.122 For Each 'each_field' done after 2 passes
+19:43:00.127 Activity 'Record the request' entered #3
+19:43:00.128   Event 'Copy the fields' #3 Main.xaml#ReparoEvent_5 starts; Variables {"approval_limit":"500","pending":"[104,102,105,101,103]","request_id":"101","fields":"[\"amount\",\"budget\"]","field":"\"budget\"","values":"{\"amount\":400,\"budget\":250}","amount":"450","remaining_budget":"700","decisions":"[{\"request_id\":104,\"decision\":\"approval\",\"amount\":300},{\"reque...
+19:43:00.137 If 'decide': Else
+19:43:00.138 If 'over the limit': Else
+19:43:00.139 Activity 'Reject for budget' entered #3
+19:43:00.140   Event 'Open the Reason dropdown' #3 Main.xaml#ReparoEvent_12 starts; Variables {"approval_limit":"500","pending":"[104,102,105,101,103]","request_id":"101","fields":"[\"amount\",\"budget\"]","field":"\"budget\"","values":"{\"amount\":400,\"budget\":250}","amount":"400","remaining_budget":"250","decisions":"[{\"request_id\":104,\"decision\":\"approval\",\"amount\":300},{\"reque...
+19:43:00.910   Event 'Pick Budget exhausted' #3 Main.xaml#ReparoEvent_13 starts; Variables {"approval_limit":"500","pending":"[104,102,105,101,103]","request_id":"101","fields":"[\"amount\",\"budget\"]","field":"\"budget\"","values":"{\"amount\":400,\"budget\":250}","amount":"400","remaining_budget":"250","decisions":"[{\"request_id\":104,\"decision\":\"approval\",\"amount\":300},{\"reque...
+19:43:01.697   Event 'Click Reject' #3 Main.xaml#ReparoEvent_14 starts; Variables {"approval_limit":"500","pending":"[104,102,105,101,103]","request_id":"101","fields":"[\"amount\",\"budget\"]","field":"\"budget\"","values":"{\"amount\":400,\"budget\":250}","amount":"400","remaining_budget":"250","decisions":"[{\"request_id\":104,\"decision\":\"approval\",\"amount\":300},{\"reque...
+19:43:02.482   Event 'Log the rejection' #3 Main.xaml#ReparoEvent_15 starts; Variables {"approval_limit":"500","pending":"[104,102,105,101,103]","request_id":"101","fields":"[\"amount\",\"budget\"]","field":"\"budget\"","values":"{\"amount\":400,\"budget\":250}","amount":"400","remaining_budget":"250","decisions":"[{\"request_id\":104,\"decision\":\"approval\",\"amount\":300},{\"reque...
+19:43:02.495 Activity 'Return to the list' entered #3
+19:43:02.498   Event 'Go back to the requests' #3 Main.xaml#ReparoEvent_16 starts; Variables {"approval_limit":"500","pending":"[104,102,105,101,103]","request_id":"101","fields":"[\"amount\",\"budget\"]","field":"\"budget\"","values":"{\"amount\":400,\"budget\":250}","amount":"400","remaining_budget":"250","decisions":"[{\"request_id\":104,\"decision\":\"approval\",\"amount\":300},{\"reque...
+19:43:03.263 For Each 'each_request' pass 4: request_id = 103
+19:43:03.274 Activity 'Open the request' entered #4
+19:43:03.284   Event 'Open the request' #4 Main.xaml#ReparoEvent_3 starts; Variables {"approval_limit":"500","pending":"[104,102,105,101,103]","request_id":"103","fields":"[\"amount\",\"budget\"]","field":"\"budget\"","values":"{\"amount\":400,\"budget\":250}","amount":"400","remaining_budget":"250","decisions":"[{\"request_id\":104,\"decision\":\"approval\",\"amount\":300},{\"reque...
+19:43:04.055 For Each 'each_field' pass 0: field = amount
+19:43:04.067 Activity 'Read the request' entered #4#0
+19:43:04.078   Event 'Read a field' #4#0 Main.xaml#ReparoEvent_4 starts; Variables {"approval_limit":"500","pending":"[104,102,105,101,103]","request_id":"103","fields":"[\"amount\",\"budget\"]","field":"\"amount\"","values":"{\"amount\":400,\"budget\":250}","amount":"400","remaining_budget":"250","decisions":"[{\"request_id\":104,\"decision\":\"approval\",\"amount\":300},{\"reque...
+19:43:04.101 For Each 'each_field' pass 1: field = budget
+19:43:04.104 Activity 'Read the request' entered #4#1
+19:43:04.107   Event 'Read a field' #4#1 Main.xaml#ReparoEvent_4 starts; Variables {"approval_limit":"500","pending":"[104,102,105,101,103]","request_id":"103","fields":"[\"amount\",\"budget\"]","field":"\"budget\"","values":"{\"amount\":200,\"budget\":250}","amount":"400","remaining_budget":"250","decisions":"[{\"request_id\":104,\"decision\":\"approval\",\"amount\":300},{\"reque...
+19:43:04.133 For Each 'each_field' done after 2 passes
+19:43:04.136 Activity 'Record the request' entered #4
+19:43:04.137   Event 'Copy the fields' #4 Main.xaml#ReparoEvent_5 starts; Variables {"approval_limit":"500","pending":"[104,102,105,101,103]","request_id":"103","fields":"[\"amount\",\"budget\"]","field":"\"budget\"","values":"{\"amount\":200,\"budget\":250}","amount":"400","remaining_budget":"250","decisions":"[{\"request_id\":104,\"decision\":\"approval\",\"amount\":300},{\"reque...
+19:43:04.146 If 'decide': Then
+19:43:04.149 Activity 'Approve the request' entered #4
+19:43:04.150   Event 'Click Approve' #4 Main.xaml#ReparoEvent_6 starts; Variables {"approval_limit":"500","pending":"[104,102,105,101,103]","request_id":"103","fields":"[\"amount\",\"budget\"]","field":"\"budget\"","values":"{\"amount\":200,\"budget\":250}","amount":"200","remaining_budget":"250","decisions":"[{\"request_id\":104,\"decision\":\"approval\",\"amount\":300},{\"reque...
+19:43:04.880   Event 'Log the approval' #4 Main.xaml#ReparoEvent_7 starts; Variables {"approval_limit":"500","pending":"[104,102,105,101,103]","request_id":"103","fields":"[\"amount\",\"budget\"]","field":"\"budget\"","values":"{\"amount\":200,\"budget\":250}","amount":"200","remaining_budget":"250","decisions":"[{\"request_id\":104,\"decision\":\"approval\",\"amount\":300},{\"reque...
+19:43:04.894 Activity 'Return to the list' entered #4
+19:43:04.898   Event 'Go back to the requests' #4 Main.xaml#ReparoEvent_16 starts; Variables {"approval_limit":"500","pending":"[104,102,105,101,103]","request_id":"103","fields":"[\"amount\",\"budget\"]","field":"\"budget\"","values":"{\"amount\":200,\"budget\":250}","amount":"200","remaining_budget":"250","decisions":"[{\"request_id\":104,\"decision\":\"approval\",\"amount\":300},{\"reque...
+19:43:05.668 For Each 'each_request' done after 5 passes
+19:43:05.673 Activity 'Record the final budget' entered
+19:43:05.676   Event 'Read the final budget' Main.xaml#ReparoEvent_17 starts; Variables {"approval_limit":"500","pending":"[104,102,105,101,103]","request_id":"103","fields":"[\"amount\",\"budget\"]","field":"\"budget\"","values":"{\"amount\":200,\"budget\":250}","amount":"200","remaining_budget":"250","decisions":"[{\"request_id\":104,\"decision\":\"approval\",\"amount\":300},{\"reque...
+19:43:05.704 decisions at the end: 104,approval,300 | 102,rejection,800 | 105,approval,450 | 101,rejection,400 | 103,approval,200
+19:43:05.709 === Process completed. UI log:
+19:43:05.709   Open the requests window  [Main.xaml#ReparoEvent_1]
+19:43:05.710   Read the pending requests  [Main.xaml#ReparoEvent_2]
+19:43:05.710   Open the request #0  [Main.xaml#ReparoEvent_3]
+19:43:05.710   Read a field #0#0  [Main.xaml#ReparoEvent_4]
+19:43:05.710   Read a field #0#1  [Main.xaml#ReparoEvent_4]
+19:43:05.710   Copy the fields #0  [Main.xaml#ReparoEvent_5]
+19:43:05.711   Click Approve #0  [Main.xaml#ReparoEvent_6]
+19:43:05.711   Log the approval #0  [Main.xaml#ReparoEvent_7]
+19:43:05.711   Go back to the requests #0  [Main.xaml#ReparoEvent_16]
+19:43:05.711   Open the request #1  [Main.xaml#ReparoEvent_3]
+19:43:05.711   Read a field #1#0  [Main.xaml#ReparoEvent_4]
+19:43:05.711   Read a field #1#1  [Main.xaml#ReparoEvent_4]
+19:43:05.712   Copy the fields #1  [Main.xaml#ReparoEvent_5]
+19:43:05.712   Open the Reason dropdown #1  [Main.xaml#ReparoEvent_8]
+19:43:05.712   Pick Over the approval limit #1  [Main.xaml#ReparoEvent_9]
+19:43:05.712   Click Reject #1  [Main.xaml#ReparoEvent_10]
+19:43:05.712   Log the rejection #1  [Main.xaml#ReparoEvent_11]
+19:43:05.712   Go back to the requests #1  [Main.xaml#ReparoEvent_16]
+19:43:05.713   Open the request #2  [Main.xaml#ReparoEvent_3]
+19:43:05.713   Read a field #2#0  [Main.xaml#ReparoEvent_4]
+19:43:05.713   Read a field #2#1  [Main.xaml#ReparoEvent_4]
+19:43:05.713   Copy the fields #2  [Main.xaml#ReparoEvent_5]
+19:43:05.713   Open the request #2  [Main.xaml#ReparoEvent_3]
+19:43:05.713   Read a field #2#0  [Main.xaml#ReparoEvent_4]
+19:43:05.714   Read a field #2#1  [Main.xaml#ReparoEvent_4]
+19:43:05.714   Copy the fields #2  [Main.xaml#ReparoEvent_5]
+19:43:05.714   Click Approve #2  [Main.xaml#ReparoEvent_6]
+19:43:05.714   Log the approval #2  [Main.xaml#ReparoEvent_7]
+19:43:05.715   Go back to the requests #2  [Main.xaml#ReparoEvent_16]
+19:43:05.715   Open the request #3  [Main.xaml#ReparoEvent_3]
+19:43:05.715   Read a field #3#0  [Main.xaml#ReparoEvent_4]
+19:43:05.715   Read a field #3#1  [Main.xaml#ReparoEvent_4]
+19:43:05.715   Copy the fields #3  [Main.xaml#ReparoEvent_5]
+19:43:05.716   Open the Reason dropdown #3  [Main.xaml#ReparoEvent_12]
+19:43:05.716   Pick Budget exhausted #3  [Main.xaml#ReparoEvent_13]
+19:43:05.716   Click Reject #3  [Main.xaml#ReparoEvent_14]
+19:43:05.716   Log the rejection #3  [Main.xaml#ReparoEvent_15]
+19:43:05.716   Go back to the requests #3  [Main.xaml#ReparoEvent_16]
+19:43:05.716   Open the request #4  [Main.xaml#ReparoEvent_3]
+19:43:05.717   Read a field #4#0  [Main.xaml#ReparoEvent_4]
+19:43:05.717   Read a field #4#1  [Main.xaml#ReparoEvent_4]
+19:43:05.717   Copy the fields #4  [Main.xaml#ReparoEvent_5]
+19:43:05.717   Click Approve #4  [Main.xaml#ReparoEvent_6]
+19:43:05.717   Log the approval #4  [Main.xaml#ReparoEvent_7]
+19:43:05.717   Go back to the requests #4  [Main.xaml#ReparoEvent_16]
+19:43:05.718   Read the final budget  [Main.xaml#ReparoEvent_17]
+19:43:05.718 Variables after the last Event: {"approval_limit":"500","pending":"[104,102,105,101,103]","request_id":"103","fields":"[\"amount\",\"budget\"]","field":"\"budget\"","values":"{\"amount\":200,\"budget\":250}","amount":"200","remaining_budget":"50","decisions":"[{\"request_id\":104,\"decision\":\"approval\",\"amount\":300},{\"request_id\":102,\"decision\":\"rejection\",\"amount\":800},{\"request_id\":105,\"decision\":\"approval\",\"amount\":450},{\"request_id\":101,\"decision\":\"rejection\",\"amount\":400},{\"request_id\":103,\"decision\":\"approval\",\"amount\":200}]","started":"\"2026-11-24T19:42:36.8959491+00:00\"","tags":"[\"proto48\"]"}
+19:43:05.718 report_result outcome: completed
+--- app
+19:42:37.041 APP start late-approve=105 open=0
+19:42:40.933 APP open 104
+19:42:41.787 APP decide 104 Approved reason= budget=700
+19:42:42.540 APP back
+19:42:43.338 APP open 102
+19:42:45.037 APP reason 102 Over the approval limit
+19:42:45.915 APP decide 102 Rejected reason=Over the approval limit budget=700
+19:42:49.343 APP back
+19:42:50.087 APP open 105
+19:42:50.094 APP approve removed for 105
+19:42:54.935 APP cmd back
+19:42:56.094 APP approve back
+19:42:57.268 APP open 105
+19:42:58.130 APP decide 105 Approved reason= budget=250
+19:42:58.929 APP back
+19:42:59.727 APP open 101
+19:43:01.376 APP reason 101 Budget exhausted
+19:43:02.159 APP decide 101 Rejected reason=Budget exhausted budget=250
+19:43:02.939 APP back
+19:43:03.729 APP open 103
+19:43:04.567 APP decide 103 Approved reason= budget=50
+19:43:05.335 APP back
+--- recovery-1.json
+{
+  "contract_version": 2,
+  "task_name": "spending_approval",
+  "errored_act": {
+    "model_event_id": "Main.xaml#ReparoEvent_6",
+    "event_name": "Click Approve #2",
+    "error_code": "SelectorNotFoundException",
+    "error_description": "Could not find the UI element corresponding to this selector:\r"
+  },
+  "loop_iteration": [
+    2
+  ],
+  "variables": {
+    "approval_limit": 500,
+    "pending": [
+      104,
+      102,
+      105,
+      101,
+      103
+    ],
+    "request_id": 105,
+    "fields": [
+      "amount",
+      "budget"
+    ],
+    "field": "budget",
+    "values": {
+      "amount": 450,
+      "budget": 700
+    },
+    "amount": 450,
+    "remaining_budget": 700,
+    "decisions": [
+      {
+        "request_id": 104,
+        "decision": "approval",
+        "amount": 300
+      },
+      {
+        "request_id": 102,
+        "decision": "rejection",
+        "amount": 800
+      }
+    ],
+    "started": "2026-11-24T19:42:36.8959491+00:00",
+    "tags": [
+      "proto48"
+    ]
+  },
+  "ui_log": [
+    "Open the requests window  [Main.xaml#ReparoEvent_1]",
+    "Read the pending requests  [Main.xaml#ReparoEvent_2]",
+    "Open the request #0  [Main.xaml#ReparoEvent_3]",
+    "Read a field #0#0  [Main.xaml#ReparoEvent_4]",
+    "Read a field #0#1  [Main.xaml#ReparoEvent_4]",
+    "Copy the fields #0  [Main.xaml#ReparoEvent_5]",
+    "Click Approve #0  [Main.xaml#ReparoEvent_6]",
+    "Log the approval #0  [Main.xaml#ReparoEvent_7]",
+    "Go back to the requests #0  [Main.xaml#ReparoEvent_16]",
+    "Open the request #1  [Main.xaml#ReparoEvent_3]",
+    "Read a field #1#0  [Main.xaml#ReparoEvent_4]",
+    "Read a field #1#1  [Main.xaml#ReparoEvent_4]",
+    "Copy the fields #1  [Main.xaml#ReparoEvent_5]",
+    "Open the Reason dropdown #1  [Main.xaml#ReparoEvent_8]",
+    "Pick Over the approval limit #1  [Main.xaml#ReparoEvent_9]",
+    "Click Reject #1  [Main.xaml#ReparoEvent_10]",
+    "Log the rejection #1  [Main.xaml#ReparoEvent_11]",
+    "Go back to the requests #1  [Main.xaml#ReparoEvent_16]",
+    "Open the request #2  [Main.xaml#ReparoEvent_3]",
+    "Read a field #2#0  [Main.xaml#ReparoEvent_4]",
+    "Read a field #2#1  [Main.xaml#ReparoEvent_4]",
+    "Copy the fields #2  [Main.xaml#ReparoEvent_5]"
+  ]
+}
+--- uip (errors)
+  "Result": "Success",
+  "Code": "ToolResult",
+    "hasErrors": false,
+    "errorMessage": null,
+    "errorScope": null
+
+
+exit 0

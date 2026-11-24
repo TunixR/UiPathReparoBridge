@@ -1,0 +1,10 @@
+<!-- PROTOTYPE for ReparoHome#46: a desktop stand-in for the Playwright Bridge's spending-approval web app. -->
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net10.0-windows</TargetFramework>
+    <UseWindowsForms>true</UseWindowsForms>
+    <AssemblyName>SpendApp</AssemblyName>
+    <Nullable>disable</Nullable>
+  </PropertyGroup>
+</Project>

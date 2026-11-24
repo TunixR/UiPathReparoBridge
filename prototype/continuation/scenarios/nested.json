@@ -1,0 +1,1 @@
+{"delay_s": 8, "continue_from_model_event_id": "Main.xaml#ReparoEvent_4", "loop_iteration": [2, 1], "variables": {"decisions": [{"request_id": 104, "decision": "approval", "amount": 300}, {"request_id": 102, "decision": "rejection", "amount": 800}, {"request_id": 999, "decision": "noted by Reparo", "amount": 0}]}}

@@ -1,0 +1,92 @@
+session 1 user reparo
+### CardProbe / card-always-attach  (2026-11-24T19:50:31, 28 s)
+--- fake done
+{"delay_s": 10}
+--- trace
+19:50:08.216 === Process 'card_always_after_attach' id=Main.xaml#ReparoProcess_1; CancelBeforeRecovery=False; Variables: request_id:Int32
+19:50:08.218   ReparoProcess 'card_always_after_attach' Main.xaml#ReparoProcess_1
+19:50:08.218     ReparoActivity 'Open the request window' Main.xaml#ReparoActivity_1
+19:50:08.218       ReparoEvent 'Open SpendApp on request 104' Main.xaml#ReparoEvent_1
+19:50:08.219     ReparoActivity 'Approve the open request' Main.xaml#ReparoActivity_2
+19:50:08.219       ReparoEvent 'Click Approve' Main.xaml#ReparoEvent_2
+19:50:08.225 Activity 'Open the request window' entered
+19:50:08.233   Event 'Open SpendApp on request 104' Main.xaml#ReparoEvent_1 starts; Variables {"request_id":"104"}
+19:50:11.305 Activity 'Approve the open request' entered
+19:50:11.319   Event 'Click Approve' Main.xaml#ReparoEvent_2 starts; Variables {"request_id":"104"}
+19:50:14.000 TRACK state Faulted UiPath.Core.Activities.Click 'Click Approve' id=1.14 inst=14
+19:50:14.001 TRACK fault from 'Click Approve' handler='Sequence' src=True SelectorNotFoundException
+19:50:14.015 TRACK fault from 'Click Approve' handler='Use SpendApp' src=False SelectorNotFoundException
+19:50:14.351 TRACK state Faulted System.Activities.Statements.Sequence 'Sequence' id=1.13 inst=13
+19:50:14.351 TRACK state Faulted UiPath.UIAutomationNext.Activities.NApplicationCard 'Use SpendApp' id=1.12 inst=12
+19:50:14.352 TRACK fault from 'Click Approve' handler='Sequence' src=False SelectorNotFoundException
+19:50:14.356 TRACK fault from 'Click Approve' handler='Click Approve' src=False SelectorNotFoundException
+19:50:14.369 TRACK fault from 'Click Approve' handler='Approve the open request' src=False SelectorNotFoundException
+19:50:14.380 TRACK fault from 'Click Approve' handler='card_always_after_attach' src=False SelectorNotFoundException
+19:50:14.382 FAULT reached Reparo Process: UiPath.Core.SelectorNotFoundException: Could not find the UI element corresponding to this selector:
+ (in Event Main.xaml#ReparoEvent_2, via Approve the open request, state Executing) on thread 1
+19:50:14.384   UI at the fault: SpendApp NOT RUNNING
+19:50:14.385   Recovery requested for Main.xaml#ReparoEvent_2; carried Variables: request_id; kept live: 
+19:50:14.386   Recovery wait starts on thread 1 (the workflow thread); fake Reparo runs off it
+19:50:14.388   fake Reparo on thread 11: payload written (recovery-1.json); UI now: SpendApp NOT RUNNING
+19:50:14.402   faulted branch 'Approve the open request' ended: Closed; UI SpendApp NOT RUNNING
+19:50:20.407   fake Reparo, mid-Recovery: UI SpendApp NOT RUNNING
+19:50:24.416   fake Reparo answers done: {"success":true,"process_finished":false,"continue_from_model_event_id":"Main.xaml#ReparoEvent_2","loop_iteration":[],"variables":{"request_id":104}}
+19:50:24.417   Recovery wait ends on thread 1
+19:50:24.417   Reparo answered; faulted branch is already ended
+19:50:24.422 Continuation: entering at Main.xaml#ReparoEvent_2; UI SpendApp NOT RUNNING
+19:50:24.427   restored request_id = 104
+19:50:24.427 Activity 'Approve the open request' entered
+19:50:24.431   Continuation reached Main.xaml#ReparoEvent_2
+19:50:24.431   Event 'Click Approve' Main.xaml#ReparoEvent_2 starts; Variables {"request_id":"104"}
+19:50:27.073 TRACK state Faulted UiPath.Core.Activities.Click 'Click Approve' id=1.14 inst=21
+19:50:27.073 TRACK fault from 'Click Approve' handler='Sequence' src=True SelectorNotFoundException
+19:50:27.076 TRACK fault from 'Click Approve' handler='Use SpendApp' src=False SelectorNotFoundException
+19:50:27.449 TRACK state Faulted System.Activities.Statements.Sequence 'Sequence' id=1.13 inst=20
+19:50:27.450 TRACK state Faulted UiPath.UIAutomationNext.Activities.NApplicationCard 'Use SpendApp' id=1.12 inst=19
+19:50:27.450 TRACK fault from 'Click Approve' handler='Sequence' src=False SelectorNotFoundException
+19:50:27.456 TRACK fault from 'Click Approve' handler='Click Approve' src=False SelectorNotFoundException
+19:50:27.470 TRACK fault from 'Click Approve' handler='Approve the open request' src=False SelectorNotFoundException
+19:50:27.481 TRACK fault from 'Click Approve' handler='card_always_after_attach' src=False SelectorNotFoundException
+19:50:27.482 FAULT reached Reparo Process: UiPath.Core.SelectorNotFoundException: Could not find the UI element corresponding to this selector:
+ (in Event Main.xaml#ReparoEvent_2, via Approve the open request, state Executing) on thread 1
+19:50:27.483   UI at the fault: SpendApp NOT RUNNING
+19:50:27.483   not handed to Reparo (the run's one Recovery is spent): left to propagate; report_result outcome continuation_failed
+19:50:27.483 TRACK fault from 'Click Approve' handler='Author outer Try Catch' src=False SelectorNotFoundException
+19:50:27.488 === Process completed. UI log:
+19:50:27.488   Open SpendApp on request 104  [Main.xaml#ReparoEvent_1]
+19:50:27.488 Variables after the last Event: {"request_id":"104"}
+19:50:27.488 report_result outcome: continuation_failed
+19:50:27.493 author outer Try Catch caught UiPath.Core.SelectorNotFoundException (the object the Bridge rethrew: False): Could not find the UI element corresponding to this selector:
+ | stack top: at UiPath.Core.Activities.ObsoleteTaskAsyncCodeActivity`1.EndExecute(AsyncCodeActivityContext context, IAsyncResult result)
+--- app
+19:50:08.331 APP start late-approve=104 open=104
+19:50:08.416 APP approve removed for 104
+19:50:24.612 APP start late-approve=104 open=104
+19:50:24.708 APP approve removed for 104
+--- recovery-1.json
+{
+  "contract_version": 2,
+  "task_name": "card_always_after_attach",
+  "errored_act": {
+    "model_event_id": "Main.xaml#ReparoEvent_2",
+    "event_name": "Click Approve",
+    "error_code": "SelectorNotFoundException",
+    "error_description": "Could not find the UI element corresponding to this selector:\r"
+  },
+  "loop_iteration": [],
+  "variables": {
+    "request_id": 104
+  },
+  "ui_log": [
+    "Open SpendApp on request 104  [Main.xaml#ReparoEvent_1]"
+  ]
+}
+--- uip (errors)
+  "Result": "Success",
+  "Code": "ToolResult",
+    "hasErrors": false,
+    "errorMessage": null,
+    "errorScope": null
+
+
+exit 0
