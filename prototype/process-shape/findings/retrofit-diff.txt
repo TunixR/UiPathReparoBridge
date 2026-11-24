@@ -1,0 +1,6 @@
+Retrofit of spending approval: plain UiPath (Native/Main.xaml) -> Reparo blocks (SpendingApproval/Main.xaml)
+UiPath activities, same count and same XAML in both: {'ui:Click': (9, 9), 'ui:GetValue': (4, 4), 'Assign': (4, 4), 'InvokeMethod': (1, 1), 'Delay': (1, 1), 'ui:Target': (13, 13)}
+UI activities byte-identical: True 13
+Elements only in plain UiPath: {'Sequence': 13, 'Sequence.Variables': 1, 'ui:ForEach': 1, 'ui:ForEach.Body': 1, 'ActivityAction': 1, 'ActivityAction.Argument': 1, 'DelegateInArgument': 1, 'If': 2, 'If.Then': 2, 'If.Else': 2}
+Elements only with Reparo blocks: {'r:ReparoProcess': 1, 'r:ReparoProcess.Variables': 1, 'Variable': 1, 'r:ReparoActivity': 7, 'r:ReparoEvent': 13, 'r:ReparoForEach': 1, 'r:ReparoIf': 2, 'r:ReparoIf.Else': 2}
+Lines: plain 165, Reparo 173; lines changed, added or removed: 77

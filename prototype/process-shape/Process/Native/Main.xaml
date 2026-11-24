@@ -1,0 +1,165 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" VisualBasic.Settings="{x:Null}" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Diagnostics;assembly=System.Diagnostics.Process" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:r="clr-namespace:Reparo.UiPathBridge;assembly=Reparo.UiPathBridge.Activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="app_args" Type="InArgument(x:String)" />
+    <x:Property Name="continue_from" Type="InArgument(x:String)" />
+    <x:Property Name="continue_passes" Type="InArgument(x:String)" />
+    <x:Property Name="continue_variables" Type="InArgument(x:String)" />
+  </x:Members>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System</x:String>
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>Reparo.UiPathBridge</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Diagnostics.Process</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>Reparo.UiPathBridge.Activities</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+<Sequence DisplayName="spending_approval" sap2010:WorkflowViewState.IdRef="Sequence_26">
+<Sequence.Variables>
+  <Variable x:TypeArguments="x:Int32" Default="500" Name="approval_limit" />
+  <Variable x:TypeArguments="scg:List(x:Int32)" Name="pending" />
+    <Variable x:TypeArguments="x:Int32" Name="amount" />
+  <Variable x:TypeArguments="x:Int32" Name="remaining_budget" />
+</Sequence.Variables>
+<Sequence DisplayName="Open the spending requests" sap2010:WorkflowViewState.IdRef="Sequence_3">
+<Sequence DisplayName="Open the requests window" sap2010:WorkflowViewState.IdRef="Sequence_1">
+<InvokeMethod DisplayName="Start SpendApp" sap2010:WorkflowViewState.IdRef="InvokeMethod_1" MethodName="Start" TargetType="sd:Process"><InArgument x:TypeArguments="x:String">C:\Users\reparo\UiPath\reparo\proto46\app\SpendApp.exe</InArgument><InArgument x:TypeArguments="x:String">[If(app_args, "--late-approve 105")]</InArgument></InvokeMethod>
+<Delay Duration="00:00:03" sap2010:WorkflowViewState.IdRef="Delay_1" />
+</Sequence>
+<Sequence DisplayName="Read the pending requests" sap2010:WorkflowViewState.IdRef="Sequence_2"><Sequence.Variables><Variable x:TypeArguments="x:String" Name="raw" /></Sequence.Variables>
+<ui:GetValue DisplayName="Get Text pending" sap2010:WorkflowViewState.IdRef="GetValue_1">
+  <ui:GetValue.Value><OutArgument x:TypeArguments="x:String">[raw]</OutArgument></ui:GetValue.Value>
+  <ui:GetValue.Target><ui:Target Selector="&lt;wnd app='spendapp.exe' title='Spending requests' /&gt;&lt;wnd ctrlname='pending' /&gt;" TimeoutMS="5000" WaitForReady="INTERACTIVE" /></ui:GetValue.Target>
+</ui:GetValue>
+<Assign sap2010:WorkflowViewState.IdRef="Assign_1"><Assign.To><OutArgument x:TypeArguments="scg:List(x:Int32)">[pending]</OutArgument></Assign.To><Assign.Value><InArgument x:TypeArguments="scg:List(x:Int32)">[raw.Split(&quot;,&quot;c).Select(Function(s) CInt(s)).ToList()]</InArgument></Assign.Value></Assign>
+</Sequence>
+</Sequence>
+<ui:ForEach x:TypeArguments="x:Int32" DisplayName="each_request" Values="[pending]" sap2010:WorkflowViewState.IdRef="ForEach_1">
+<ui:ForEach.Body>
+<ActivityAction x:TypeArguments="x:Int32">
+<ActivityAction.Argument><DelegateInArgument x:TypeArguments="x:Int32" Name="request_id" /></ActivityAction.Argument>
+<Sequence sap2010:WorkflowViewState.IdRef="Sequence_4">
+<Sequence DisplayName="Open the request" sap2010:WorkflowViewState.IdRef="Sequence_7">
+<Sequence DisplayName="Open the request" sap2010:WorkflowViewState.IdRef="Sequence_5">
+<ui:Click DisplayName="Click Open request" sap2010:WorkflowViewState.IdRef="Click_1" ClickType="CLICK_SINGLE" MouseButton="BTN_LEFT" KeyModifiers="None">
+  <ui:Click.Target><ui:Target Selector="[&quot;&lt;wnd app='spendapp.exe' title='Spending requests' /&gt;&lt;wnd ctrlname='Openrequest&quot; + request_id.ToString + &quot;' /&gt;&quot;]" TimeoutMS="2000" WaitForReady="INTERACTIVE" /></ui:Click.Target>
+</ui:Click>
+</Sequence>
+<Sequence DisplayName="Read the request" sap2010:WorkflowViewState.IdRef="Sequence_6"><Sequence.Variables><Variable x:TypeArguments="x:String" Name="raw" /><Variable x:TypeArguments="x:String" Name="raw2" /></Sequence.Variables>
+<ui:GetValue DisplayName="Get Text amount" sap2010:WorkflowViewState.IdRef="GetValue_2">
+  <ui:GetValue.Value><OutArgument x:TypeArguments="x:String">[raw]</OutArgument></ui:GetValue.Value>
+  <ui:GetValue.Target><ui:Target Selector="&lt;wnd app='spendapp.exe' title='Spending requests' /&gt;&lt;wnd ctrlname='amount' /&gt;" TimeoutMS="5000" WaitForReady="INTERACTIVE" /></ui:GetValue.Target>
+</ui:GetValue>
+<Assign sap2010:WorkflowViewState.IdRef="Assign_2"><Assign.To><OutArgument x:TypeArguments="x:Int32">[amount]</OutArgument></Assign.To><Assign.Value><InArgument x:TypeArguments="x:Int32">[CInt(raw)]</InArgument></Assign.Value></Assign>
+<ui:GetValue DisplayName="Get Text budget" sap2010:WorkflowViewState.IdRef="GetValue_3">
+  <ui:GetValue.Value><OutArgument x:TypeArguments="x:String">[raw2]</OutArgument></ui:GetValue.Value>
+  <ui:GetValue.Target><ui:Target Selector="&lt;wnd app='spendapp.exe' title='Spending requests' /&gt;&lt;wnd ctrlname='budget' /&gt;" TimeoutMS="5000" WaitForReady="INTERACTIVE" /></ui:GetValue.Target>
+</ui:GetValue>
+<Assign sap2010:WorkflowViewState.IdRef="Assign_3"><Assign.To><OutArgument x:TypeArguments="x:Int32">[remaining_budget]</OutArgument></Assign.To><Assign.Value><InArgument x:TypeArguments="x:Int32">[CInt(raw2)]</InArgument></Assign.Value></Assign>
+</Sequence>
+</Sequence>
+<If DisplayName="decide" Condition="[amount &lt;= approval_limit AndAlso amount &lt;= remaining_budget]" sap2010:WorkflowViewState.IdRef="If_2">
+<If.Then>
+<Sequence sap2010:WorkflowViewState.IdRef="Sequence_20">
+<Sequence DisplayName="Approve the request" sap2010:WorkflowViewState.IdRef="Sequence_9">
+<Sequence DisplayName="Click Approve" sap2010:WorkflowViewState.IdRef="Sequence_8">
+<ui:Click DisplayName="Click Approve" sap2010:WorkflowViewState.IdRef="Click_2" ClickType="CLICK_SINGLE" MouseButton="BTN_LEFT" KeyModifiers="None">
+  <ui:Click.Target><ui:Target Selector="&lt;wnd app='spendapp.exe' title='Spending requests' /&gt;&lt;wnd ctrlname='Approve' /&gt;" TimeoutMS="2000" WaitForReady="INTERACTIVE" /></ui:Click.Target>
+</ui:Click>
+</Sequence>
+</Sequence>
+</Sequence>
+</If.Then>
+<If.Else>
+<Sequence sap2010:WorkflowViewState.IdRef="Sequence_21">
+<If DisplayName="over the limit" Condition="[amount &gt; approval_limit]" sap2010:WorkflowViewState.IdRef="If_1">
+<If.Then>
+<Sequence sap2010:WorkflowViewState.IdRef="Sequence_18">
+<Sequence DisplayName="Reject over limit" sap2010:WorkflowViewState.IdRef="Sequence_13">
+<Sequence DisplayName="Open the Reason dropdown" sap2010:WorkflowViewState.IdRef="Sequence_10">
+<ui:Click DisplayName="Click Reason" sap2010:WorkflowViewState.IdRef="Click_3" ClickType="CLICK_SINGLE" MouseButton="BTN_LEFT" KeyModifiers="None">
+  <ui:Click.Target><ui:Target Selector="&lt;wnd app='spendapp.exe' title='Spending requests' /&gt;&lt;wnd ctrlname='Reason' /&gt;" TimeoutMS="2000" WaitForReady="INTERACTIVE" /></ui:Click.Target>
+</ui:Click>
+</Sequence>
+<Sequence DisplayName="Pick Over the approval limit" sap2010:WorkflowViewState.IdRef="Sequence_11">
+<ui:Click DisplayName="Click Over the approval limit" sap2010:WorkflowViewState.IdRef="Click_4" ClickType="CLICK_SINGLE" MouseButton="BTN_LEFT" KeyModifiers="None">
+  <ui:Click.Target><ui:Target Selector="&lt;wnd app='spendapp.exe' title='Spending requests' /&gt;&lt;wnd ctrlname='Overtheapprovallimit' /&gt;" TimeoutMS="2000" WaitForReady="INTERACTIVE" /></ui:Click.Target>
+</ui:Click>
+</Sequence>
+<Sequence DisplayName="Click Reject" sap2010:WorkflowViewState.IdRef="Sequence_12">
+<ui:Click DisplayName="Click Reject" sap2010:WorkflowViewState.IdRef="Click_5" ClickType="CLICK_SINGLE" MouseButton="BTN_LEFT" KeyModifiers="None">
+  <ui:Click.Target><ui:Target Selector="&lt;wnd app='spendapp.exe' title='Spending requests' /&gt;&lt;wnd ctrlname='Reject' /&gt;" TimeoutMS="2000" WaitForReady="INTERACTIVE" /></ui:Click.Target>
+</ui:Click>
+</Sequence>
+</Sequence>
+</Sequence>
+</If.Then>
+<If.Else>
+<Sequence sap2010:WorkflowViewState.IdRef="Sequence_19">
+<Sequence DisplayName="Reject for budget" sap2010:WorkflowViewState.IdRef="Sequence_17">
+<Sequence DisplayName="Open the Reason dropdown" sap2010:WorkflowViewState.IdRef="Sequence_14">
+<ui:Click DisplayName="Click Reason" sap2010:WorkflowViewState.IdRef="Click_6" ClickType="CLICK_SINGLE" MouseButton="BTN_LEFT" KeyModifiers="None">
+  <ui:Click.Target><ui:Target Selector="&lt;wnd app='spendapp.exe' title='Spending requests' /&gt;&lt;wnd ctrlname='Reason' /&gt;" TimeoutMS="2000" WaitForReady="INTERACTIVE" /></ui:Click.Target>
+</ui:Click>
+</Sequence>
+<Sequence DisplayName="Pick Budget exhausted" sap2010:WorkflowViewState.IdRef="Sequence_15">
+<ui:Click DisplayName="Click Budget exhausted" sap2010:WorkflowViewState.IdRef="Click_7" ClickType="CLICK_SINGLE" MouseButton="BTN_LEFT" KeyModifiers="None">
+  <ui:Click.Target><ui:Target Selector="&lt;wnd app='spendapp.exe' title='Spending requests' /&gt;&lt;wnd ctrlname='Budgetexhausted' /&gt;" TimeoutMS="2000" WaitForReady="INTERACTIVE" /></ui:Click.Target>
+</ui:Click>
+</Sequence>
+<Sequence DisplayName="Click Reject" sap2010:WorkflowViewState.IdRef="Sequence_16">
+<ui:Click DisplayName="Click Reject" sap2010:WorkflowViewState.IdRef="Click_8" ClickType="CLICK_SINGLE" MouseButton="BTN_LEFT" KeyModifiers="None">
+  <ui:Click.Target><ui:Target Selector="&lt;wnd app='spendapp.exe' title='Spending requests' /&gt;&lt;wnd ctrlname='Reject' /&gt;" TimeoutMS="2000" WaitForReady="INTERACTIVE" /></ui:Click.Target>
+</ui:Click>
+</Sequence>
+</Sequence>
+</Sequence>
+</If.Else>
+</If>
+</Sequence>
+</If.Else>
+</If>
+<Sequence DisplayName="Return to the list" sap2010:WorkflowViewState.IdRef="Sequence_23">
+<Sequence DisplayName="Go back to the requests" sap2010:WorkflowViewState.IdRef="Sequence_22">
+<ui:Click DisplayName="Click Back to requests" sap2010:WorkflowViewState.IdRef="Click_9" ClickType="CLICK_SINGLE" MouseButton="BTN_LEFT" KeyModifiers="None">
+  <ui:Click.Target><ui:Target Selector="&lt;wnd app='spendapp.exe' title='Spending requests' /&gt;&lt;wnd ctrlname='Backtorequests' /&gt;" TimeoutMS="2000" WaitForReady="INTERACTIVE" /></ui:Click.Target>
+</ui:Click>
+</Sequence>
+</Sequence>
+</Sequence>
+</ActivityAction>
+</ui:ForEach.Body>
+</ui:ForEach>
+<Sequence DisplayName="Record the final budget" sap2010:WorkflowViewState.IdRef="Sequence_25">
+<Sequence DisplayName="Read the final budget" sap2010:WorkflowViewState.IdRef="Sequence_24"><Sequence.Variables><Variable x:TypeArguments="x:String" Name="raw" /></Sequence.Variables>
+<ui:GetValue DisplayName="Get Text budget" sap2010:WorkflowViewState.IdRef="GetValue_4">
+  <ui:GetValue.Value><OutArgument x:TypeArguments="x:String">[raw]</OutArgument></ui:GetValue.Value>
+  <ui:GetValue.Target><ui:Target Selector="&lt;wnd app='spendapp.exe' title='Spending requests' /&gt;&lt;wnd ctrlname='budget' /&gt;" TimeoutMS="5000" WaitForReady="INTERACTIVE" /></ui:GetValue.Target>
+</ui:GetValue>
+<Assign sap2010:WorkflowViewState.IdRef="Assign_4"><Assign.To><OutArgument x:TypeArguments="x:Int32">[remaining_budget]</OutArgument></Assign.To><Assign.Value><InArgument x:TypeArguments="x:Int32">[CInt(raw)]</InArgument></Assign.Value></Assign>
+</Sequence>
+</Sequence>
+</Sequence>
+</Activity>
+

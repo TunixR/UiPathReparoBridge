@@ -1,0 +1,15 @@
+# Scenario C3: an author Try Catch inside Event 5 "Click Approve" (gen.py trycatch), app --late-approve 105.
+# The trace.log copy failed before C4 overwrote it; these lines are the run's trace as printed on 2026-11-24.
+18:37:09.179   Event 'Click Approve' #2 Main.xaml#ReparoEvent_5 starts; Variables {"approval_limit":500,"pending":[104,102,105,101,103],"request_id":105,"amount":450,"remaining_budget":700}
+18:37:11.504 TRACK state Faulted UiPath.Core.Activities.Click 'Click Approve' id=1.173 inst=102
+18:37:11.505 TRACK fault from 'Click Approve' handler='Author Try Catch' src=True SelectorNotFoundException
+18:37:11.508 author Try Catch caught SelectorNotFoundException
+18:37:11.522 Activity 'Return to the list' entered #2
+...
+18:37:17.186 === Process completed. UI log:
+18:37:17.189   Click Approve #2  [Main.xaml#ReparoEvent_5]
+...
+18:37:17.192 Variables at the end: {"approval_limit":500,"pending":[104,102,105,101,103],"request_id":103,"amount":200,"remaining_budget":100}
+# No recovery-*.json was written: the Bridge never saw the failure. Request 105 stayed open (budget 100, not 50),
+# which is what the author's Catch chose. The UI log still lists "Click Approve #2": an Event that ends because an
+# author's handler swallowed a failure reads as done.

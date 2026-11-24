@@ -1,0 +1,10 @@
+# Scenario F: a .NET 10 project that uses Reparo.UiPathBridge.Activities 0.0.1-proto.3 (net6.0-windows). vm/net10.ps1, 2026-11-24.
+# The project.json key is "dotNetVersion"; Helm (Studio 27.0.206) takes "net10.0" or "Net10", and refuses "10.0", "10" and "8.0".
+=== dotNetVersion=net10.0
+  "Result": "Success",
+  lib/net10.0-windows7.0/GlobalVariablesT1PNoYwrqg.dll
+  lib/net10.0-windows7.0/Proto46Net10.dll
+  lib/net10.0-windows7.0/Proto46Net10_Expressions.dll
+    "robotVersion": "27.0.206"
+  "targetFramework": "Windows",
+# Not run: the VM's Robot is 25.10.19, and .NET 10 projects need Robot 26.10 or later.

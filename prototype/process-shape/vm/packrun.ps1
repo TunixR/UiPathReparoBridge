@@ -15,6 +15,16 @@ $pkg = Get-ChildItem "$root\out\$proj" -Filter *.nupkg | Select-Object -First 1
 "package $($pkg.Name)"
 Add-Type -AssemblyName System.IO.Compression.FileSystem
 $z = [IO.Compression.ZipFile]::OpenRead($pkg.FullName); $z.Entries | Where-Object { $_.FullName -match '\.(xaml|dll)$|project.json' } | ForEach-Object { "  " + $_.FullName }; $z.Dispose()
+# The packer drops exceptionHandlerWorkflow, so add it to the package when geh-mode.txt asks for a handler.
+if (Test-Path "$root\geh-mode.txt") {
+  $z = [IO.Compression.ZipFile]::Open($pkg.FullName, 'Update')
+  $e = $z.GetEntry('content/project.json'); $r = New-Object IO.StreamReader($e.Open()); $j = $r.ReadToEnd() | ConvertFrom-Json; $r.Close(); $e.Delete()
+  $j | Add-Member -Force NoteProperty exceptionHandlerWorkflow 'GlobalHandler.xaml'
+  $w = New-Object IO.StreamWriter($z.CreateEntry('content/project.json').Open()); $w.Write(($j | ConvertTo-Json -Depth 20)); $w.Close(); $z.Dispose()
+  "patched exceptionHandlerWorkflow into the package ($(Get-Content "$root\geh-mode.txt"))"
+}
+# The Robot reuses an installed package of the same name and version, so drop it.
+Get-ChildItem "$env:USERPROFILE\.nuget\packages" -Directory -Filter 'proto46*' -ErrorAction SilentlyContinue | Remove-Item -Recurse -Force
 $t0 = Get-Date
 $o = & "$env:LOCALAPPDATA\Programs\UiPath\Studio\UiRobot.exe" execute --file $pkg.FullName 2>&1
 "exit $LASTEXITCODE, took $([int]((Get-Date) - $t0).TotalSeconds)s"

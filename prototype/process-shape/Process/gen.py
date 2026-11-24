@@ -1,6 +1,9 @@
-# PROTOTYPE generator for the spending-approval Process XAML (Reparo blocks). Run: python3 gen.py > SpendingApproval/Main.xaml
+# PROTOTYPE generator for the spending-approval Process XAML.
+# Run: python3 gen.py header.xaml [plain|trycatch|retryscope] [reparo|native] > SpendingApproval/Main.xaml
+# "native" writes the same Process in plain UiPath (Sequence, If, ForEach), the workflow a retrofit starts from.
 import itertools, sys
 MODE = sys.argv[2] if len(sys.argv) > 2 else "plain"   # plain | trycatch | retryscope
+NATIVE = len(sys.argv) > 3 and sys.argv[3] == "native"
 ids = {}
 def idref(kind):
     ids[kind] = ids.get(kind, 0) + 1
@@ -27,10 +30,15 @@ def seq(inner, local_vars=()):
     vs = f'<Sequence.Variables>{v}</Sequence.Variables>' if v else ''
     return f'<Sequence {idref("Sequence")}>{vs}\n' + '\n'.join(inner) + '\n</Sequence>'
 def event(name, *body, local=()):
+    if NATIVE: return seq(body, local).replace('<Sequence ', f'<Sequence DisplayName="{esc(name)}" ', 1)
     return f'<r:ReparoEvent DisplayName="{esc(name)}" {idref("ReparoEvent")}>\n' + seq(body, local) + '\n</r:ReparoEvent>'
 def activity(name, *events):
+    if NATIVE: return f'<Sequence DisplayName="{esc(name)}" {idref("Sequence")}>\n' + '\n'.join(events) + '\n</Sequence>'
     return f'<r:ReparoActivity DisplayName="{esc(name)}" {idref("ReparoActivity")}>\n' + '\n'.join(events) + '\n</r:ReparoActivity>'
 def if_(name, cond, then, els):
+    if NATIVE:
+        return (f'<If DisplayName="{esc(name)}" Condition="{esc("["+cond+"]")}" {idref("If")}>\n<If.Then>\n'
+                + seq(then) + '\n</If.Then>\n<If.Else>\n' + seq(els) + '\n</If.Else>\n</If>')
     return (f'<r:ReparoIf DisplayName="{esc(name)}" Condition="{esc("["+cond+"]")}" {idref("ReparoIf")}>\n'
             + '\n'.join(then) + '\n<r:ReparoIf.Else>\n' + '\n'.join(els) + '\n</r:ReparoIf.Else>\n</r:ReparoIf>')
 def reject(activity_name, reason):
@@ -59,7 +67,9 @@ body = [
     event("Read the pending requests",
       gettext("pending", "raw"),
       assign("pending", "scg:List(x:Int32)", 'raw.Split(","c).Select(Function(s) CInt(s)).ToList()'), local=("raw",))),
-  f'<r:ReparoForEach DisplayName="each_request" Over="pending" Item="request_id" {idref("ReparoForEach")}>',
+  (f'<ui:ForEach x:TypeArguments="x:Int32" DisplayName="each_request" Values="[pending]" {idref("ForEach")}>\n<ui:ForEach.Body>\n'
+   f'<ActivityAction x:TypeArguments="x:Int32">\n<ActivityAction.Argument><DelegateInArgument x:TypeArguments="x:Int32" Name="request_id" /></ActivityAction.Argument>\n<Sequence {idref("Sequence")}>'
+   if NATIVE else f'<r:ReparoForEach DisplayName="each_request" Over="pending" Item="request_id" {idref("ReparoForEach")}>'),
   activity("Open the request",
     event("Open the request", click("Click Open request", expr='"' + APP.replace('"','""') + "<wnd ctrlname='Openrequest\" + request_id.ToString + \"' />\"")),
     event("Read the request",
@@ -71,7 +81,7 @@ body = [
        [reject("Reject over limit", "Over the approval limit")],
        [reject("Reject for budget", "Budget exhausted")])]),
   activity("Return to the list", event("Go back to the requests", click("Click Back to requests", "Backtorequests"))),
-  '</r:ReparoForEach>',
+  '</Sequence>\n</ActivityAction>\n</ui:ForEach.Body>\n</ui:ForEach>' if NATIVE else '</r:ReparoForEach>',
   activity("Record the final budget",
     event("Read the final budget", gettext("budget", "raw"), assign("remaining_budget", "x:Int32", "CInt(raw)"), local=("raw",))),
 ]
@@ -86,4 +96,8 @@ proc = f'''<r:ReparoProcess DisplayName="spending_approval" {idref("ReparoProces
   <Variable x:TypeArguments="x:Int32" Name="remaining_budget" />
 </r:ReparoProcess.Variables>
 ''' + '\n'.join(body) + '\n</r:ReparoProcess>'
+if NATIVE:
+    proc = (proc.replace('<r:ReparoProcess.Variables>', '<Sequence.Variables>').replace('</r:ReparoProcess.Variables>', '</Sequence.Variables>')
+                .replace('</r:ReparoProcess>', '</Sequence>').replace('<Variable x:TypeArguments="x:Int32" Name="request_id" />\n', ''))
+    proc = '<Sequence DisplayName="spending_approval" ' + idref("Sequence") + '>' + proc[proc.index('\n'):]
 print(header.replace('@@BODY@@', proc))
