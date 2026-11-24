@@ -4,7 +4,7 @@
     <TargetFramework>net6.0-windows</TargetFramework>
     <RootNamespace>Reparo.UiPathBridge</RootNamespace>
     <PackageId>Reparo.UiPathBridge.Activities</PackageId>
-    <Version>0.0.1-proto.1</Version>
+    <Version>0.0.1-proto.2</Version>
     <Nullable>disable</Nullable>
     <Authors>Reparo prototype</Authors>
     <Description>PROTOTYPE of the UiPath Bridge's Process blocks (ReparoHome#46).</Description>

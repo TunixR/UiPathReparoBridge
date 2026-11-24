@@ -36,6 +36,30 @@ namespace Reparo.UiPathBridge
 
     public sealed class ReparoProbe : NativeActivity
     {
+        static void DumpRoot(Activity root)
+        {
+            int n = AttachablePropertyServices.GetAttachedPropertyCount(root);
+            var arr = new System.Collections.Generic.KeyValuePair<AttachableMemberIdentifier, object>[n];
+            AttachablePropertyServices.CopyPropertiesTo(root, arr, 0);
+            foreach (var kv in arr) Trace.W("  root attached " + kv.Key + " = " + Short(kv.Value));
+            foreach (var pn in new[] { "IdRefDictionary", "ConstructorIdRefDictionary" })
+            {
+                var p = root.GetType().GetProperty(pn, BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance | BindingFlags.Static);
+                var v = p?.GetValue(p.GetGetMethod(true).IsStatic ? null : root);
+                Trace.W("  " + pn + " : " + p?.PropertyType + " = " + (v == null ? "null" : v.GetType().ToString()));
+                if (v is System.Collections.IDictionary d)
+                    foreach (System.Collections.DictionaryEntry e in d)
+                        Trace.W("    [" + Short(e.Key) + "] = " + Short(e.Value));
+                else if (v is System.Collections.IEnumerable en && !(v is string))
+                    foreach (var e in en) Trace.W("    " + Short(e));
+            }
+        }
+        static string Short(object o)
+        {
+            if (o is Activity a) return a.GetType().Name + "('" + a.DisplayName + "' Id=" + a.Id + ")";
+            return o?.ToString() ?? "null";
+        }
+
         protected override void CacheMetadata(NativeActivityMetadata metadata)
         {
             base.CacheMetadata(metadata);
@@ -70,12 +94,13 @@ namespace Reparo.UiPathBridge
             }
 
             // 3. what the compiled root type exposes about IdRefs
-            foreach (var t in new[] { root.GetType() }.Concat(root.GetType().Assembly.GetTypes().Take(50)))
+            foreach (var t in new[] { root.GetType() })
             {
                 foreach (var m in t.GetMembers(BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Static | BindingFlags.Instance | BindingFlags.DeclaredOnly))
                     if (m.Name.IndexOf("IdRef", StringComparison.OrdinalIgnoreCase) >= 0 || m.Name.IndexOf("MapFilePath", StringComparison.OrdinalIgnoreCase) >= 0)
                         Trace.W($"  member {t.FullName}.{m.Name} ({m.MemberType})");
             }
+            DumpRoot(root);
             Trace.W("root assembly: " + root.GetType().Assembly.FullName + " loc=" + root.GetType().Assembly.Location);
             foreach (var n in root.GetType().Assembly.GetManifestResourceNames()) Trace.W("  resource " + n);
         }
