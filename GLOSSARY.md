@@ -57,7 +57,7 @@ unless the Bridge sends it as one.
 ## The Bridge's blocks
 
 The UiPath Bridge's own UiPath activities, which give a Process its structure. Each block's Event id or
-node id is its workflow file and `IdRef`, such as `Main.xaml#ReparoEvent_5`.
+node id is its workflow file's stem and `IdRef`, such as `Main-ReparoEvent_5`.
 
 **Reparo Process**: The block that holds a Process and its Variables. It catches the UI failures
 that nothing inside it resolved, and it continues the run after a Recovery.
