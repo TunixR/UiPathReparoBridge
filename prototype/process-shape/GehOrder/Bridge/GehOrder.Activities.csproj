@@ -1,0 +1,17 @@
+<!-- RESEARCH for ReparoHome#47: throwaway probe activities, never merged. -->
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <RootNamespace>Reparo.GehOrder</RootNamespace>
+    <AssemblyName>Reparo.GehOrder.Activities</AssemblyName>
+    <PackageId>Reparo.GehOrder.Activities</PackageId>
+    <Version>0.0.1</Version>
+    <Nullable>disable</Nullable>
+    <Authors>Reparo research</Authors>
+    <Description>RESEARCH probes for the Global Exception Handler's order (ReparoHome#47).</Description>
+    <NoWarn>NU1701;CS1591</NoWarn>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="UiPath.Workflow" Version="6.0.0-20240401-07" PrivateAssets="All" />
+  </ItemGroup>
+</Project>

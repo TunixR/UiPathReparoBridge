@@ -1,0 +1,19 @@
+# scenario=tcdirect geh-mode=continue package=GehOrder.1.0.0.nupkg (UiRobot execute --file, console session)
+# UiRobot exit 0 after 4s
+
+## trace.log (probe activities, FaultTracker, GEH)
+19:35:29.353 === Main starts scenario tcdirect
+19:35:29.660   track: Executing 'Click missing' id=1.98
+19:35:31.405   track: Faulted 'Click missing' id=1.98
+19:35:31.406   track: fault SelectorNotFoundException@12b319a from 'Click missing' -> handler 'Try Catch' isSource=True
+19:35:31.407 CATCH of Try Catch gets SelectorNotFoundException@12b319a
+19:35:31.407 after Try Catch
+19:35:31.413 === Main ends
+
+## UiRobot output
+{}
+
+## Robot Execution.log lines of this run (message field)
+19:35:29.3197 Info GehOrder execution started
+19:35:30.0861 Info Healing agent configuration.
+19:35:31.7063 Info GehOrder execution ended

@@ -1,0 +1,15 @@
+# run-matrix.ps1's first lines, 2026-11-24 19:34, console session 1: `uip rpa pack` of GehOrder with
+# project.json runtimeOptions.exceptionHandlerWorkflow = "GlobalHandler.xaml"; no patching of the package.
+pack GehOrder (session 1)
+[WARN] [Process] [GehOrder] Argument result does not respect the set pattern ^out_(dt_)?([A-Z]|[a-z])+([0-9])*$
+[WARN] [Process] [GehOrder] Argument errorInfo does not respect the set pattern ^in_(dt_)?([A-Z]|[a-z])+([0-9])*$
+  "Result": "Success",
+package GehOrder.1.0.0.nupkg
+  content/GlobalHandler.xaml
+  content/Main.xaml
+  lib/net8.0-windows7.0/GehOrder.dll
+  lib/net8.0-windows7.0/GehOrder_Expressions.dll
+  lib/net8.0-windows7.0/GlobalVariablesT1PNoYwrqg.dll
+  packaged runtimeOptions.exceptionHandlerWorkflow = 'GlobalHandler.xaml'
+  GehOrder.dll holds a GlobalHandler type: True
+  GehOrder_Expressions.dll holds a GlobalHandler type: True

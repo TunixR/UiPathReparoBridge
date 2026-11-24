@@ -1,0 +1,50 @@
+# scenario=nested geh-mode=continue package=GehOrder.1.0.0.nupkg (UiRobot execute --file, console session)
+# UiRobot exit 1 after 9s
+
+## trace.log (probe activities, FaultTracker, GEH)
+19:34:53.913 === Main starts scenario nested
+19:34:55.211   track: Executing 'Click missing' id=1.17
+19:34:57.026   track: Faulted 'Click missing' id=1.17
+19:34:57.026   track: fault SelectorNotFoundException@2f8c81f from 'Click missing' -> handler 'L3' isSource=True
+19:34:57.065 GEH runs for SelectorNotFoundException@2f8c81f at 'Click missing' (id 1.17) RetryCount=0 mode=continue -> Continue
+19:34:57.066   track: fault SelectorNotFoundException@2f8c81f from 'Click missing' -> handler 'L2' isSource=False
+19:34:57.068 GEH runs for SelectorNotFoundException@2f8c81f at 'L3' (id 1.16) RetryCount=0 mode=continue -> Continue
+19:34:57.069   track: fault SelectorNotFoundException@2f8c81f from 'Click missing' -> handler 'L1' isSource=False
+19:34:57.071 GEH runs for SelectorNotFoundException@2f8c81f at 'L2' (id 1.13) RetryCount=0 mode=continue -> Continue
+19:34:57.071   track: fault SelectorNotFoundException@2f8c81f from 'Click missing' -> handler 'scenario nested' isSource=False
+19:34:57.072 GEH runs for SelectorNotFoundException@2f8c81f at 'L1' (id 1.10) RetryCount=0 mode=continue -> Continue
+19:34:57.080   track: fault SelectorNotFoundException@2f8c81f from 'Click missing' -> handler 'Switch scenario' isSource=False
+19:34:57.081 GEH runs for SelectorNotFoundException@2f8c81f at 'scenario nested' (id 1.7) RetryCount=0 mode=continue -> Continue
+19:34:57.081   track: fault SelectorNotFoundException@2f8c81f from 'Click missing' -> handler 'Main Sequence' isSource=False
+19:34:57.082 GEH runs for SelectorNotFoundException@2f8c81f at 'Switch scenario' (id 1.4) RetryCount=0 mode=continue -> Continue
+19:34:57.082   track: fault SelectorNotFoundException@2f8c81f from 'Click missing' -> handler 'Main' isSource=False
+19:34:57.083 GEH runs for SelectorNotFoundException@2f8c81f at 'Main Sequence' (id 1.1) RetryCount=0 mode=continue -> Continue
+19:34:57.083   track: fault SelectorNotFoundException@2f8c81f from 'Click missing' -> handler '(none)' isSource=False
+19:34:57.084   track: Faulted 'L3' id=1.16
+19:34:57.085   track: Faulted 'L2' id=1.13
+19:34:57.085   track: Faulted 'L1' id=1.10
+19:34:57.085   track: Faulted 'scenario nested' id=1.7
+19:34:57.086   track: Faulted 'Switch scenario' id=1.4
+19:34:57.086   track: Faulted 'Main Sequence' id=1.1
+19:34:57.086   track: Faulted 'Main' id=1
+
+## UiRobot output
+GehOrder: in Main.xaml
+    at Click "Click missing"
+    at Sequence "L3"
+    at Sequence "L2"
+    at Sequence "L1"
+    at Sequence "scenario nested"
+    at Switch`1 "Switch scenario"
+    at Sequence "Main Sequence"
+    at Main "Main"
+System.Management.Automation.RemoteException
+UiPath.Core.SelectorNotFoundException: No open windows found for 'nosuchapp.exe'. Please check if the application is running.
+   at UiPath.Core.Activities.ObsoleteTaskAsyncCodeActivity`1.EndExecute(AsyncCodeActivityContext context, IAsyncResult result)
+   at System.Activities.AsyncCodeActivity.CompleteAsyncCodeActivityData.CompleteAsyncCodeActivityWorkItem.Execute(ActivityExecutor executor, BookmarkManager bookmarkManager)
+
+## Robot Execution.log lines of this run (message field)
+19:34:53.8558 Info GehOrder execution started
+19:34:55.5638 Info Healing agent configuration.
+19:34:57.0844 Error Click missing: No open windows found for 'nosuchapp.exe'. Please check if the application is running. | in Main.xaml |     at Click "Click missing" |     at Sequence "L3" |     at Sequence "L2" |     at Sequence "L1" |     at Sequence "scenario nested" |     at Switch`1 "Switch scenario" |     at Sequence "Main Sequence" |     at Main "Main" | 
+19:34:57.3076 Info GehOrder execution ended

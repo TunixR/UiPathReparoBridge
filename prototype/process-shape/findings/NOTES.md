@@ -41,7 +41,8 @@ The Process: 13 Events in 7 Activities, one Reparo For Each over `pending`, two 
   try clicks Approve once it's back, and no Recovery request is written. Final budget 50. `scenario-c4-retryscope.log`.
 - **A Try Catch around Reparo Process:** not run. By construction it never sees a UI failure inside an Event: the
   Process's FaultCallback handles it first, so the author's outer handlers see only what Reparo couldn't recover.
-- **C1/C2, the Global Exception Handler: UNVERIFIED.** It never ran, even in GehProbe, which has no Reparo blocks:
+- **C1/C2, the Global Exception Handler: UNVERIFIED here; settled on branch `research/uipath-geh-order`** (`findings/GEH-ORDER.md`):
+  the key belongs under `runtimeOptions`, which none of the attempts below tried. It never ran, even in GehProbe, which has no Reparo blocks:
   - `uip rpa run` builds only the files Main.xaml reaches, so the handler file isn't even built.
   - `uip rpa pack` drops `exceptionHandlerWorkflow` from the packaged project.json, whether it's set at the top
     level, under `designOptions`, or as `ExceptionHandlerWorkflow` in `project.uiproj`.

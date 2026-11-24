@@ -1,0 +1,29 @@
+# scenario=fsnested geh-mode=continue package=GehOrder.1.0.0.nupkg (UiRobot execute --file, console session)
+# UiRobot exit 0 after 4s
+
+## trace.log (probe activities, FaultTracker, GEH)
+19:35:58.637 === Main starts scenario fsnested
+19:35:58.640 scope 'Outer scope': schedules 'Between' with a FaultCallback (Handle=True)
+19:35:58.641 scope 'Inner scope': schedules 'Scope body' with a FaultCallback (Handle=False)
+19:35:58.939   track: Executing 'Click missing' id=1.35
+19:36:00.726   track: Faulted 'Click missing' id=1.35
+19:36:00.727   track: fault SelectorNotFoundException@1587ff5 from 'Click missing' -> handler 'Scope body' isSource=True
+19:36:00.750 GEH runs for SelectorNotFoundException@1587ff5 at 'Click missing' (id 1.35) RetryCount=0 mode=continue -> Continue
+19:36:00.766   track: fault SelectorNotFoundException@1587ff5 from 'Click missing' -> handler 'Inner scope' isSource=False
+19:36:00.767 FAULTCALLBACK of 'Inner scope' gets SelectorNotFoundException@1587ff5 propagated from 'Scope body': No open windows found for 'nosuchapp.exe'. Please check if the application is running. -> not handled, propagates
+19:36:00.768   track: fault SelectorNotFoundException@1587ff5 from 'Click missing' -> handler 'Between' isSource=False
+19:36:00.770 GEH runs for SelectorNotFoundException@1587ff5 at 'Inner scope' (id 1.33) RetryCount=0 mode=continue -> Continue
+19:36:00.774   track: fault SelectorNotFoundException@1587ff5 from 'Click missing' -> handler 'Outer scope' isSource=False
+19:36:00.774 FAULTCALLBACK of 'Outer scope' gets SelectorNotFoundException@1587ff5 propagated from 'Between': No open windows found for 'nosuchapp.exe'. Please check if the application is running. -> HandleFault
+19:36:00.775 scope 'Inner scope': body ended, state Closed
+19:36:00.776 scope 'Outer scope': body ended, state Closed
+19:36:00.776 after Outer scope
+19:36:00.778 === Main ends
+
+## UiRobot output
+{}
+
+## Robot Execution.log lines of this run (message field)
+19:35:58.5860 Info GehOrder execution started
+19:35:59.4847 Info Healing agent configuration.
+19:36:00.9152 Info GehOrder execution ended

@@ -1,0 +1,21 @@
+# scenario=nested geh-mode=ignore package=GehOrder.1.0.0.nupkg (UiRobot execute --file, console session)
+# UiRobot exit 0 after 4s
+
+## trace.log (probe activities, FaultTracker, GEH)
+19:39:49.329 === Main starts scenario nested
+19:39:49.634   track: Executing 'Click missing' id=1.17
+19:39:51.399   track: Faulted 'Click missing' id=1.17
+19:39:51.400   track: fault SelectorNotFoundException@c615eb from 'Click missing' -> handler 'L3' isSource=True
+19:39:51.424 GEH runs for SelectorNotFoundException@c615eb at 'Click missing' (id 1.17) RetryCount=0 mode=ignore -> Ignore
+19:39:51.443 after L3
+19:39:51.449 after L2
+19:39:51.451 after L1
+19:39:51.452 === Main ends
+
+## UiRobot output
+{}
+
+## Robot Execution.log lines of this run (message field)
+19:39:49.2967 Info GehOrder execution started
+19:39:50.1824 Info Healing agent configuration.
+19:39:51.6767 Info GehOrder execution ended

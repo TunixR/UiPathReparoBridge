@@ -1,0 +1,26 @@
+# scenario=tc geh-mode=retry package=GehOrder.1.0.0.nupkg (UiRobot execute --file, console session)
+# UiRobot exit 0 after 6s
+
+## trace.log (probe activities, FaultTracker, GEH)
+19:35:19.823 === Main starts scenario tc
+19:35:20.129   track: Executing 'Click missing' id=1.118
+19:35:21.916   track: Faulted 'Click missing' id=1.118
+19:35:21.917   track: fault SelectorNotFoundException@1bff755 from 'Click missing' -> handler 'Try body' isSource=True
+19:35:21.940 GEH runs for SelectorNotFoundException@1bff755 at 'Click missing' (id 1.118) RetryCount=0 mode=retry -> Retry
+19:35:21.957   track: Executing 'Click missing' id=1.118
+19:35:23.677   track: Faulted 'Click missing' id=1.118
+19:35:23.677   track: fault SelectorNotFoundException@3dc3506 from 'Click missing' -> handler 'Try body' isSource=True
+19:35:23.681 GEH runs for SelectorNotFoundException@3dc3506 at 'Click missing' (id 1.118) RetryCount=1 mode=retry -> Continue
+19:35:23.682   track: fault SelectorNotFoundException@3dc3506 from 'Click missing' -> handler 'Try Catch' isSource=False
+19:35:23.683   track: Canceled 'Try body' id=1.115
+19:35:23.684 CATCH of Try Catch gets SelectorNotFoundException@3dc3506
+19:35:23.685 after Try Catch
+19:35:23.686 === Main ends
+
+## UiRobot output
+{}
+
+## Robot Execution.log lines of this run (message field)
+19:35:19.7859 Info GehOrder execution started
+19:35:20.6606 Info Healing agent configuration.
+19:35:23.8852 Info GehOrder execution ended

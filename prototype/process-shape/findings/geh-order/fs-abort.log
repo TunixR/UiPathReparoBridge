@@ -1,0 +1,31 @@
+# scenario=fs geh-mode=abort package=GehOrder.1.0.0.nupkg (UiRobot execute --file, console session)
+# UiRobot exit 1 after 4s
+
+## trace.log (probe activities, FaultTracker, GEH)
+19:35:46.774 === Main starts scenario fs
+19:35:46.781 scope 'Fault scope': schedules 'Scope body' with a FaultCallback (Handle=True)
+19:35:47.105   track: Executing 'Click missing' id=1.81
+19:35:48.851   track: Faulted 'Click missing' id=1.81
+19:35:48.851   track: fault SelectorNotFoundException@682ea8 from 'Click missing' -> handler 'Scope body' isSource=True
+19:35:48.873 GEH runs for SelectorNotFoundException@682ea8 at 'Click missing' (id 1.81) RetryCount=0 mode=abort -> Abort
+19:35:48.889   track: fault SelectorNotFoundException@682ea8 from 'Click missing' -> handler 'Fault scope' isSource=False
+
+## UiRobot output
+GehOrder: in Main.xaml
+    at Click "Click missing"
+    at Sequence "Scope body"
+    at FaultScope "Fault scope"
+    at Sequence "scenario fs"
+    at Switch`1 "Switch scenario"
+    at Sequence "Main Sequence"
+    at Main "Main"
+System.Management.Automation.RemoteException
+UiPath.Core.SelectorNotFoundException: No open windows found for 'nosuchapp.exe'. Please check if the application is running.
+   at UiPath.Core.Activities.ObsoleteTaskAsyncCodeActivity`1.EndExecute(AsyncCodeActivityContext context, IAsyncResult result)
+   at System.Activities.AsyncCodeActivity.CompleteAsyncCodeActivityData.CompleteAsyncCodeActivityWorkItem.Execute(ActivityExecutor executor, BookmarkManager bookmarkManager)
+
+## Robot Execution.log lines of this run (message field)
+19:35:46.7349 Info GehOrder execution started
+19:35:47.5939 Info Healing agent configuration.
+19:35:48.8751 Error Click missing: No open windows found for 'nosuchapp.exe'. Please check if the application is running. | in Main.xaml |     at Click "Click missing" |     at Sequence "Scope body" |     at FaultScope "Fault scope" |     at Sequence "scenario fs" |     at Switch`1 "Switch scenario" |     at Sequence "Main Sequence" |     at Main "Main" | 
+19:35:49.2195 Info GehOrder execution ended

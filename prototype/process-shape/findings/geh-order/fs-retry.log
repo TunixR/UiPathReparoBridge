@@ -1,0 +1,27 @@
+# scenario=fs geh-mode=retry package=GehOrder.1.0.0.nupkg (UiRobot execute --file, console session)
+# UiRobot exit 0 after 6s
+
+## trace.log (probe activities, FaultTracker, GEH)
+19:35:41.095 === Main starts scenario fs
+19:35:41.100 scope 'Fault scope': schedules 'Scope body' with a FaultCallback (Handle=True)
+19:35:41.404   track: Executing 'Click missing' id=1.81
+19:35:43.167   track: Faulted 'Click missing' id=1.81
+19:35:43.167   track: fault SelectorNotFoundException@29f4c7d from 'Click missing' -> handler 'Scope body' isSource=True
+19:35:43.191 GEH runs for SelectorNotFoundException@29f4c7d at 'Click missing' (id 1.81) RetryCount=0 mode=retry -> Retry
+19:35:43.209   track: Executing 'Click missing' id=1.81
+19:35:44.932   track: Faulted 'Click missing' id=1.81
+19:35:44.932   track: fault SelectorNotFoundException@2317d37 from 'Click missing' -> handler 'Scope body' isSource=True
+19:35:44.940 GEH runs for SelectorNotFoundException@2317d37 at 'Click missing' (id 1.81) RetryCount=1 mode=retry -> Continue
+19:35:44.942   track: fault SelectorNotFoundException@2317d37 from 'Click missing' -> handler 'Fault scope' isSource=False
+19:35:44.949 FAULTCALLBACK of 'Fault scope' gets SelectorNotFoundException@2317d37 propagated from 'Scope body': No open windows found for 'nosuchapp.exe'. Please check if the application is running. -> HandleFault
+19:35:44.958 scope 'Fault scope': body ended, state Closed
+19:35:44.963 after Fault scope
+19:35:44.965 === Main ends
+
+## UiRobot output
+{}
+
+## Robot Execution.log lines of this run (message field)
+19:35:41.0583 Info GehOrder execution started
+19:35:41.9596 Info Healing agent configuration.
+19:35:45.1578 Info GehOrder execution ended

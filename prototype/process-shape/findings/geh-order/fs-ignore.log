@@ -1,0 +1,22 @@
+# scenario=fs geh-mode=ignore package=GehOrder.1.0.0.nupkg (UiRobot execute --file, console session)
+# UiRobot exit 0 after 4s
+
+## trace.log (probe activities, FaultTracker, GEH)
+19:35:37.202 === Main starts scenario fs
+19:35:37.208 scope 'Fault scope': schedules 'Scope body' with a FaultCallback (Handle=True)
+19:35:37.511   track: Executing 'Click missing' id=1.81
+19:35:39.272   track: Faulted 'Click missing' id=1.81
+19:35:39.273   track: fault SelectorNotFoundException@6673a from 'Click missing' -> handler 'Scope body' isSource=True
+19:35:39.298 GEH runs for SelectorNotFoundException@6673a at 'Click missing' (id 1.81) RetryCount=0 mode=ignore -> Ignore
+19:35:39.319 after the Click, in Scope body
+19:35:39.324 scope 'Fault scope': body ended, state Closed
+19:35:39.327 after Fault scope
+19:35:39.330 === Main ends
+
+## UiRobot output
+{}
+
+## Robot Execution.log lines of this run (message field)
+19:35:37.1675 Info GehOrder execution started
+19:35:37.9712 Info Healing agent configuration.
+19:35:39.5000 Info GehOrder execution ended

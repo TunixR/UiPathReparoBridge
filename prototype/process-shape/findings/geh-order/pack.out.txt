@@ -1,0 +1,64 @@
+[WARN] Tenant Orchestrator feeds skipped: the login session is 'Refresh Failed' — run 'uip login' to restore it.
+[WARN] [GovernancePolicyService] [ResolvePolicy] Connection info is incomplete, so the tenant could not be asked about governance. Analyzing with the rules shipped with the WorkflowCompiler.
+[WARN] [Process] [GehOrder] Dependency package UiPath.System.Activities is not used.
+[WARN] [Process] [GehOrder] Activity Mark has a default name.
+[WARN] [Process] [GehOrder] Activity Mark has a default name.
+[WARN] [Process] [GehOrder] Activity Mark has a default name.
+[WARN] [Process] [GehOrder] Activity Mark has a default name.
+[WARN] [Process] [GehOrder] UI Automation activity Click missing used without SimulateClick or SendWindowMessage.
+[WARN] [Process] [GehOrder] Activity Click missing has a hardcoded timeout.
+[WARN] [Process] [GehOrder] Activity Mark has a default name.
+[WARN] [Process] [GehOrder] Activity Mark has a default name.
+[WARN] [Process] [GehOrder] UI Automation activity Click missing used without SimulateClick or SendWindowMessage.
+[WARN] [Process] [GehOrder] Activity Click missing has a hardcoded timeout.
+[WARN] [Process] [GehOrder] Activity Mark has a default name.
+[WARN] [Process] [GehOrder] Activity Mark has a default name.
+[WARN] [Process] [GehOrder] UI Automation activity Click missing used without SimulateClick or SendWindowMessage.
+[WARN] [Process] [GehOrder] Activity Click missing has a hardcoded timeout.
+[WARN] [Process] [GehOrder] Activity Mark has a default name.
+[WARN] [Process] [GehOrder] UI Automation activity Click missing used without SimulateClick or SendWindowMessage.
+[WARN] [Process] [GehOrder] Activity Click missing has a hardcoded timeout.
+[WARN] [Process] [GehOrder] Activity Mark has a default name.
+[WARN] [Process] [GehOrder] Activity Mark has a default name.
+[WARN] [Process] [GehOrder] UI Automation activity Click missing used without SimulateClick or SendWindowMessage.
+[WARN] [Process] [GehOrder] Activity Click missing has a hardcoded timeout.
+[WARN] [Process] [GehOrder] Your organization requires your project to have an Automation Hub URL defined.
+[WARN] [Process] [GehOrder] Activity Mark has a default name.
+[WARN] [Process] [GehOrder] Activity Mark has a default name.
+[WARN] [Process] [GehOrder] UI Automation activity Click missing used without SimulateClick or SendWindowMessage.
+[WARN] [Process] [GehOrder] Activity Click missing has a hardcoded timeout.
+[WARN] [Process] [GehOrder] Activity Try Catch has a default name.
+[WARN] [Process] [GehOrder] Activity Mark has a default name.
+[WARN] [Process] [GehOrder] Activity Mark has a default name.
+[WARN] [Process] [GehOrder] Activity Mark has a default name.
+[WARN] [Process] [GehOrder] Activity Click missing has a hardcoded timeout.
+[WARN] [Process] [GehOrder] UI Automation activity Click missing used without SimulateClick or SendWindowMessage.
+[WARN] [Process] [GehOrder] Activity Try Catch has a default name.
+[WARN] [Process] [GehOrder] Activity Assign has a default name.
+[WARN] [Process] [GehOrder] Activity Assign has a default name.
+[WARN] [Process] [GehOrder] Activity Mark has a default name.
+[WARN] [Process] [GehOrder] Log Message not used in workflow Main.
+[WARN] [Process] [GehOrder] Fault scope display name is defined many times. Current allowed threshold is 1. Code contains 3.
+[WARN] [Process] [GehOrder] Click missing display name is defined many times. Current allowed threshold is 1. Code contains 7.
+[WARN] [Process] [GehOrder] Try Catch display name is defined many times. Current allowed threshold is 1. Code contains 2.
+[WARN] [Process] [GehOrder] Mark display name is defined many times. Current allowed threshold is 1. Code contains 17.
+[WARN] [Process] [GehOrder] Assign display name is defined many times. Current allowed threshold is 1. Code contains 2.
+[WARN] [Process] [GehOrder] Log Message not used in workflow GlobalHandler.
+[WARN] [Process] [GehOrder] Argument result does not respect the set pattern ^out_(dt_)?([A-Z]|[a-z])+([0-9])*$
+[WARN] [Process] [GehOrder] Argument errorInfo does not respect the set pattern ^in_(dt_)?([A-Z]|[a-z])+([0-9])*$
+{
+  "Result": "Success",
+  "Code": "Pack",
+  "Data": {
+    "Success": true,
+    "Packages": [
+      "C:/Users/reparo/UiPath/reparo/geh47/out/GehOrder.1.0.0.nupkg"
+    ],
+    "PackagePath": "C:/Users/reparo/UiPath/reparo/geh47/out/GehOrder.1.0.0.nupkg",
+    "PackageName": "GehOrder",
+    "PackageVersion": "1.0.0",
+    "OutputPath": "C:\\Users\\reparo\\UiPath\\reparo\\geh47\\out",
+    "OutputType": "",
+    "MinimumRobotVersion": "24.10"
+  }
+}

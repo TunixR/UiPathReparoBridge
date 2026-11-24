@@ -1,0 +1,30 @@
+# scenario=tc geh-mode=abort package=GehOrder.1.0.0.nupkg (UiRobot execute --file, console session)
+# UiRobot exit 1 after 4s
+
+## trace.log (probe activities, FaultTracker, GEH)
+19:35:25.448 === Main starts scenario tc
+19:35:25.760   track: Executing 'Click missing' id=1.118
+19:35:27.552   track: Faulted 'Click missing' id=1.118
+19:35:27.553   track: fault SelectorNotFoundException@21a5b93 from 'Click missing' -> handler 'Try body' isSource=True
+19:35:27.575 GEH runs for SelectorNotFoundException@21a5b93 at 'Click missing' (id 1.118) RetryCount=0 mode=abort -> Abort
+19:35:27.593   track: fault SelectorNotFoundException@21a5b93 from 'Click missing' -> handler 'Try Catch' isSource=False
+
+## UiRobot output
+GehOrder: in Main.xaml
+    at Click "Click missing"
+    at Sequence "Try body"
+    at TryCatch "Try Catch"
+    at Sequence "scenario tc"
+    at Switch`1 "Switch scenario"
+    at Sequence "Main Sequence"
+    at Main "Main"
+System.Management.Automation.RemoteException
+UiPath.Core.SelectorNotFoundException: No open windows found for 'nosuchapp.exe'. Please check if the application is running.
+   at UiPath.Core.Activities.ObsoleteTaskAsyncCodeActivity`1.EndExecute(AsyncCodeActivityContext context, IAsyncResult result)
+   at System.Activities.AsyncCodeActivity.CompleteAsyncCodeActivityData.CompleteAsyncCodeActivityWorkItem.Execute(ActivityExecutor executor, BookmarkManager bookmarkManager)
+
+## Robot Execution.log lines of this run (message field)
+19:35:25.4131 Info GehOrder execution started
+19:35:26.1916 Info Healing agent configuration.
+19:35:27.5775 Error Click missing: No open windows found for 'nosuchapp.exe'. Please check if the application is running. | in Main.xaml |     at Click "Click missing" |     at Sequence "Try body" |     at TryCatch "Try Catch" |     at Sequence "scenario tc" |     at Switch`1 "Switch scenario" |     at Sequence "Main Sequence" |     at Main "Main" | 
+19:35:27.8138 Info GehOrder execution ended

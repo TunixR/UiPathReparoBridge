@@ -1,0 +1,51 @@
+# scenario=fsrethrow geh-mode=continue package=GehOrder.1.0.0.nupkg (UiRobot execute --file, console session)
+# UiRobot exit 1 after 4s
+
+## trace.log (probe activities, FaultTracker, GEH)
+19:35:54.745 === Main starts scenario fsrethrow
+19:35:54.757 scope 'Fault scope': schedules 'Scope body' with a FaultCallback (Handle=False)
+19:35:55.057   track: Executing 'Click missing' id=1.52
+19:35:56.838   track: Faulted 'Click missing' id=1.52
+19:35:56.839   track: fault SelectorNotFoundException@1bff755 from 'Click missing' -> handler 'Scope body' isSource=True
+19:35:56.862 GEH runs for SelectorNotFoundException@1bff755 at 'Click missing' (id 1.52) RetryCount=0 mode=continue -> Continue
+19:35:56.879   track: fault SelectorNotFoundException@1bff755 from 'Click missing' -> handler 'Fault scope' isSource=False
+19:35:56.880 FAULTCALLBACK of 'Fault scope' gets SelectorNotFoundException@1bff755 propagated from 'Scope body': No open windows found for 'nosuchapp.exe'. Please check if the application is running. -> not handled, propagates
+19:35:56.881   track: fault SelectorNotFoundException@1bff755 from 'Click missing' -> handler 'Outer' isSource=False
+19:35:56.883 GEH runs for SelectorNotFoundException@1bff755 at 'Fault scope' (id 1.50) RetryCount=0 mode=continue -> Continue
+19:35:56.889   track: fault SelectorNotFoundException@1bff755 from 'Click missing' -> handler 'scenario fsrethrow' isSource=False
+19:35:56.890 GEH runs for SelectorNotFoundException@1bff755 at 'Outer' (id 1.47) RetryCount=0 mode=continue -> Continue
+19:35:56.891   track: fault SelectorNotFoundException@1bff755 from 'Click missing' -> handler 'Switch scenario' isSource=False
+19:35:56.892 GEH runs for SelectorNotFoundException@1bff755 at 'scenario fsrethrow' (id 1.44) RetryCount=0 mode=continue -> Continue
+19:35:56.893   track: fault SelectorNotFoundException@1bff755 from 'Click missing' -> handler 'Main Sequence' isSource=False
+19:35:56.894 GEH runs for SelectorNotFoundException@1bff755 at 'Switch scenario' (id 1.4) RetryCount=0 mode=continue -> Continue
+19:35:56.895   track: fault SelectorNotFoundException@1bff755 from 'Click missing' -> handler 'Main' isSource=False
+19:35:56.896 GEH runs for SelectorNotFoundException@1bff755 at 'Main Sequence' (id 1.1) RetryCount=0 mode=continue -> Continue
+19:35:56.896   track: fault SelectorNotFoundException@1bff755 from 'Click missing' -> handler '(none)' isSource=False
+19:35:56.897   track: Faulted 'Scope body' id=1.51
+19:35:56.898   track: Faulted 'Fault scope' id=1.50
+19:35:56.898   track: Faulted 'Outer' id=1.47
+19:35:56.898   track: Faulted 'scenario fsrethrow' id=1.44
+19:35:56.898   track: Faulted 'Switch scenario' id=1.4
+19:35:56.899   track: Faulted 'Main Sequence' id=1.1
+19:35:56.899   track: Faulted 'Main' id=1
+
+## UiRobot output
+GehOrder: in Main.xaml
+    at Click "Click missing"
+    at Sequence "Scope body"
+    at FaultScope "Fault scope"
+    at Sequence "Outer"
+    at Sequence "scenario fsrethrow"
+    at Switch`1 "Switch scenario"
+    at Sequence "Main Sequence"
+    at Main "Main"
+System.Management.Automation.RemoteException
+UiPath.Core.SelectorNotFoundException: No open windows found for 'nosuchapp.exe'. Please check if the application is running.
+   at UiPath.Core.Activities.ObsoleteTaskAsyncCodeActivity`1.EndExecute(AsyncCodeActivityContext context, IAsyncResult result)
+   at System.Activities.AsyncCodeActivity.CompleteAsyncCodeActivityData.CompleteAsyncCodeActivityWorkItem.Execute(ActivityExecutor executor, BookmarkManager bookmarkManager)
+
+## Robot Execution.log lines of this run (message field)
+19:35:54.7090 Info GehOrder execution started
+19:35:55.5838 Info Healing agent configuration.
+19:35:56.8975 Error Click missing: No open windows found for 'nosuchapp.exe'. Please check if the application is running. | in Main.xaml |     at Click "Click missing" |     at Sequence "Scope body" |     at FaultScope "Fault scope" |     at Sequence "Outer" |     at Sequence "scenario fsrethrow" |     at Switch`1 "Switch scenario" |     at Sequence "Main Sequence" |     at Main "Main" | 
+19:35:57.1030 Info GehOrder execution ended
