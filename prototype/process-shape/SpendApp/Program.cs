@@ -89,15 +89,19 @@ class SpendForm : Form
         Refresh2();
     }
 
+    public void Open(int id) => ShowDetail(reqs.First(r => r.Id == id));
+
     void Refresh2() { budgetLbl.Text = budget.ToString(); if (current != null) status.Text = current.Status; }
 
     [STAThread]
     static void Main(string[] args)
     {
-        int late = 0;
-        for (int i = 0; i < args.Length - 1; i++) if (args[i] == "--late-approve") late = int.Parse(args[i + 1]);
+        int late = 0, open = 0;
+        for (int i = 0; i < args.Length - 1; i++) { if (args[i] == "--late-approve") late = int.Parse(args[i + 1]); if (args[i] == "--open") open = int.Parse(args[i + 1]); }
         Application.EnableVisualStyles();
-        Log("start late-approve=" + late);
-        Application.Run(new SpendForm(late));
+        Log("start late-approve=" + late + " open=" + open);
+        var f = new SpendForm(late);
+        if (open != 0) f.Open(open);
+        Application.Run(f);
     }
 }

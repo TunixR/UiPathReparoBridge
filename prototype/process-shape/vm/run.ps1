@@ -4,6 +4,7 @@ $root = 'C:\Users\reparo\UiPath\reparo\proto46'
 $proj = (Get-Content "$root\current.txt" -Raw).Trim()
 Remove-Item "$root\trace.log", "$root\app.log", "$root\recovery-*.json", "$root\uip.out" -ErrorAction SilentlyContinue
 Get-Process SpendApp -ErrorAction SilentlyContinue | Stop-Process -Force
+if (Test-Path "$root\prestart.txt") { $pa = (Get-Content "$root\prestart.txt" -Raw).Trim(); "prestart SpendApp $pa"; Start-Process "$root\app\SpendApp.exe" -ArgumentList $pa; Start-Sleep 3 }
 Set-Location "$root\$proj"
 $a = if (Test-Path "$root\args.json") { "--input-arguments-file $root\args.json" } else { "" }
 "run $proj in session $((Get-Process -Id $PID).SessionId) $a"

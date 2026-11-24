@@ -1,5 +1,6 @@
 # PROTOTYPE generator for the spending-approval Process XAML (Reparo blocks). Run: python3 gen.py > SpendingApproval/Main.xaml
 import itertools, sys
+MODE = sys.argv[2] if len(sys.argv) > 2 else "plain"   # plain | trycatch | retryscope
 ids = {}
 def idref(kind):
     ids[kind] = ids.get(kind, 0) + 1
@@ -38,6 +39,18 @@ def reject(activity_name, reason):
         event(f"Pick {reason}", click(f"Click {reason}", reason.replace(' ', ''))),
         event("Click Reject", click("Click Reject", "Reject")))
 
+def approve_body():
+    c = click("Click Approve", "Approve")
+    if MODE == "trycatch":
+        return (f'<TryCatch DisplayName="Author Try Catch" {idref("TryCatch")}><TryCatch.Try>' + c + '</TryCatch.Try><TryCatch.Catches>'
+                f'<Catch x:TypeArguments="ui:SelectorNotFoundException" {idref("Catch")}><ActivityAction x:TypeArguments="ui:SelectorNotFoundException"><ActivityAction.Argument><DelegateInArgument x:TypeArguments="ui:SelectorNotFoundException" Name="ex" /></ActivityAction.Argument>'
+                f'<InvokeMethod DisplayName="Trace catch" {idref("InvokeMethod")} MethodName="W" TargetType="r:Trace"><InArgument x:TypeArguments="x:String">[&quot;author Try Catch caught &quot; &amp; ex.GetType().Name]</InArgument></InvokeMethod>'
+                '</ActivityAction></Catch></TryCatch.Catches></TryCatch>')
+    if MODE == "retryscope":
+        return (f'<ui:RetryScope DisplayName="Author Retry Scope" NumberOfRetries="5" RetryInterval="00:00:01" {idref("RetryScope")}><ui:RetryScope.ActivityBody><ActivityAction>'
+                + c + '</ActivityAction></ui:RetryScope.ActivityBody></ui:RetryScope>')
+    return c
+
 body = [
   activity("Open the spending requests",
     event("Open the requests window",
@@ -53,7 +66,7 @@ body = [
       gettext("amount", "raw"), assign("amount", "x:Int32", "CInt(raw)"),
       gettext("budget", "raw2"), assign("remaining_budget", "x:Int32", "CInt(raw2)"), local=("raw", "raw2"))),
   if_("decide", "amount <= approval_limit AndAlso amount <= remaining_budget",
-    [activity("Approve the request", event("Click Approve", click("Click Approve", "Approve")))],
+    [activity("Approve the request", event("Click Approve", approve_body()))],
     [if_("over the limit", "amount > approval_limit",
        [reject("Reject over limit", "Over the approval limit")],
        [reject("Reject for budget", "Budget exhausted")])]),

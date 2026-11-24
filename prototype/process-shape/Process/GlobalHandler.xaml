@@ -1,0 +1,38 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="GlobalHandler" VisualBasic.Settings="{x:Null}" sap2010:WorkflowViewState.IdRef="GlobalHandler_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uico="http://schemas.uipath.com/workflow/activities/contracts" xmlns:r="clr-namespace:Reparo.UiPathBridge;assembly=Reparo.UiPathBridge.Activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <!-- PROTOTYPE GEH for ReparoHome#46: traces when it runs; proto46\geh-mode.txt = continue | retry (one retry) -->
+  <x:Members>
+    <x:Property Name="errorInfo" Type="InArgument(uico:ExceptionHandlerArgs)" />
+    <x:Property Name="result" Type="OutArgument(uico:ErrorAction)" />
+  </x:Members>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Activities</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>UiPath.Activities.Contracts</x:String>
+      <x:String>Reparo.UiPathBridge</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Activities.Contracts</AssemblyReference>
+      <AssemblyReference>Reparo.UiPathBridge.Activities</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="Global Exception Handler" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:String" Name="mode" />
+    </Sequence.Variables>
+    <Assign sap2010:WorkflowViewState.IdRef="Assign_1"><Assign.To><OutArgument x:TypeArguments="x:String">[mode]</OutArgument></Assign.To><Assign.Value><InArgument x:TypeArguments="x:String">[If(File.Exists("C:\Users\reparo\UiPath\reparo\proto46\geh-mode.txt"), File.ReadAllText("C:\Users\reparo\UiPath\reparo\proto46\geh-mode.txt").Trim(), "continue")]</InArgument></Assign.Value></Assign>
+    <Assign sap2010:WorkflowViewState.IdRef="Assign_2"><Assign.To><OutArgument x:TypeArguments="uico:ErrorAction">[result]</OutArgument></Assign.To><Assign.Value><InArgument x:TypeArguments="uico:ErrorAction">[If(mode = "retry" AndAlso errorInfo.RetryCount &lt; 1, ErrorAction.Retry, ErrorAction.Continue)]</InArgument></Assign.Value></Assign>
+    <InvokeMethod DisplayName="Trace GEH" sap2010:WorkflowViewState.IdRef="InvokeMethod_1" MethodName="W" TargetType="r:Trace">
+      <InArgument x:TypeArguments="x:String">["GEH runs: " &amp; errorInfo.Exception.GetType().Name &amp; " at '" &amp; errorInfo.ActivityInfo.Name &amp; "' RetryCount=" &amp; errorInfo.RetryCount.ToString() &amp; " mode=" &amp; mode &amp; " -> " &amp; result.ToString()]</InArgument>
+    </InvokeMethod>
+  </Sequence>
+</Activity>
