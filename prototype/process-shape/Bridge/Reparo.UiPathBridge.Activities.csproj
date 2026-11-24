@@ -1,0 +1,16 @@
+<!-- PROTOTYPE for ReparoHome#46: throwaway, never merged. -->
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <RootNamespace>Reparo.UiPathBridge</RootNamespace>
+    <PackageId>Reparo.UiPathBridge.Activities</PackageId>
+    <Version>0.0.1-proto.1</Version>
+    <Nullable>disable</Nullable>
+    <Authors>Reparo prototype</Authors>
+    <Description>PROTOTYPE of the UiPath Bridge's Process blocks (ReparoHome#46).</Description>
+    <NoWarn>NU1701;CS1591</NoWarn>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="UiPath.Workflow" Version="6.0.0-20240401-07" PrivateAssets="All" />
+  </ItemGroup>
+</Project>
