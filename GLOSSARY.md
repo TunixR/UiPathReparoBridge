@@ -28,8 +28,8 @@ _Avoid_: recovery, recover (for Healing Agent's work)
 ## Building a process
 
 **UiPath activity**: UiPath's executable block in a workflow, identified within its workflow file
-by its `IdRef` (such as `NClick_1`). It is not an Activity; how it relates to an Event is not
-decided yet.
+by its `IdRef` (such as `NClick_1`). It is not an Activity. Every UiPath activity in a Process sits
+inside a Reparo Event.
 _Avoid_: activity (alone)
 
 **Process project**: A Studio project of UiPath's Process type, beside Library and Test Automation.
@@ -41,16 +41,34 @@ folder so UiPath Robots can run jobs of it.
 _Avoid_: process (alone, for the deployment)
 
 **Workflow file**: One `.xaml` file of a Process project, rooted in a Sequence, a Flowchart or a
-State Machine. A Process spans many, joined by Invoke Workflow File.
+State Machine. A project's files are joined by Invoke Workflow File. A Process lives in one, for now: an
+invoked workflow file runs whole, inside one Reparo Event.
 _Avoid_: workflow (alone)
 
 **Coded workflow**: A C# workflow file in a Process project, with no XAML and no `IdRef`.
 
 **UiPath variable**: A named value UiPath scopes to a container, a workflow file or the project.
-It is not one of the Variables unless the Bridge sends it as one.
+The UiPath variables declared on Reparo Process are the Process's Variables. Any other UiPath variable is
+not one of the Variables.
 
 **UiPath argument**: A workflow file's In, Out or In/Out parameter. It is not one of the Variables
 unless the Bridge sends it as one.
+
+## The Bridge's blocks
+
+The UiPath Bridge's own UiPath activities, which give a Process its structure. Each block's Event id or
+node id is its workflow file and `IdRef`, such as `Main.xaml#ReparoEvent_5`.
+
+**Reparo Process**: The block that holds a Process and its Variables. It catches the UI failures
+that nothing inside it resolved, and it continues the run after a Recovery.
+
+**Reparo Activity**: The block that groups the Events of one Activity.
+
+**Reparo Event**: The block whose body is one Event. Its body holds UiPath activities, and any
+UiPath control flow inside it runs whole as part of that Event.
+
+**Reparo If** and **Reparo For Each**: The only control flow between Events: an exclusive gateway, and
+a loop over a list that is one of the Variables, whose item is also one of the Variables.
 
 ## Other UiPath words
 
