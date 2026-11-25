@@ -57,7 +57,7 @@ unless the Bridge sends it as one.
 ## The Bridge's blocks
 
 The UiPath Bridge's own UiPath activities, which give a Process its structure. Each block's Event id or
-node id is its workflow file and `IdRef`, such as `Main.xaml#ReparoEvent_5`.
+node id is its workflow file's stem and `IdRef`, such as `Main-ReparoEvent_5`.
 
 **Reparo Process**: The block that holds a Process and its Variables. It catches the UI failures
 that nothing inside it resolved, and it continues the run after a Recovery.
@@ -74,6 +74,15 @@ a loop over a list that is one of the Variables, whose item is also one of the V
 
 **Execution logs**: The logs a UiPath Robot writes, including what the Log Message activity adds.
 They are not the UI log.
+
+**REFramework**: UiPath's Robotic Enterprise Framework, a State Machine template for processes
+that work through Transactions one by one. It retries a Transaction that ends in a System
+exception, and reinitialises its applications first.
+
+**Transaction**: One item of work REFramework hands to its `Process.xaml`, from an Orchestrator
+queue or another source of data. Processing it once is one run of the Process. A retry processes
+it again, so it is a new run.
+_Avoid_: transaction item (alone), queue item (only one source of Transactions)
 
 **System exception**: REFramework's name for any failure that isn't a business exception; it
 covers Process bugs and Environment failures alike, so it is not an Infrastructure failure.
