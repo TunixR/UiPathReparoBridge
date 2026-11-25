@@ -1,0 +1,95 @@
+### Card67 / unmax-retry  (2026-11-25T14:48:28, 25 s)
+--- fake done
+{"delay_s": 10, "ui_command": "unmax"}
+--- trace
+14:48:08.397 === Process 'attach_maximize' id=Main.xaml#ReparoProcess_1; RecoverAt=Event; CardCloseOverride=-; TrackHoldMs=0
+14:48:08.400   ReparoProcess 'attach_maximize' Main.xaml#ReparoProcess_1
+14:48:08.400     ReparoActivity 'Open SpendApp' Main.xaml#ReparoActivity_1
+14:48:08.400       ReparoEvent 'Start SpendApp' Main.xaml#ReparoEvent_1
+14:48:08.402     NApplicationCard 'Use SpendApp' Main.xaml#NApplicationCard_1 [card holding Bridge blocks; OpenMode:InArgument`1=Literal`1(IfNotOpen), CloseMode:InArgument`1=(unset), AttachMode:NAppAttachMode=ByInstance, WindowResize:NWindowResize=Maximize, HealingAgentBehavior:InArgument`1=Literal`1(Job)]
+14:48:08.402       ReparoActivity 'Open the request' Main.xaml#ReparoActivity_2
+14:48:08.403         ReparoEvent 'Click Open request 104' Main.xaml#ReparoEvent_2
+14:48:08.403       ReparoActivity 'Approve the request' Main.xaml#ReparoActivity_3
+14:48:08.404         ReparoEvent 'Click Approve' Main.xaml#ReparoEvent_3
+14:48:08.404       ReparoActivity 'Go back' Main.xaml#ReparoActivity_4
+14:48:08.404         ReparoEvent 'Click Back' Main.xaml#ReparoEvent_4
+14:48:08.404     ReparoActivity 'After the card' Main.xaml#ReparoActivity_5
+14:48:08.404       ReparoEvent 'Note the end' Main.xaml#ReparoEvent_5
+14:48:08.420 Activity 'Open SpendApp' entered
+14:48:08.432   Event 'Start SpendApp' Main.xaml#ReparoEvent_1 starts; UI NO TARGET APP
+14:48:11.926 Activity 'Open the request' entered
+14:48:11.938   Event 'Click Open request 104' Main.xaml#ReparoEvent_2 starts; UI SpendApp[1680] 'Spending requests' MAXIMIZED -8,-8 1936x1048
+14:48:12.954 Activity 'Approve the request' entered
+14:48:12.962   Event 'Click Approve' Main.xaml#ReparoEvent_3 starts; UI SpendApp[1680] 'Spending requests' MAXIMIZED -8,-8 1936x1048
+14:48:16.226 TRACK state Faulted NClick 'Click Approve' (thread 10); UI SpendApp[1680] 'Spending requests' MAXIMIZED -8,-8 1936x1048
+14:48:16.229 TRACK fault from 'Click Approve' to handler 'Sequence' src=True (thread 10); UI SpendApp[1680] 'Spending requests' MAXIMIZED -8,-8 1936x1048
+14:48:16.247 TRACK fault from 'Click Approve' to handler 'Click Approve' src=False (thread 10); UI SpendApp[1680] 'Spending requests' MAXIMIZED -8,-8 1936x1048
+14:48:16.248 FAULT reached Reparo Event 'Click Approve': NodeNotFoundException: Could not find the user-interface (UI) element for this action.
+ (in Event Main.xaml#ReparoEvent_3, via Sequence)
+14:48:16.251   UI at the fault: SpendApp[1680] 'Spending requests' MAXIMIZED -8,-8 1936x1048
+14:48:16.252   Recovery requested by Reparo Event 'Click Approve' for Main.xaml#ReparoEvent_3
+14:48:16.253   Recovery wait starts on thread 1
+14:48:16.266   the Event's faulted body ended: Closed; UI SpendApp[1680] 'Spending requests' MAXIMIZED -8,-8 1936x1048
+14:48:16.338   fake Reparo: payload written; first screenshot: shot-1-recovery-start.png; UI SpendApp[1680] 'Spending requests' MAXIMIZED -8,-8 1936x1048
+14:48:18.351   fake Reparo acts on the UI: unmax
+14:48:22.364   fake Reparo, mid-Recovery: UI SpendApp[1680] 'Spending requests' normal 300,200 600x500
+14:48:26.384   fake Reparo answers done: {"success":true,"process_finished":false,"continue_from_model_event_id":"Main.xaml#ReparoEvent_3","loop_iteration":[],"variables":{"ok":true,"req":null,"reqs":["102","104"]}}
+14:48:26.402 Continuation in place: running 'Click Approve' again inside its scope; UI SpendApp[1680] 'Spending requests' normal 300,200 600x500
+14:48:26.403   restored ok = true
+14:48:26.403   restored req = null
+14:48:26.404   restored reqs = ["102","104"]
+14:48:26.404   Continuation reached Main.xaml#ReparoEvent_3
+14:48:26.406   Event 'Click Approve' Main.xaml#ReparoEvent_3 starts; UI SpendApp[1680] 'Spending requests' normal 300,200 600x500
+14:48:27.183 Activity 'Go back' entered
+14:48:27.199   Event 'Click Back' Main.xaml#ReparoEvent_4 starts; UI SpendApp[1680] 'Spending requests' normal 300,200 600x500
+14:48:27.994 TRACK state Closed NApplicationCard 'Use SpendApp' (thread 10); UI SpendApp[1680] 'Spending requests' normal 300,200 600x500
+14:48:27.998 Activity 'After the card' entered
+14:48:28.007   Event 'Note the end' Main.xaml#ReparoEvent_5 starts; UI SpendApp[1680] 'Spending requests' normal 300,200 600x500
+14:48:28.014 after the card
+14:48:28.022 === Process completed. UI log:
+14:48:28.022   Start SpendApp  [Main.xaml#ReparoEvent_1]
+14:48:28.023   Click Open request 104  [Main.xaml#ReparoEvent_2]
+14:48:28.023   Click Approve  [Main.xaml#ReparoEvent_3]
+14:48:28.023   Click Back  [Main.xaml#ReparoEvent_4]
+14:48:28.023   Note the end  [Main.xaml#ReparoEvent_5]
+14:48:28.026 report_result outcome: completed; UI SpendApp[1680] 'Spending requests' normal 300,200 600x500
+--- app
+14:48:08.529 APP start late-approve=104 open=0
+14:48:12.614 APP open 104
+14:48:12.640 APP approve removed for 104
+14:48:18.622 APP cmd unmax
+14:48:18.658 APP approve back
+14:48:26.858 APP decide 104 Approved reason= budget=700
+14:48:27.664 APP back
+--- screenshots
+shot-1-recovery-start.png
+--- recovery-1.json
+{
+  "contract_version": 2,
+  "task_name": "attach_maximize",
+  "errored_act": {
+    "model_event_id": "Main.xaml#ReparoEvent_3",
+    "event_name": "Click Approve",
+    "error_code": "NodeNotFoundException",
+    "error_description": "Could not find the user-interface (UI) element for this action.\r"
+  },
+  "loop_iteration": [],
+  "variables": {
+    "ok": true,
+    "req": null,
+    "reqs": [
+      "102",
+      "104"
+    ]
+  },
+  "ui_log": [
+    "Start SpendApp  [Main.xaml#ReparoEvent_1]",
+    "Click Open request 104  [Main.xaml#ReparoEvent_2]"
+  ]
+}
+--- uip (errors)
+  "Result": "Success",
+  "Code": "ToolResult",
+    "hasErrors": false,
+    "errorMessage": null,
+    "errorScope": null

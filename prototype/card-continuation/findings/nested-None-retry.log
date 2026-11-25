@@ -1,0 +1,86 @@
+### Card67 / retry  (2026-11-25T14:50:59, 28 s)
+--- fake done
+{"delay_s": 10}
+--- trace
+14:50:36.799 === Process 'nested_none' id=Main.xaml#ReparoProcess_1; RecoverAt=Event; CardCloseOverride=-; TrackHoldMs=0
+14:50:36.802   ReparoProcess 'nested_none' Main.xaml#ReparoProcess_1
+14:50:36.803     NApplicationCard 'Use SpendApp' Main.xaml#NApplicationCard_2 [card holding Bridge blocks; OpenMode:InArgument`1=Literal`1(IfNotOpen), CloseMode:InArgument`1=(unset), AttachMode:NAppAttachMode=ByInstance, WindowResize:NWindowResize=None, HealingAgentBehavior:InArgument`1=Literal`1(Job)]
+14:50:36.803       ReparoActivity 'Open the request' Main.xaml#ReparoActivity_1
+14:50:36.804         ReparoEvent 'Click Open request 102' Main.xaml#ReparoEvent_1
+14:50:36.804       NApplicationCard 'Use Spend web' Main.xaml#NApplicationCard_1 [card holding Bridge blocks; OpenMode:InArgument`1=Literal`1(IfNotOpen), CloseMode:InArgument`1=(unset), AttachMode:NAppAttachMode=ByInstance, WindowResize:NWindowResize=None, HealingAgentBehavior:InArgument`1=Literal`1(Job)]
+14:50:36.805         ReparoActivity 'Approve on the web' Main.xaml#ReparoActivity_2
+14:50:36.806           ReparoEvent 'Click Approve (web)' Main.xaml#ReparoEvent_2
+14:50:36.806       ReparoActivity 'Go back' Main.xaml#ReparoActivity_3
+14:50:36.806         ReparoEvent 'Click Back' Main.xaml#ReparoEvent_3
+14:50:36.806     ReparoActivity 'After the card' Main.xaml#ReparoActivity_4
+14:50:36.807       ReparoEvent 'Note the end' Main.xaml#ReparoEvent_4
+14:50:37.559 Activity 'Open the request' entered
+14:50:37.571   Event 'Click Open request 102' Main.xaml#ReparoEvent_1 starts; UI SpendApp[4048] 'Spending requests' normal 100,100 700x600
+14:50:42.912 Activity 'Approve on the web' entered
+14:50:42.952   Event 'Click Approve (web)' Main.xaml#ReparoEvent_2 starts; UI SpendApp[4048] 'Spending requests' normal 100,100 700x600; msedge[3416] 'Spend web - Profile 1 - Microsoft​ Edge'
+14:50:46.356 TRACK state Faulted NClick 'Click Approve (web)' (thread 10); UI SpendApp[4048] 'Spending requests' normal 100,100 700x600; msedge[3416] 'Spend web - Profile 1 - Microsoft​ Edge'
+14:50:46.364 TRACK fault from 'Click Approve (web)' to handler 'Sequence' src=True (thread 10); UI SpendApp[4048] 'Spending requests' normal 100,100 700x600; msedge[3416] 'Spend web - Profile 1 - Microsoft​ Edge'
+14:50:46.396 TRACK fault from 'Click Approve (web)' to handler 'Click Approve (web)' src=False (thread 17); UI SpendApp[4048] 'Spending requests' normal 100,100 700x600; msedge[3416] 'Spend web - Profile 1 - Microsoft​ Edge'
+14:50:46.397 FAULT reached Reparo Event 'Click Approve (web)': NodeNotFoundException: Could not find the user-interface (UI) element for this action.
+ (in Event Main.xaml#ReparoEvent_2, via Sequence)
+14:50:46.416   UI at the fault: SpendApp[4048] 'Spending requests' normal 100,100 700x600; msedge[3416] 'Spend web - Profile 1 - Microsoft​ Edge'
+14:50:46.417   Recovery requested by Reparo Event 'Click Approve (web)' for Main.xaml#ReparoEvent_2
+14:50:46.419   Recovery wait starts on thread 1
+14:50:46.459   the Event's faulted body ended: Closed; UI SpendApp[4048] 'Spending requests' normal 100,100 700x600; msedge[3416] 'Spend web - Profile 1 - Microsoft​ Edge'
+14:50:46.665   fake Reparo: payload written; first screenshot: shot-1-recovery-start.png; UI SpendApp[4048] 'Spending requests' normal 100,100 700x600; msedge[3416] 'Spend web - Profile 1 - Microsoft​ Edge'
+14:50:52.697   fake Reparo, mid-Recovery: UI SpendApp[4048] 'Spending requests' normal 100,100 700x600; msedge[3416] 'Spend web - Profile 1 - Microsoft​ Edge'
+14:50:56.712   fake Reparo answers done: {"success":true,"process_finished":false,"continue_from_model_event_id":"Main.xaml#ReparoEvent_2","loop_iteration":[],"variables":{"ok":false,"req":null,"reqs":["102","104"]}}
+14:50:56.727 Continuation in place: running 'Click Approve (web)' again inside its scope; UI SpendApp[4048] 'Spending requests' normal 100,100 700x600; msedge[3416] 'Spend web - Profile 1 - Microsoft​ Edge'
+14:50:56.728   restored ok = false
+14:50:56.728   restored req = null
+14:50:56.728   restored reqs = ["102","104"]
+14:50:56.729   Continuation reached Main.xaml#ReparoEvent_2
+14:50:56.740   Event 'Click Approve (web)' Main.xaml#ReparoEvent_2 starts; UI SpendApp[4048] 'Spending requests' normal 100,100 700x600; msedge[3416] 'Spend web - Profile 1 - Microsoft​ Edge'
+14:50:57.965 TRACK state Closed NApplicationCard 'Use Spend web' (thread 10); UI SpendApp[4048] 'Spending requests' normal 100,100 700x600
+14:50:57.978 Activity 'Go back' entered
+14:50:58.001   Event 'Click Back' Main.xaml#ReparoEvent_3 starts; UI SpendApp[4048] 'Spending requests' normal 100,100 700x600
+14:50:59.129 TRACK state Closed NApplicationCard 'Use SpendApp' (thread 17); UI NO TARGET APP
+14:50:59.132 Activity 'After the card' entered
+14:50:59.141   Event 'Note the end' Main.xaml#ReparoEvent_4 starts; UI NO TARGET APP
+14:50:59.146 after the card
+14:50:59.150 === Process completed. UI log:
+14:50:59.151   Click Open request 102  [Main.xaml#ReparoEvent_1]
+14:50:59.151   Click Approve (web)  [Main.xaml#ReparoEvent_2]
+14:50:59.151   Click Back  [Main.xaml#ReparoEvent_3]
+14:50:59.151   Note the end  [Main.xaml#ReparoEvent_4]
+14:50:59.158 report_result outcome: completed; UI NO TARGET APP
+--- app
+14:50:37.282 APP start late-approve=0 open=0
+14:50:38.182 APP open 102
+14:50:58.431 APP back
+--- screenshots
+shot-1-recovery-start.png
+--- recovery-1.json
+{
+  "contract_version": 2,
+  "task_name": "nested_none",
+  "errored_act": {
+    "model_event_id": "Main.xaml#ReparoEvent_2",
+    "event_name": "Click Approve (web)",
+    "error_code": "NodeNotFoundException",
+    "error_description": "Could not find the user-interface (UI) element for this action.\r"
+  },
+  "loop_iteration": [],
+  "variables": {
+    "ok": false,
+    "req": null,
+    "reqs": [
+      "102",
+      "104"
+    ]
+  },
+  "ui_log": [
+    "Click Open request 102  [Main.xaml#ReparoEvent_1]"
+  ]
+}
+--- uip (errors)
+  "Result": "Success",
+  "Code": "ToolResult",
+    "hasErrors": false,
+    "errorMessage": null,
+    "errorScope": null

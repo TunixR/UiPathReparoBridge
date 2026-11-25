@@ -1,0 +1,106 @@
+### Card67 / to-e1  (2026-11-25T14:51:56, 52 s)
+--- fake done
+{"delay_s": 10, "continue_from_model_event_id": "Main.xaml#ReparoEvent_1"}
+--- trace
+14:51:26.158 === Process 'nested_none' id=Main.xaml#ReparoProcess_1; RecoverAt=Event; CardCloseOverride=-; TrackHoldMs=0
+14:51:26.160   ReparoProcess 'nested_none' Main.xaml#ReparoProcess_1
+14:51:26.161     NApplicationCard 'Use SpendApp' Main.xaml#NApplicationCard_2 [card holding Bridge blocks; OpenMode:InArgument`1=Literal`1(IfNotOpen), CloseMode:InArgument`1=(unset), AttachMode:NAppAttachMode=ByInstance, WindowResize:NWindowResize=None, HealingAgentBehavior:InArgument`1=Literal`1(Job)]
+14:51:26.161       ReparoActivity 'Open the request' Main.xaml#ReparoActivity_1
+14:51:26.162         ReparoEvent 'Click Open request 102' Main.xaml#ReparoEvent_1
+14:51:26.162       NApplicationCard 'Use Spend web' Main.xaml#NApplicationCard_1 [card holding Bridge blocks; OpenMode:InArgument`1=Literal`1(IfNotOpen), CloseMode:InArgument`1=(unset), AttachMode:NAppAttachMode=ByInstance, WindowResize:NWindowResize=None, HealingAgentBehavior:InArgument`1=Literal`1(Job)]
+14:51:26.164         ReparoActivity 'Approve on the web' Main.xaml#ReparoActivity_2
+14:51:26.164           ReparoEvent 'Click Approve (web)' Main.xaml#ReparoEvent_2
+14:51:26.164       ReparoActivity 'Go back' Main.xaml#ReparoActivity_3
+14:51:26.165         ReparoEvent 'Click Back' Main.xaml#ReparoEvent_3
+14:51:26.165     ReparoActivity 'After the card' Main.xaml#ReparoActivity_4
+14:51:26.165       ReparoEvent 'Note the end' Main.xaml#ReparoEvent_4
+14:51:27.195 Activity 'Open the request' entered
+14:51:27.208   Event 'Click Open request 102' Main.xaml#ReparoEvent_1 starts; UI SpendApp[6372] 'Spending requests' normal 100,100 700x600
+14:51:30.368 Activity 'Approve on the web' entered
+14:51:30.379   Event 'Click Approve (web)' Main.xaml#ReparoEvent_2 starts; UI SpendApp[6372] 'Spending requests' normal 100,100 700x600; msedge[2200] 'Spend web - Profile 1 - Microsoft​ Edge'
+14:51:33.871 TRACK state Faulted NClick 'Click Approve (web)' (thread 13); UI SpendApp[6372] 'Spending requests' normal 100,100 700x600; msedge[2200] 'Spend web - Profile 1 - Microsoft​ Edge'
+14:51:33.891 TRACK fault from 'Click Approve (web)' to handler 'Sequence' src=True (thread 13); UI SpendApp[6372] 'Spending requests' normal 100,100 700x600; msedge[2200] 'Spend web - Profile 1 - Microsoft​ Edge'
+14:51:33.974 TRACK fault from 'Click Approve (web)' to handler 'Click Approve (web)' src=False (thread 13); UI SpendApp[6372] 'Spending requests' normal 100,100 700x600; msedge[2200] 'Spend web - Profile 1 - Microsoft​ Edge'
+14:51:33.977 FAULT reached Reparo Event 'Click Approve (web)': NodeNotFoundException: Could not find the user-interface (UI) element for this action.
+ (in Event Main.xaml#ReparoEvent_2, via Sequence)
+14:51:33.988   UI at the fault: SpendApp[6372] 'Spending requests' normal 100,100 700x600; msedge[2200] 'Spend web - Profile 1 - Microsoft​ Edge'
+14:51:33.991   Recovery requested by Reparo Event 'Click Approve (web)' for Main.xaml#ReparoEvent_2
+14:51:33.995   Recovery wait starts on thread 1
+14:51:34.034   the Event's faulted body ended: Closed; UI SpendApp[6372] 'Spending requests' normal 100,100 700x600; msedge[2200] 'Spend web - Profile 1 - Microsoft​ Edge'
+14:51:34.157   fake Reparo: payload written; first screenshot: shot-1-recovery-start.png; UI SpendApp[6372] 'Spending requests' normal 100,100 700x600; msedge[2200] 'Spend web - Profile 1 - Microsoft​ Edge'
+14:51:40.209   fake Reparo, mid-Recovery: UI SpendApp[6372] 'Spending requests' normal 100,100 700x600; msedge[2200] 'Spend web - Profile 1 - Microsoft​ Edge'
+14:51:44.227   fake Reparo answers done: {"success":true,"process_finished":false,"continue_from_model_event_id":"Main.xaml#ReparoEvent_1","loop_iteration":[],"variables":{"ok":false,"req":null,"reqs":["102","104"]}}
+14:51:44.248 Continuation jumps from 'Click Approve (web)' to Main.xaml#ReparoEvent_1: completing upward to the block that holds it; UI SpendApp[6372] 'Spending requests' normal 100,100 700x600; msedge[2200] 'Spend web - Profile 1 - Microsoft​ Edge'
+14:51:44.264   jump passes up through ReparoActivity 'Approve on the web'
+14:51:44.844 TRACK state Closed NApplicationCard 'Use Spend web' (thread 13); UI SpendApp[6372] 'Spending requests' normal 100,100 700x600
+14:51:44.851 Activity 'Go back' skipped (jump or finish under way)
+14:51:45.234 TRACK state Closed NApplicationCard 'Use SpendApp' (thread 10); UI NO TARGET APP
+14:51:45.238   jump reaches Reparo Process: entering at Main.xaml#ReparoEvent_1; UI NO TARGET APP
+14:51:45.647   restored ok = false
+14:51:45.648   restored req = null
+14:51:45.649   restored reqs = ["102","104"]
+14:51:45.649 Activity 'Open the request' entered
+14:51:45.654   Continuation reached Main.xaml#ReparoEvent_1
+14:51:45.658   Event 'Click Open request 102' Main.xaml#ReparoEvent_1 starts; UI SpendApp[1508] 'Spending requests' normal 100,100 700x600
+14:51:47.909 Activity 'Approve on the web' entered
+14:51:47.918   Event 'Click Approve (web)' Main.xaml#ReparoEvent_2 starts; UI SpendApp[1508] 'Spending requests' normal 100,100 700x600; msedge[3524] 'Spend web - Profile 1 - Microsoft​ Edge'
+14:51:51.285 TRACK state Faulted NClick 'Click Approve (web)' (thread 18); UI SpendApp[1508] 'Spending requests' normal 100,100 700x600; msedge[3524] 'Spend web - Profile 1 - Microsoft​ Edge'
+14:51:51.294 TRACK fault from 'Click Approve (web)' to handler 'Sequence' src=True (thread 18); UI SpendApp[1508] 'Spending requests' normal 100,100 700x600; msedge[3524] 'Spend web - Profile 1 - Microsoft​ Edge'
+14:51:51.307 TRACK fault from 'Click Approve (web)' to handler 'Click Approve (web)' src=False (thread 18); UI SpendApp[1508] 'Spending requests' normal 100,100 700x600; msedge[3524] 'Spend web - Profile 1 - Microsoft​ Edge'
+14:51:51.307 FAULT reached Reparo Event 'Click Approve (web)': NodeNotFoundException: Could not find the user-interface (UI) element for this action.
+ (in Event Main.xaml#ReparoEvent_2, via Sequence)
+14:51:51.313   UI at the fault: SpendApp[1508] 'Spending requests' normal 100,100 700x600; msedge[3524] 'Spend web - Profile 1 - Microsoft​ Edge'
+14:51:51.314   not handed to Reparo (the run's one Recovery is spent): left to propagate; outcome continuation_failed
+14:51:51.338 TRACK fault from 'Click Approve (web)' to handler 'Approve on the web' src=False (thread 18); UI SpendApp[1508] 'Spending requests' normal 100,100 700x600; msedge[3524] 'Spend web - Profile 1 - Microsoft​ Edge'
+14:51:51.347 TRACK fault from 'Click Approve (web)' to handler 'Sequence' src=False (thread 12); UI SpendApp[1508] 'Spending requests' normal 100,100 700x600; msedge[3524] 'Spend web - Profile 1 - Microsoft​ Edge'
+14:51:51.362 TRACK fault from 'Click Approve (web)' to handler 'Use Spend web' src=False (thread 10); UI SpendApp[1508] 'Spending requests' normal 100,100 700x600; msedge[3524] 'Spend web - Profile 1 - Microsoft​ Edge'
+14:51:51.938 TRACK state Faulted Sequence 'Sequence' (thread 18); UI SpendApp[1508] 'Spending requests' normal 100,100 700x600
+14:51:51.944 TRACK state Faulted ReparoEvent 'Click Approve (web)' (thread 18); UI SpendApp[1508] 'Spending requests' normal 100,100 700x600
+14:51:51.949 TRACK state Faulted ReparoActivity 'Approve on the web' (thread 18); UI SpendApp[1508] 'Spending requests' normal 100,100 700x600
+14:51:51.958 TRACK state Faulted Sequence 'Sequence' (thread 18); UI SpendApp[1508] 'Spending requests' normal 100,100 700x600
+14:51:51.962 TRACK state Faulted NApplicationCard 'Use Spend web' (thread 18); UI SpendApp[1508] 'Spending requests' normal 100,100 700x600
+14:51:51.966 TRACK fault from 'Click Approve (web)' to handler 'Sequence' src=False (thread 18); UI SpendApp[1508] 'Spending requests' normal 100,100 700x600
+14:51:51.994 TRACK fault from 'Click Approve (web)' to handler 'Use SpendApp' src=False (thread 13); UI SpendApp[1508] 'Spending requests' normal 100,100 700x600
+14:51:52.388 TRACK state Faulted Sequence 'Sequence' (thread 17); UI NO TARGET APP
+14:51:52.390 TRACK state Faulted NApplicationCard 'Use SpendApp' (thread 17); UI NO TARGET APP
+14:51:52.392 TRACK fault from 'Click Approve (web)' to handler 'nested_none' src=False (thread 17); UI NO TARGET APP
+14:51:52.394 FAULT reached Reparo Process: NodeNotFoundException (after the Recovery); UI NO TARGET APP
+14:51:52.396 TRACK fault from 'Click Approve (web)' to handler 'Author outer Try Catch' src=False (thread 17); UI NO TARGET APP
+14:51:52.400 author outer Try Catch caught UiPath.UIAutomationNext.Exceptions.NodeNotFoundException: Could not find the user-interface (UI) element for this action.
+
+--- app
+14:51:26.889 APP start late-approve=0 open=0
+14:51:27.927 APP open 102
+14:51:45.401 APP start late-approve=0 open=0
+14:51:46.162 APP open 102
+--- screenshots
+shot-1-recovery-start.png
+--- recovery-1.json
+{
+  "contract_version": 2,
+  "task_name": "nested_none",
+  "errored_act": {
+    "model_event_id": "Main.xaml#ReparoEvent_2",
+    "event_name": "Click Approve (web)",
+    "error_code": "NodeNotFoundException",
+    "error_description": "Could not find the user-interface (UI) element for this action.\r"
+  },
+  "loop_iteration": [],
+  "variables": {
+    "ok": false,
+    "req": null,
+    "reqs": [
+      "102",
+      "104"
+    ]
+  },
+  "ui_log": [
+    "Click Open request 102  [Main.xaml#ReparoEvent_1]"
+  ]
+}
+--- uip (errors)
+  "Result": "Success",
+  "Code": "ToolResult",
+    "hasErrors": false,
+    "errorMessage": null,
+    "errorScope": null

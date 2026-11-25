@@ -1,0 +1,102 @@
+### Card67 / to-e1-pass0  (2026-11-25T14:50:29, 27 s)
+--- fake done
+{"delay_s": 10, "continue_from_model_event_id": "Main.xaml#ReparoEvent_1", "loop_iteration": [0]}
+--- trace
+14:50:07.352 === Process 'incard_none' id=Main.xaml#ReparoProcess_1; RecoverAt=Event; CardCloseOverride=-; TrackHoldMs=0
+14:50:07.355   ReparoProcess 'incard_none' Main.xaml#ReparoProcess_1
+14:50:07.356     NApplicationCard 'Use SpendApp' Main.xaml#NApplicationCard_1 [card holding Bridge blocks; OpenMode:InArgument`1=Literal`1(IfNotOpen), CloseMode:InArgument`1=(unset), AttachMode:NAppAttachMode=ByInstance, WindowResize:NWindowResize=None, HealingAgentBehavior:InArgument`1=Literal`1(Job)]
+14:50:07.357       ReparoForEach 'Each request' Main.xaml#ReparoForEach_1
+14:50:07.357         ReparoActivity 'Handle the request' Main.xaml#ReparoActivity_1
+14:50:07.357           ReparoEvent 'Click Open request' Main.xaml#ReparoEvent_1
+14:50:07.358           ReparoEvent 'Click Approve' Main.xaml#ReparoEvent_2
+14:50:07.358           ReparoEvent 'Click Back' Main.xaml#ReparoEvent_3
+14:50:07.358     ReparoActivity 'After the card' Main.xaml#ReparoActivity_2
+14:50:07.359       ReparoEvent 'Note the end' Main.xaml#ReparoEvent_4
+14:50:08.118 For Each 'Each request' pass 0: req = 102
+14:50:08.123 Activity 'Handle the request' entered #0
+14:50:08.134   Event 'Click Open request' #0 Main.xaml#ReparoEvent_1 starts; UI SpendApp[5804] 'Spending requests' normal 100,100 700x600
+14:50:09.074   Event 'Click Approve' #0 Main.xaml#ReparoEvent_2 starts; UI SpendApp[5804] 'Spending requests' normal 100,100 700x600
+14:50:09.864   Event 'Click Back' #0 Main.xaml#ReparoEvent_3 starts; UI SpendApp[5804] 'Spending requests' normal 100,100 700x600
+14:50:10.647 For Each 'Each request' pass 1: req = 104
+14:50:10.650 Activity 'Handle the request' entered #1
+14:50:10.656   Event 'Click Open request' #1 Main.xaml#ReparoEvent_1 starts; UI SpendApp[5804] 'Spending requests' normal 100,100 700x600
+14:50:11.448   Event 'Click Approve' #1 Main.xaml#ReparoEvent_2 starts; UI SpendApp[5804] 'Spending requests' normal 100,100 700x600
+14:50:14.722 TRACK state Faulted NClick 'Click Approve' (thread 9); UI SpendApp[5804] 'Spending requests' normal 100,100 700x600
+14:50:14.727 TRACK fault from 'Click Approve' to handler 'Sequence' src=True (thread 9); UI SpendApp[5804] 'Spending requests' normal 100,100 700x600
+14:50:14.745 TRACK fault from 'Click Approve' to handler 'Click Approve' src=False (thread 9); UI SpendApp[5804] 'Spending requests' normal 100,100 700x600
+14:50:14.746 FAULT reached Reparo Event 'Click Approve': NodeNotFoundException: Could not find the user-interface (UI) element for this action.
+ (in Event Main.xaml#ReparoEvent_2, via Sequence)
+14:50:14.749   UI at the fault: SpendApp[5804] 'Spending requests' normal 100,100 700x600
+14:50:14.750   Recovery requested by Reparo Event 'Click Approve' for Main.xaml#ReparoEvent_2 #1
+14:50:14.751   Recovery wait starts on thread 1
+14:50:14.761   the Event's faulted body ended: Closed; UI SpendApp[5804] 'Spending requests' normal 100,100 700x600
+14:50:14.856   fake Reparo: payload written; first screenshot: shot-1-recovery-start.png; UI SpendApp[5804] 'Spending requests' normal 100,100 700x600
+14:50:20.871   fake Reparo, mid-Recovery: UI SpendApp[5804] 'Spending requests' normal 100,100 700x600
+14:50:24.880   fake Reparo answers done: {"success":true,"process_finished":false,"continue_from_model_event_id":"Main.xaml#ReparoEvent_1","loop_iteration":[0],"variables":{"ok":false,"req":"104","reqs":["102","104"]}}
+14:50:24.896 Continuation jumps from 'Click Approve' to Main.xaml#ReparoEvent_1 #0: completing upward to the block that holds it; UI SpendApp[5804] 'Spending requests' normal 100,100 700x600
+14:50:24.911   jump re-enters at ReparoActivity 'Handle the request'
+14:50:24.911   restored ok = false
+14:50:24.912   restored req = "104"
+14:50:24.912   restored reqs = ["102","104"]
+14:50:24.923   Continuation reached Main.xaml#ReparoEvent_1 #0
+14:50:24.926   Event 'Click Open request' #1 Main.xaml#ReparoEvent_1 starts; UI SpendApp[5804] 'Spending requests' normal 100,100 700x600
+14:50:26.466   Event 'Click Approve' #1 Main.xaml#ReparoEvent_2 starts; UI SpendApp[5804] 'Spending requests' normal 100,100 700x600
+14:50:27.265   Event 'Click Back' #1 Main.xaml#ReparoEvent_3 starts; UI SpendApp[5804] 'Spending requests' normal 100,100 700x600
+14:50:28.474 TRACK state Closed NApplicationCard 'Use SpendApp' (thread 9); UI NO TARGET APP
+14:50:28.477 Activity 'After the card' entered
+14:50:28.483   Event 'Note the end' Main.xaml#ReparoEvent_4 starts; UI NO TARGET APP
+14:50:28.487 after the card
+14:50:28.491 === Process completed. UI log:
+14:50:28.491   Click Open request #0  [Main.xaml#ReparoEvent_1]
+14:50:28.491   Click Approve #0  [Main.xaml#ReparoEvent_2]
+14:50:28.491   Click Back #0  [Main.xaml#ReparoEvent_3]
+14:50:28.492   Click Open request #1  [Main.xaml#ReparoEvent_1]
+14:50:28.492   Click Open request #1  [Main.xaml#ReparoEvent_1]
+14:50:28.492   Click Approve #1  [Main.xaml#ReparoEvent_2]
+14:50:28.492   Click Back #1  [Main.xaml#ReparoEvent_3]
+14:50:28.492   Note the end  [Main.xaml#ReparoEvent_4]
+14:50:28.495 report_result outcome: completed; UI NO TARGET APP
+--- app
+14:50:07.825 APP start late-approve=104 open=0
+14:50:08.747 APP open 102
+14:50:09.546 APP decide 102 Approved reason= budget=200
+14:50:10.329 APP back
+14:50:11.108 APP open 104
+14:50:11.112 APP approve removed for 104
+14:50:17.113 APP approve back
+--- screenshots
+shot-1-recovery-start.png
+--- recovery-1.json
+{
+  "contract_version": 2,
+  "task_name": "incard_none",
+  "errored_act": {
+    "model_event_id": "Main.xaml#ReparoEvent_2",
+    "event_name": "Click Approve #1",
+    "error_code": "NodeNotFoundException",
+    "error_description": "Could not find the user-interface (UI) element for this action.\r"
+  },
+  "loop_iteration": [
+    1
+  ],
+  "variables": {
+    "ok": false,
+    "req": "104",
+    "reqs": [
+      "102",
+      "104"
+    ]
+  },
+  "ui_log": [
+    "Click Open request #0  [Main.xaml#ReparoEvent_1]",
+    "Click Approve #0  [Main.xaml#ReparoEvent_2]",
+    "Click Back #0  [Main.xaml#ReparoEvent_3]",
+    "Click Open request #1  [Main.xaml#ReparoEvent_1]"
+  ]
+}
+--- uip (errors)
+  "Result": "Success",
+  "Code": "ToolResult",
+    "hasErrors": false,
+    "errorMessage": null,
+    "errorScope": null
