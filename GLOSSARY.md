@@ -29,7 +29,8 @@ _Avoid_: recovery, recover (for Healing Agent's work)
 
 **UiPath activity**: UiPath's executable block in a workflow, identified within its workflow file
 by its `IdRef` (such as `NClick_1`). It is not an Activity. Every UiPath activity in a Process sits
-inside a Reparo Event.
+inside a Reparo Event, except a UiPath scope that holds the Bridge's blocks, such as a Use
+Application/Browser card.
 _Avoid_: activity (alone)
 
 **Process project**: A Studio project of UiPath's Process type, beside Library and Test Automation.
@@ -51,6 +52,11 @@ _Avoid_: workflow (alone)
 The UiPath variables declared on Reparo Process are the Process's Variables. Any other UiPath variable is
 not one of the Variables.
 
+**Use Application/Browser card**: UiPath's scope that opens or attaches to the application or browser
+its UiPath activities act on, and may close it when it ends or fails. It may hold Reparo Activities,
+or sit inside a Reparo Event.
+_Avoid_: scope (alone), application scope
+
 **UiPath argument**: A workflow file's In, Out or In/Out parameter. It is not one of the Variables
 unless the Bridge sends it as one.
 
@@ -59,13 +65,14 @@ unless the Bridge sends it as one.
 The UiPath Bridge's own UiPath activities, which give a Process its structure. Each block's Event id or
 node id is its workflow file's stem and `IdRef`, such as `Main-ReparoEvent_5`.
 
-**Reparo Process**: The block that holds a Process and its Variables. It catches the UI failures
-that nothing inside it resolved, and it continues the run after a Recovery.
+**Reparo Process**: The block that holds a Process and its Variables.
 
 **Reparo Activity**: The block that groups the Events of one Activity.
 
 **Reparo Event**: The block whose body is one Event. Its body holds UiPath activities, and any
-UiPath control flow inside it runs whole as part of that Event.
+UiPath control flow inside it runs whole as part of that Event. It catches the UI failures that
+nothing inside it resolved, so Reparo sees the screen before any UiPath scope around it closes an
+application, and it continues the run after the Recovery.
 
 **Reparo If** and **Reparo For Each**: The only control flow between Events: an exclusive gateway, and
 a loop over a list that is one of the Variables, whose item is also one of the Variables.
