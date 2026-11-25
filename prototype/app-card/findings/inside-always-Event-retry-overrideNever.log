@@ -1,0 +1,33 @@
+### CardInside / retry  (2026-11-25T14:01:05, 11 s)
+--- fake done
+{"delay_s": 10}
+--- trace
+14:00:59.741 === Process 'inside_always_event_override_never' id=Main.xaml#ReparoProcess_1; RecoverAt=Event; CardCloseOverride=Never; TrackHoldMs=0
+14:00:59.743   ReparoProcess 'inside_always_event_override_never' Main.xaml#ReparoProcess_1
+14:00:59.744     ReparoActivity 'Approve the request' Main.xaml#ReparoActivity_1
+14:00:59.744       ReparoEvent 'Click Approve' Main.xaml#ReparoEvent_1
+14:00:59.746         NApplicationCard 'Use SpendApp' Main.xaml#NApplicationCard_1 [card INSIDE an Event; OpenMode:InArgument`1=Literal`1(IfNotOpen), CloseMode:InArgument`1=Literal`1(Always), AttachMode:NAppAttachMode=ByInstance, WindowResize:NWindowResize=None, HealingAgentBehavior:InArgument`1=Literal`1(Job)] override: set -> OpenMode:InArgument`1=Literal`1(IfNotOpen), CloseMode:InArgument`1=Literal`1(Never), AttachMode:NAppAttachMode=ByInstance, WindowResize:NWindowResize=None, HealingAgentBehavior:InArgument`1=Literal`1(Job)
+14:00:59.747     ReparoActivity 'After the card' Main.xaml#ReparoActivity_2
+14:00:59.747       ReparoEvent 'Note the end' Main.xaml#ReparoEvent_2
+14:00:59.768 Activity 'Approve the request' entered
+14:00:59.787   Event 'Click Approve' Main.xaml#ReparoEvent_1 starts; UI NO TARGET APP
+14:01:01.219 TRACK state Faulted NApplicationCard 'Use SpendApp' (thread 9); UI NO TARGET APP
+14:01:01.221 TRACK fault from 'Use SpendApp' to handler 'Sequence' src=True (thread 9); UI NO TARGET APP
+14:01:01.238 TRACK fault from 'Use SpendApp' to handler 'Click Approve' src=False (thread 4); UI NO TARGET APP
+14:01:01.240 FAULT reached Reparo Event 'Click Approve': InvalidOperationException: The argument of type 'UiPath.UIAutomationNext.Enums.NAppCloseMode' cannot be used.  Make sure that it is declared on an activity. (in Event Main.xaml#ReparoEvent_1, via Sequence)
+14:01:01.242   UI at the fault: NO TARGET APP
+14:01:01.243   not handed to Reparo (not a UI failure in an Event): left to propagate; outcome completed
+14:01:01.245 TRACK fault from 'Use SpendApp' to handler 'Approve the request' src=False (thread 4); UI NO TARGET APP
+14:01:01.250 TRACK fault from 'Use SpendApp' to handler 'inside_always_event_override_never' src=False (thread 17); UI NO TARGET APP
+14:01:01.253 FAULT reached Reparo Process: InvalidOperationException (not handled at an Event); UI NO TARGET APP
+14:01:01.254 TRACK fault from 'Use SpendApp' to handler 'Author outer Try Catch' src=False (thread 17); UI NO TARGET APP
+14:01:01.267 author outer Try Catch caught System.InvalidOperationException (the object the Bridge rethrew: False): The argument of type 'UiPath.UIAutomationNext.Enums.NAppCloseMode' cannot be used.  Make sure that it is declared on an activity. | stack top: at System.Activities.Argument.ThrowIfNotInTree()
+--- app
+--- screenshots
+--- recovery-1.json
+--- uip (errors)
+  "Result": "Success",
+  "Code": "ToolResult",
+    "hasErrors": false,
+    "errorMessage": null,
+    "errorScope": null

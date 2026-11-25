@@ -1,0 +1,83 @@
+### CardHolds / out-of-card  (2026-11-25T13:57:50, 16 s)
+--- fake done
+{"delay_s": 3, "continue_from_model_event_id": "Main.xaml#ReparoEvent_5"}
+--- trace
+13:57:39.741 === Process 'holds_default_event' id=Main.xaml#ReparoProcess_1; RecoverAt=Event; CardCloseOverride=-; TrackHoldMs=0
+13:57:39.744   ReparoProcess 'holds_default_event' Main.xaml#ReparoProcess_1
+13:57:39.746     NApplicationCard 'Use SpendApp' Main.xaml#NApplicationCard_1 [card holding Bridge blocks; OpenMode:InArgument`1=Literal`1(IfNotOpen), CloseMode:InArgument`1=(unset), AttachMode:NAppAttachMode=ByInstance, WindowResize:NWindowResize=None, HealingAgentBehavior:InArgument`1=Literal`1(Job)]
+13:57:39.746       ReparoActivity 'Read the request' Main.xaml#ReparoActivity_1
+13:57:39.746         ReparoEvent 'Read the title' Main.xaml#ReparoEvent_1
+13:57:39.746       ReparoActivity 'Approve the request' Main.xaml#ReparoActivity_2
+13:57:39.747         ReparoEvent 'Read the amount' Main.xaml#ReparoEvent_2
+13:57:39.747         ReparoEvent 'Click Approve' Main.xaml#ReparoEvent_3
+13:57:39.748       ReparoActivity 'Check the status' Main.xaml#ReparoActivity_3
+13:57:39.748         ReparoEvent 'Read the status' Main.xaml#ReparoEvent_4
+13:57:39.748     ReparoActivity 'After the card' Main.xaml#ReparoActivity_4
+13:57:39.748       ReparoEvent 'Note the end' Main.xaml#ReparoEvent_5
+13:57:40.509 Activity 'Read the request' entered
+13:57:40.520   Event 'Read the title' Main.xaml#ReparoEvent_1 starts; UI SpendApp[6132] 'Spending requests'
+13:57:40.600 Activity 'Approve the request' entered
+13:57:40.607   Event 'Read the amount' Main.xaml#ReparoEvent_2 starts; UI SpendApp[6132] 'Spending requests'
+13:57:40.633   Event 'Click Approve' Main.xaml#ReparoEvent_3 starts; UI SpendApp[6132] 'Spending requests'
+13:57:42.892 TRACK state Faulted Click 'Click Approve' (thread 10); UI SpendApp[6132] 'Spending requests'
+13:57:42.895 TRACK fault from 'Click Approve' to handler 'Sequence' src=True (thread 10); UI SpendApp[6132] 'Spending requests'
+13:57:42.918 TRACK fault from 'Click Approve' to handler 'Click Approve' src=False (thread 11); UI SpendApp[6132] 'Spending requests'
+13:57:42.919 FAULT reached Reparo Event 'Click Approve': SelectorNotFoundException: Could not find the UI element corresponding to this selector:
+ (in Event Main.xaml#ReparoEvent_3, via Sequence)
+13:57:42.922   UI at the fault: SpendApp[6132] 'Spending requests'
+13:57:42.923   Recovery requested by Reparo Event 'Click Approve' for Main.xaml#ReparoEvent_3
+13:57:42.924   Recovery wait starts on thread 1
+13:57:42.938   the Event's faulted body ended: Closed; UI SpendApp[6132] 'Spending requests'
+13:57:43.044   fake Reparo: payload written; first screenshot: shot-1-recovery-start.png; UI SpendApp[6132] 'Spending requests'
+13:57:45.066   fake Reparo, mid-Recovery: UI SpendApp[6132] 'Spending requests'
+13:57:46.069   fake Reparo answers done: {"success":true,"process_finished":false,"continue_from_model_event_id":"Main.xaml#ReparoEvent_5","loop_iteration":[],"variables":{"title":"Request 104","amount_txt":"300","status":null}}
+13:57:46.088 Continuation jumps from 'Click Approve' to Main.xaml#ReparoEvent_5: completing upward to the block that holds it; UI SpendApp[6132] 'Spending requests'
+13:57:46.101   jump passes up through ReparoActivity 'Approve the request'
+13:57:46.115 Activity 'Check the status' skipped (jump or finish under way)
+13:57:46.502 TRACK state Closed NApplicationCard 'Use SpendApp' (thread 6); UI NO TARGET APP
+13:57:46.506   jump reaches Reparo Process: entering at Main.xaml#ReparoEvent_5; UI NO TARGET APP
+13:57:46.511   restored title = "Request 104"
+13:57:46.511   restored amount_txt = "300"
+13:57:46.511   restored status = null
+13:57:46.512 Activity 'After the card' entered
+13:57:46.515   Continuation reached Main.xaml#ReparoEvent_5
+13:57:46.520   Event 'Note the end' Main.xaml#ReparoEvent_5 starts; UI NO TARGET APP
+13:57:46.528 after the card: title=Request 104 amount=300 status=
+13:57:46.533 === Process completed. UI log:
+13:57:46.534   Read the title  [Main.xaml#ReparoEvent_1]
+13:57:46.534   Read the amount  [Main.xaml#ReparoEvent_2]
+13:57:46.534   Note the end  [Main.xaml#ReparoEvent_5]
+13:57:46.537 report_result outcome: completed; UI NO TARGET APP
+--- app
+13:57:40.228 APP start late-approve=104 open=104
+13:57:40.318 APP approve removed for 104
+13:57:46.334 APP approve back
+--- screenshots
+shot-1-recovery-start.png
+--- recovery-1.json
+{
+  "contract_version": 2,
+  "task_name": "holds_default_event",
+  "errored_act": {
+    "model_event_id": "Main.xaml#ReparoEvent_3",
+    "event_name": "Click Approve",
+    "error_code": "SelectorNotFoundException",
+    "error_description": "Could not find the UI element corresponding to this selector:\r"
+  },
+  "loop_iteration": [],
+  "variables": {
+    "title": "Request 104",
+    "amount_txt": "300",
+    "status": null
+  },
+  "ui_log": [
+    "Read the title  [Main.xaml#ReparoEvent_1]",
+    "Read the amount  [Main.xaml#ReparoEvent_2]"
+  ]
+}
+--- uip (errors)
+  "Result": "Success",
+  "Code": "ToolResult",
+    "hasErrors": false,
+    "errorMessage": null,
+    "errorScope": null

@@ -1,0 +1,73 @@
+### CardHolds / finished  (2026-11-25T13:58:29, 16 s)
+--- fake done
+{"delay_s": 3, "process_finished": true}
+--- trace
+13:58:18.445 === Process 'holds_default_event' id=Main.xaml#ReparoProcess_1; RecoverAt=Event; CardCloseOverride=-; TrackHoldMs=0
+13:58:18.448   ReparoProcess 'holds_default_event' Main.xaml#ReparoProcess_1
+13:58:18.449     NApplicationCard 'Use SpendApp' Main.xaml#NApplicationCard_1 [card holding Bridge blocks; OpenMode:InArgument`1=Literal`1(IfNotOpen), CloseMode:InArgument`1=(unset), AttachMode:NAppAttachMode=ByInstance, WindowResize:NWindowResize=None, HealingAgentBehavior:InArgument`1=Literal`1(Job)]
+13:58:18.450       ReparoActivity 'Read the request' Main.xaml#ReparoActivity_1
+13:58:18.450         ReparoEvent 'Read the title' Main.xaml#ReparoEvent_1
+13:58:18.450       ReparoActivity 'Approve the request' Main.xaml#ReparoActivity_2
+13:58:18.451         ReparoEvent 'Read the amount' Main.xaml#ReparoEvent_2
+13:58:18.451         ReparoEvent 'Click Approve' Main.xaml#ReparoEvent_3
+13:58:18.451       ReparoActivity 'Check the status' Main.xaml#ReparoActivity_3
+13:58:18.451         ReparoEvent 'Read the status' Main.xaml#ReparoEvent_4
+13:58:18.452     ReparoActivity 'After the card' Main.xaml#ReparoActivity_4
+13:58:18.452       ReparoEvent 'Note the end' Main.xaml#ReparoEvent_5
+13:58:19.197 Activity 'Read the request' entered
+13:58:19.208   Event 'Read the title' Main.xaml#ReparoEvent_1 starts; UI SpendApp[6984] 'Spending requests'
+13:58:19.286 Activity 'Approve the request' entered
+13:58:19.293   Event 'Read the amount' Main.xaml#ReparoEvent_2 starts; UI SpendApp[6984] 'Spending requests'
+13:58:19.317   Event 'Click Approve' Main.xaml#ReparoEvent_3 starts; UI SpendApp[6984] 'Spending requests'
+13:58:21.616 TRACK state Faulted Click 'Click Approve' (thread 4); UI SpendApp[6984] 'Spending requests'
+13:58:21.618 TRACK fault from 'Click Approve' to handler 'Sequence' src=True (thread 4); UI SpendApp[6984] 'Spending requests'
+13:58:21.637 TRACK fault from 'Click Approve' to handler 'Click Approve' src=False (thread 10); UI SpendApp[6984] 'Spending requests'
+13:58:21.638 FAULT reached Reparo Event 'Click Approve': SelectorNotFoundException: Could not find the UI element corresponding to this selector:
+ (in Event Main.xaml#ReparoEvent_3, via Sequence)
+13:58:21.640   UI at the fault: SpendApp[6984] 'Spending requests'
+13:58:21.641   Recovery requested by Reparo Event 'Click Approve' for Main.xaml#ReparoEvent_3
+13:58:21.642   Recovery wait starts on thread 1
+13:58:21.661   the Event's faulted body ended: Closed; UI SpendApp[6984] 'Spending requests'
+13:58:21.757   fake Reparo: payload written; first screenshot: shot-1-recovery-start.png; UI SpendApp[6984] 'Spending requests'
+13:58:23.780   fake Reparo, mid-Recovery: UI SpendApp[6984] 'Spending requests'
+13:58:24.796   fake Reparo answers done: {"success":true,"process_finished":true,"continue_from_model_event_id":"Main.xaml#ReparoEvent_3","loop_iteration":[],"variables":{"title":"Request 104","amount_txt":"300","status":null}}
+13:58:24.807   Reparo finished the Process: every block above completes
+13:58:24.820 Activity 'Check the status' skipped (jump or finish under way)
+13:58:25.212 TRACK state Closed NApplicationCard 'Use SpendApp' (thread 4); UI NO TARGET APP
+13:58:25.213 === Process completed. UI log:
+13:58:25.213   Read the title  [Main.xaml#ReparoEvent_1]
+13:58:25.214   Read the amount  [Main.xaml#ReparoEvent_2]
+13:58:25.216 report_result outcome: completed; UI NO TARGET APP
+--- app
+13:58:18.919 APP start late-approve=104 open=104
+13:58:19.008 APP approve removed for 104
+13:58:25.019 APP approve back
+--- screenshots
+shot-1-recovery-start.png
+--- recovery-1.json
+{
+  "contract_version": 2,
+  "task_name": "holds_default_event",
+  "errored_act": {
+    "model_event_id": "Main.xaml#ReparoEvent_3",
+    "event_name": "Click Approve",
+    "error_code": "SelectorNotFoundException",
+    "error_description": "Could not find the UI element corresponding to this selector:\r"
+  },
+  "loop_iteration": [],
+  "variables": {
+    "title": "Request 104",
+    "amount_txt": "300",
+    "status": null
+  },
+  "ui_log": [
+    "Read the title  [Main.xaml#ReparoEvent_1]",
+    "Read the amount  [Main.xaml#ReparoEvent_2]"
+  ]
+}
+--- uip (errors)
+  "Result": "Success",
+  "Code": "ToolResult",
+    "hasErrors": false,
+    "errorMessage": null,
+    "errorScope": null

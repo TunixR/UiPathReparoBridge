@@ -1,0 +1,66 @@
+### CardBrowser / retry  (2026-11-25T14:10:23, 25 s)
+--- fake done
+{"delay_s": 10}
+--- trace
+14:10:04.150 === Process 'browser-holds_default_event' id=Main.xaml#ReparoProcess_1; RecoverAt=Event; CardCloseOverride=-; TrackHoldMs=0
+14:10:04.153   ReparoProcess 'browser-holds_default_event' Main.xaml#ReparoProcess_1
+14:10:04.154     NApplicationCard 'Use Spend web' Main.xaml#NApplicationCard_1 [card holding Bridge blocks; OpenMode:InArgument`1=Literal`1(IfNotOpen), CloseMode:InArgument`1=(unset), AttachMode:NAppAttachMode=ByInstance, WindowResize:NWindowResize=None, HealingAgentBehavior:InArgument`1=Literal`1(Job)]
+14:10:04.154       ReparoActivity 'Approve the request' Main.xaml#ReparoActivity_1
+14:10:04.155         ReparoEvent 'Click Approve' Main.xaml#ReparoEvent_1
+14:10:04.155     ReparoActivity 'After the card' Main.xaml#ReparoActivity_2
+14:10:04.156       ReparoEvent 'Note the end' Main.xaml#ReparoEvent_2
+14:10:07.793 Activity 'Approve the request' entered
+14:10:07.809   Event 'Click Approve' Main.xaml#ReparoEvent_1 starts; UI msedge[8984] 'Spend web - Profile 1 - Microsoft​ Edge'
+14:10:11.260 TRACK state Faulted NClick 'Click Approve' (thread 4); UI msedge[8984] 'Spend web - Profile 1 - Microsoft​ Edge'
+14:10:11.266 TRACK fault from 'Click Approve' to handler 'Sequence' src=True (thread 4); UI msedge[8984] 'Spend web - Profile 1 - Microsoft​ Edge'
+14:10:11.377 TRACK fault from 'Click Approve' to handler 'Click Approve' src=False (thread 6); UI msedge[8984] 'Spend web - Profile 1 - Microsoft​ Edge'
+14:10:11.380 FAULT reached Reparo Event 'Click Approve': NodeNotFoundException: Could not find the user-interface (UI) element for this action.
+ (in Event Main.xaml#ReparoEvent_1, via Sequence)
+14:10:11.386   UI at the fault: msedge[8984] 'Spend web - Profile 1 - Microsoft​ Edge'
+14:10:11.387   Recovery requested by Reparo Event 'Click Approve' for Main.xaml#ReparoEvent_1
+14:10:11.388   Recovery wait starts on thread 1
+14:10:11.410   the Event's faulted body ended: Closed; UI msedge[8984] 'Spend web - Profile 1 - Microsoft​ Edge'
+14:10:11.498   fake Reparo: payload written; first screenshot: shot-1-recovery-start.png; UI msedge[8984] 'Spend web - Profile 1 - Microsoft​ Edge'
+14:10:17.537   fake Reparo, mid-Recovery: UI msedge[8984] 'Spend web - Profile 1 - Microsoft​ Edge'
+14:10:21.558   fake Reparo answers done: {"success":true,"process_finished":false,"continue_from_model_event_id":"Main.xaml#ReparoEvent_1","loop_iteration":[],"variables":{"title":null,"amount_txt":null,"status":null}}
+14:10:21.578 Continuation in place: running 'Click Approve' again inside its scope; UI msedge[8984] 'Spend web - Profile 1 - Microsoft​ Edge'
+14:10:21.578   restored title = null
+14:10:21.579   restored amount_txt = null
+14:10:21.579   restored status = null
+14:10:21.579   Continuation reached Main.xaml#ReparoEvent_1
+14:10:21.581   Event 'Click Approve' Main.xaml#ReparoEvent_1 starts; UI msedge[8984] 'Spend web - Profile 1 - Microsoft​ Edge'
+14:10:22.808 TRACK state Closed NApplicationCard 'Use Spend web' (thread 12); UI NO TARGET APP
+14:10:22.814 Activity 'After the card' entered
+14:10:22.824   Event 'Note the end' Main.xaml#ReparoEvent_2 starts; UI NO TARGET APP
+14:10:22.832 after the card
+14:10:22.837 === Process completed. UI log:
+14:10:22.838   Click Approve  [Main.xaml#ReparoEvent_1]
+14:10:22.838   Note the end  [Main.xaml#ReparoEvent_2]
+14:10:22.845 report_result outcome: completed; UI NO TARGET APP
+--- app
+--- screenshots
+shot-1-recovery-start.png
+--- recovery-1.json
+{
+  "contract_version": 2,
+  "task_name": "browser-holds_default_event",
+  "errored_act": {
+    "model_event_id": "Main.xaml#ReparoEvent_1",
+    "event_name": "Click Approve",
+    "error_code": "NodeNotFoundException",
+    "error_description": "Could not find the user-interface (UI) element for this action.\r"
+  },
+  "loop_iteration": [],
+  "variables": {
+    "title": null,
+    "amount_txt": null,
+    "status": null
+  },
+  "ui_log": []
+}
+--- uip (errors)
+  "Result": "Success",
+  "Code": "ToolResult",
+    "hasErrors": false,
+    "errorMessage": null,
+    "errorScope": null
