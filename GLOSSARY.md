@@ -29,7 +29,7 @@ _Avoid_: recovery, recover (for Healing Agent's work)
 
 **UiPath activity**: UiPath's executable block in a workflow, identified within its workflow file
 by its `IdRef` (such as `NClick_1`). It is not an Activity. Every UiPath activity in a Process sits
-inside a Reparo Event, except a UiPath scope that holds the Bridge's blocks, such as a Use
+inside a Reparo Event, except a UiPath scope that holds Reparo Activities, such as a Use
 Application/Browser card.
 _Avoid_: activity (alone)
 
@@ -42,8 +42,8 @@ folder so UiPath Robots can run jobs of it.
 _Avoid_: process (alone, for the deployment)
 
 **Workflow file**: One `.xaml` file of a Process project, rooted in a Sequence, a Flowchart or a
-State Machine. A project's files are joined by Invoke Workflow File. A Process lives in one, for now: an
-invoked workflow file runs whole, inside one Reparo Event.
+State Machine. A project's files are joined by Invoke Workflow File. A Process lives in one: a file it
+invokes runs inside a Reparo Subprocess, as one Event of the invoking Process.
 _Avoid_: workflow (alone)
 
 **Coded workflow**: A C# workflow file in a Process project, with no XAML and no `IdRef`.
@@ -53,8 +53,8 @@ The UiPath variables declared on Reparo Process are the Process's Variables. Any
 not one of the Variables.
 
 **Use Application/Browser card**: UiPath's scope that opens or attaches to the application or browser
-its UiPath activities act on, and may close it when it ends or fails. It may hold Reparo Activities,
-or sit inside a Reparo Event.
+its UiPath activities act on, and may close it when it ends or fails. It may sit between Reparo
+Process and the Reparo Activities it holds, never inside a Reparo Activity or a Reparo Event.
 _Avoid_: scope (alone), application scope
 
 **UiPath argument**: A workflow file's In, Out or In/Out parameter. It is not one of the Variables
@@ -69,13 +69,30 @@ node id is its workflow file's stem and `IdRef`, such as `Main-ReparoEvent_5`.
 
 **Reparo Activity**: The block that groups the Events of one Activity.
 
-**Reparo Event**: The block whose body is one Event. Its body holds UiPath activities, and any
-UiPath control flow inside it runs whole as part of that Event. It catches the UI failures that
+**Reparo Event**: The block whose body is one Event. Its body holds only UiPath activities with no
+body of their own, which a Sequence may group and a Try Catch or Retry Scope may wrap. It catches the UI failures that
 nothing inside it resolved, so Reparo sees the screen before any UiPath scope around it closes an
 application, and it continues the run after the Recovery.
 
+**Reparo Subprocess**: The Reparo Event whose body is one Invoke Workflow File, the only way a
+Process runs another workflow file. Instrumented, the invoked file has its own Reparo Process and
+recovers its own UI failures; uninstrumented, a UI failure inside it is this Event's.
+_Avoid_: invoke Event, nested Process
+
 **Reparo If** and **Reparo For Each**: The only control flow between Events: an exclusive gateway, and
 a loop over a list that is one of the Variables, whose item is also one of the Variables.
+
+## What an Event records
+
+**UiPath UI activity**: A UiPath activity with a UI target. The Bridge sorts each one by what it
+does, not by its type: an action, a read (it takes a value off the UI) or a check (it only tests
+the UI, and is never logged).
+_Avoid_: UI activity (alone: an Activity is home's)
+
+**Logged UiPath activity**: The one UiPath activity an Event's Logged event records: its action
+that succeeded, else its last read that succeeded. An Event with neither is logged as `none`, and
+a second action that succeeds is a Process bug.
+_Avoid_: logged call (the Playwright Bridge's word)
 
 ## Other UiPath words
 
