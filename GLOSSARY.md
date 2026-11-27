@@ -75,8 +75,9 @@ nothing inside it resolved, so Reparo sees the screen before any UiPath scope ar
 application, and it continues the run after the Recovery.
 
 **Reparo Subprocess**: The Reparo Event whose body is one Invoke Workflow File, the only way a
-Process runs another workflow file. Instrumented, the invoked file has its own Reparo Process and
-recovers its own UI failures; uninstrumented, a UI failure inside it is this Event's.
+Process runs another workflow file. Instrumented, the invoked file has its own Reparo Process, runs
+as its own run and recovers its own UI failures; uninstrumented, a UI failure inside it is this
+Event's.
 _Avoid_: invoke Event, nested Process
 
 **Reparo If** and **Reparo For Each**: The only control flow between Events: an exclusive gateway, and
