@@ -50,7 +50,8 @@ _Avoid_: workflow (alone)
 
 **UiPath variable**: A named value UiPath scopes to a container, a workflow file or the project.
 The UiPath variables declared on Reparo Process are the Process's Variables. Any other UiPath variable is
-not one of the Variables.
+not one of the Variables. One of the Variables that is or holds a `SecureString` is never sent to
+Reparo: it keeps its value in the run.
 
 **Use Application/Browser card**: UiPath's scope that opens or attaches to the application or browser
 its UiPath activities act on, and may close it when it ends or fails. It may sit between Reparo
@@ -79,6 +80,10 @@ Process runs another workflow file. Instrumented, the invoked file has its own R
 as its own run and recovers its own UI failures; uninstrumented, a UI failure inside it is this
 Event's.
 _Avoid_: invoke Event, nested Process
+
+**Secret Event**: As home defines it. Here, a Reparo Event whose `Secret` setting is on, or whose
+body holds a UiPath activity that types secure text or types into a password field; the process
+author can't turn the second kind off.
 
 **Reparo If** and **Reparo For Each**: The only control flow between Events: an exclusive gateway, and
 a loop over a list that is one of the Variables, whose item is also one of the Variables.
